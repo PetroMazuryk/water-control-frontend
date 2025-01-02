@@ -1,4 +1,9 @@
+import Logo from './components/Logo/Logo';
 function App() {
-  return <div>Water Control</div>;
+  return (
+    <div>
+      <Logo />
+    </div>
+  );
 }
 export default App;
