@@ -1,13 +1,16 @@
+import { lazy } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import SharedLayout from './components/SharedLayout/SharedLayout';
 import PrivateRoute from './components/PrivateRoute';
 import RestrictedRoute from './components/RestrictedRoute';
 
+const HomePage = lazy(() => import('./pages/HomePage/HomePage'));
+
 function App() {
   return (
     <SharedLayout>
       <Routes>
-        <Route path="/" element={<div>HomePage</div>} />
+        <Route path="/" element={<HomePage />} />
 
         <Route
           path="/register"
