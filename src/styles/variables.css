@@ -4,6 +4,7 @@
   --color-main-bg: #d6cff6;
   --color-second-bg: #c8b4f8;
   --color-second-bg-hover: #927bc6;
+  --color-accent: #4eca56;
   --white: #ffffff;
   --transition-color: 300ms cubic-bezier(0.4, 0, 0.2, 1);
 }
