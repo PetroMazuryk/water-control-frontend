@@ -1,13 +1,17 @@
 import { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as Yup from 'yup';
 import sprite from '../../assets/sprite.svg';
+import { selectIsLoading } from '../../redux/auth/selectors.js';
+import { registration } from '../../redux/auth/operations.js';
 
 import css from './FormRegister.module.css';
 
 const FormRegister = () => {
-  const isLoading = false;
+  const dispatch = useDispatch();
+  const isLoading = useSelector(selectIsLoading);
   const [showPassword, setShowPassword] = useState(false);
   const [showPasswordRepeat, setshowPasswordRepeat] = useState(false);
 
@@ -42,7 +46,8 @@ const FormRegister = () => {
   } = useForm({ resolver: yupResolver(schemaValidation) });
 
   const onSubmitForm = (data) => {
-    console.log(data);
+    const { email, password } = data;
+    dispatch(registration({ email, password }));
   };
 
   return (
