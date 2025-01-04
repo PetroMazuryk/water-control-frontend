@@ -15,7 +15,7 @@
 .userCount {
   position: absolute;
   left: 16px;
-  bottom: 6px;
+  bottom: 96px;
 }
 
 .advantagesList {
@@ -104,10 +104,9 @@
 
 @media screen and (min-width: 1440px) {
   .advantagesSection {
-    padding: 64px 32px;
-
-    height: 736px;
     width: 672px;
+    height: 736px;
+    padding: 64px 32px;
   }
 
   .userCount {
@@ -130,7 +129,7 @@
 /* user component */
 
 .userCountComponent {
-  width: 280px;
+  width: 180px;
   border-radius: 30px;
   padding: 10px 14px;
   box-shadow: 0 4px 50px 0 rgba(0, 0, 0, 0.1);
@@ -182,6 +181,7 @@
 
 @media screen and (min-width: 768px) {
   .userCountComponent {
+    width: 280px;
     padding: 10px 20px;
   }
 
