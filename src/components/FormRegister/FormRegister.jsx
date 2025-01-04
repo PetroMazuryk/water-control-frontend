@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as Yup from 'yup';
+import clsx from 'clsx';
 import sprite from '../../assets/sprite.svg';
 import { selectIsLoading } from '../../redux/auth/selectors.js';
 import { registration } from '../../redux/auth/operations.js';
@@ -13,7 +14,7 @@ const FormRegister = () => {
   const dispatch = useDispatch();
   const isLoading = useSelector(selectIsLoading);
   const [showPassword, setShowPassword] = useState(false);
-  const [showPasswordRepeat, setshowPasswordRepeat] = useState(false);
+  const [showPasswordRepeat, setShowPasswordRepeat] = useState(false);
 
   const schemaValidation = Yup.object({
     email: Yup.string()
@@ -23,7 +24,7 @@ const FormRegister = () => {
       .required('Потрібен пароль')
       .min(7, 'Пароль має містити принаймні 7 символів')
       .matches(
-        /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/,
+        /^(?=.*[A-Za-z])(?=.*\d)/,
         'Пароль повинен містити принаймні одну літеру та одну цифру'
       ),
     repeatPassword: Yup.string()
@@ -31,13 +32,9 @@ const FormRegister = () => {
       .required('Будь ласка, підтвердьте свій пароль'),
   });
 
-  const togglePasswordVisibility = () => {
-    setShowPassword(!showPassword);
-  };
-
-  const togglePasswordRepeatVisibility = () => {
-    setshowPasswordRepeat(!showPasswordRepeat);
-  };
+  const togglePasswordVisibility = () => setShowPassword(!showPassword);
+  const togglePasswordRepeatVisibility = () =>
+    setShowPasswordRepeat(!showPasswordRepeat);
 
   const {
     register,
@@ -58,20 +55,16 @@ const FormRegister = () => {
           <label className={css.registerLabel}>
             Електронна пошта
             <input
-              className={
-                errors.email?.message
-                  ? `${css.registerInputError}`
-                  : `${css.registerInput}`
-              }
+              className={clsx(css.registerInput, {
+                [css.registerInputError]: errors.email?.message,
+              })}
               {...register('email')}
               placeholder="Введіть свою пошту"
             />
-            {errors.email?.message ? (
+            {errors.email?.message && (
               <p className={css.registerErrorMessage}>
                 {errors.email?.message}
               </p>
-            ) : (
-              ''
             )}
           </label>
 
@@ -80,11 +73,9 @@ const FormRegister = () => {
             <span className={css.registerPassword}>
               <input
                 type={showPassword ? 'text' : 'password'}
-                className={
-                  errors.password?.message
-                    ? `${css.registerInputError}`
-                    : `${css.registerInput}`
-                }
+                className={clsx(css.registerInput, {
+                  [css.registerInputError]: errors.password?.message,
+                })}
                 {...register('password')}
                 placeholder="Введіть свій пароль"
               />
@@ -93,23 +84,19 @@ const FormRegister = () => {
                 type="button"
                 onClick={togglePasswordVisibility}
               >
-                {showPassword === false ? (
-                  <svg className={css.passwordIcon}>
-                    <use xlinkHref={sprite + '#icon-eye-off'} />
-                  </svg>
-                ) : (
-                  <svg className={css.passwordIcon}>
-                    <use xlinkHref={sprite + '#icon-eye'} />
-                  </svg>
-                )}
+                <svg className={css.passwordIcon}>
+                  <use
+                    xlinkHref={`${sprite}#${
+                      showPassword ? 'icon-eye' : 'icon-eye-off'
+                    }`}
+                  />
+                </svg>
               </button>
             </span>
-            {errors.password?.message ? (
+            {errors.password?.message && (
               <p className={css.registerErrorMessage}>
                 {errors.password?.message}
               </p>
-            ) : (
-              ''
             )}
           </label>
 
@@ -118,11 +105,9 @@ const FormRegister = () => {
             <span className={css.registerPassword}>
               <input
                 type={showPasswordRepeat ? 'text' : 'password'}
-                className={
-                  errors.repeatPassword?.message
-                    ? `${css.registerInputError}`
-                    : `${css.registerInput}`
-                }
+                className={clsx(css.registerInput, {
+                  [css.registerInputError]: errors.repeatPassword?.message,
+                })}
                 {...register('repeatPassword')}
                 placeholder="Повторіть пароль"
               />
@@ -131,39 +116,30 @@ const FormRegister = () => {
                 type="button"
                 onClick={togglePasswordRepeatVisibility}
               >
-                {showPasswordRepeat === false ? (
-                  <svg className={css.passwordIcon}>
-                    <use xlinkHref={sprite + '#icon-eye-off'} />
-                  </svg>
-                ) : (
-                  <svg className={css.passwordIcon}>
-                    <use xlinkHref={sprite + '#icon-eye'} />
-                  </svg>
-                )}
+                <svg className={css.passwordIcon}>
+                  <use
+                    xlinkHref={`${sprite}#${
+                      showPasswordRepeat ? 'icon-eye' : 'icon-eye-off'
+                    }`}
+                  />
+                </svg>
               </button>
             </span>
-            {errors.repeatPassword?.message ? (
+            {errors.repeatPassword?.message && (
               <p className={css.registerErrorMessage}>
                 {errors.repeatPassword?.message}
               </p>
-            ) : (
-              ''
             )}
           </label>
         </div>
         {isLoading ? (
-          <div className={css.registerLoader}>
-            <div height={44} width={44}>
-              Loading ...
-            </div>
-            .
-          </div>
+          <div className={css.registerLoader}>Loading...</div>
         ) : (
           <div className={css.registerButtonsContainer}>
             <button
-              disabled={isLoading && true}
               className={css.registerBtn}
               type="submit"
+              disabled={isLoading}
             >
               Зареєструватися
             </button>
