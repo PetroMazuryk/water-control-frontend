@@ -5,6 +5,7 @@ import PrivateRoute from './components/PrivateRoute';
 import RestrictedRoute from './components/RestrictedRoute';
 
 const HomePage = lazy(() => import('./pages/HomePage/HomePage'));
+const RegisterPage = lazy(() => import('./pages/RegisterPage/RegisterPage'));
 
 function App() {
   return (
@@ -17,7 +18,7 @@ function App() {
           element={
             <RestrictedRoute
               redirectTo={`/water/${Date.now()}`}
-              component={<div>RegisterPage</div>}
+              component={<RegisterPage />}
             />
           }
         />
