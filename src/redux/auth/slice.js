@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { INITIAL_STATE } from './initialState';
-import { registration, login } from './operations';
+import { registration, login, logOut } from './operations';
 const authSlice = createSlice({
   name: 'auth',
   initialState: INITIAL_STATE,
@@ -42,6 +42,20 @@ const authSlice = createSlice({
       .addCase(login.rejected, (state, action) => {
         state.isLoading = false;
         state.errorMessage = action.payload;
+      })
+      .addCase(logOut.pending, (state) => {
+        state.isLoading = true;
+        state.errorMessage = null;
+        state.successMessage = null;
+      })
+      .addCase(logOut.fulfilled, () => {
+        return INITIAL_STATE;
+      })
+      .addCase(logOut.rejected, (_, action) => {
+        return {
+          ...INITIAL_STATE,
+          errorMessage: action.payload || 'Error while logout',
+        };
       });
   },
 });

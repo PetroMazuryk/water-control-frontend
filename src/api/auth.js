@@ -9,3 +9,7 @@ export const loginUser = async (userInfo) => {
   const data = await instance.post('/users/login', userInfo);
   return data;
 };
+
+export const logOutUser = async () => {
+  await instance.post('/users/logout');
+};
