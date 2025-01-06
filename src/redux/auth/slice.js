@@ -4,7 +4,15 @@ import { registration, login, logOut } from './operations';
 const authSlice = createSlice({
   name: 'auth',
   initialState: INITIAL_STATE,
-  reducers: {},
+  reducers: {
+    setToken: (state, action) => {
+      state.token = action.payload;
+    },
+
+    logOutReducer: () => {
+      return INITIAL_STATE;
+    },
+  },
   extraReducers: (builder) => {
     builder
       .addCase(registration.pending, (state) => {
@@ -13,6 +21,7 @@ const authSlice = createSlice({
         state.successMessage = null;
         state.token = null;
       })
+
       .addCase(registration.fulfilled, (state, action) => {
         state.isLoading = false;
         state.isLoggedIn = true;
@@ -61,3 +70,4 @@ const authSlice = createSlice({
 });
 
 export const authReducer = authSlice.reducer;
+export const { setToken, logOutReducer } = authSlice.actions;
