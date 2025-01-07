@@ -5,6 +5,7 @@ import {
   currentUser,
   logOutUser,
 } from '../../api/auth';
+import { fetchRefreshToken } from '../../api/axiosConfig';
 
 export const registration = createAsyncThunk(
   'auth/registration',
@@ -52,3 +53,15 @@ export const current = createAsyncThunk('auth/current', async (_, thunkAPI) => {
     return thunkAPI.rejectWithValue(err.response.data.data.message);
   }
 });
+
+export const refreshToken = createAsyncThunk(
+  'users/refresh',
+  async (_, thunkAPI) => {
+    try {
+      const { token } = await fetchRefreshToken();
+      return token;
+    } catch (err) {
+      return thunkAPI.rejectWithValue(err.response);
+    }
+  }
+);

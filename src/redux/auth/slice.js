@@ -1,6 +1,12 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { INITIAL_STATE } from './initialState';
-import { registration, login, current, logOut } from './operations';
+import {
+  registration,
+  login,
+  current,
+  logOut,
+  refreshToken,
+} from './operations';
 const authSlice = createSlice({
   name: 'auth',
   initialState: INITIAL_STATE,
@@ -80,7 +86,15 @@ const authSlice = createSlice({
       .addCase(current.rejected, (state) => {
         state.isLoading = false;
         state.errorMessage = 'Something went wrong, try again later';
-      });
+      })
+      .addCase(refreshToken.pending, (state) => {
+        state.isLoggedIn = false;
+      })
+      .addCase(refreshToken.fulfilled, (state, action) => {
+        state.isLoggedIn = true;
+        state.token = action.payload;
+      })
+      .addCase(refreshToken.rejected, () => INITIAL_STATE);
   },
 });
 
