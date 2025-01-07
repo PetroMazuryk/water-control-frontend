@@ -13,3 +13,8 @@ export const loginUser = async (userInfo) => {
 export const logOutUser = async () => {
   await instance.post('/users/logout');
 };
+
+export const currentUser = async () => {
+  const data = await instance.get('/users/current');
+  return data;
+};

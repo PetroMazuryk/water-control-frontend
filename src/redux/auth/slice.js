@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { INITIAL_STATE } from './initialState';
-import { registration, login, logOut } from './operations';
+import { registration, login, current, logOut } from './operations';
 const authSlice = createSlice({
   name: 'auth',
   initialState: INITIAL_STATE,
@@ -8,9 +8,11 @@ const authSlice = createSlice({
     setToken: (state, action) => {
       state.token = action.payload;
     },
-
     logOutReducer: () => {
       return INITIAL_STATE;
+    },
+    setLoggedIn: (state, action) => {
+      state.isLoggedIn = action.payload;
     },
   },
   extraReducers: (builder) => {
@@ -65,9 +67,22 @@ const authSlice = createSlice({
           ...INITIAL_STATE,
           errorMessage: action.payload || 'Error while logout',
         };
+      })
+      .addCase(current.pending, (state) => {
+        state.isLoading = true;
+        state.errorMessage = null;
+        state.successMessage = null;
+      })
+      .addCase(current.fulfilled, (state, action) => {
+        state.isLoading = false;
+        state.user = action.payload;
+      })
+      .addCase(current.rejected, (state) => {
+        state.isLoading = false;
+        state.errorMessage = 'Something went wrong, try again later';
       });
   },
 });
 
 export const authReducer = authSlice.reducer;
-export const { setToken, logOutReducer } = authSlice.actions;
+export const { setToken, logOutReducer, setLoggedIn } = authSlice.actions;

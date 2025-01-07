@@ -1,8 +1,12 @@
-import { lazy } from 'react';
+import { lazy, useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { Route, Routes } from 'react-router-dom';
 import SharedLayout from './components/SharedLayout/SharedLayout';
 import PrivateRoute from './components/PrivateRoute';
 import RestrictedRoute from './components/RestrictedRoute';
+import { current } from './redux/auth/operations';
+import { setLoggedIn } from './redux/auth/slice.js';
+import { selectToken } from './redux/auth/selectors.js';
 
 const HomePage = lazy(() => import('./pages/HomePage/HomePage'));
 const RegisterPage = lazy(() => import('./pages/RegisterPage/RegisterPage'));
@@ -10,6 +14,16 @@ const LoginPage = lazy(() => import('./pages/LoginPage/LoginPage'));
 import WaterControlPage from './pages/WaterControlPage/WaterControlPage';
 
 function App() {
+  const token = useSelector(selectToken);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    if (token) {
+      dispatch(current());
+      dispatch(setLoggedIn(true));
+    }
+  }, []);
+
   return (
     <SharedLayout>
       <Routes>
