@@ -2,7 +2,6 @@ import AdvantagesSection from '../../components/AdvantagesSection/AdvantagesSect
 import FormWrapper from '../../components/FormWrapper/FormWrapper';
 import FormLogin from '../../components/FormLogin/FormLogin';
 import FormFooter from '../../components/FormFooter/FormFooter';
-import BtnLogout from '../../components/BtnLogout/BtnLogout';
 
 import css from '../RegisterPage/RegisterPage.module.css';
 
@@ -16,7 +15,6 @@ const LoginPage = () => {
           text="Немає облікового запису?"
           linkName="Зареєструватися"
         />
-        <BtnLogout />
       </FormWrapper>
 
       <div className={css.registerPageRight}>
