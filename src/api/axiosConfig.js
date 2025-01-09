@@ -12,6 +12,14 @@ export const injectStore = (_store) => {
   store = _store;
 };
 
+let isRefreshing = false;
+let subscribers = [];
+
+const onRefreshed = (token) => {
+  subscribers.forEach((callback) => callback(token));
+  subscribers = [];
+};
+
 export const fetchRefreshToken = async () => {
   const { data } = await axios.post(
     `${BASE_URL}/users/refresh`,
@@ -45,17 +53,34 @@ instance.interceptors.response.use(
     const originalRequest = error.config;
 
     if (error.response.status === 401 && !originalRequest._retry) {
+      if (isRefreshing) {
+        return new Promise((resolve) => {
+          subscribers.push((token) => {
+            originalRequest.headers['Authorization'] = `Bearer ${token}`;
+            resolve(instance(originalRequest));
+          });
+        });
+      }
+
       originalRequest._retry = true;
+      isRefreshing = true;
+
       try {
-        const response = await fetchRefreshToken();
-        store.dispatch(setToken(response.token));
+        const { token } = await fetchRefreshToken();
+        store.dispatch(setToken(token));
+        isRefreshing = false;
+
+        onRefreshed(token);
+
+        originalRequest.headers['Authorization'] = `Bearer ${token}`;
         return instance(originalRequest);
-      } catch (error) {
-        if (error.response.status === 401) {
-          store.dispatch(logOutReducer());
-        }
+      } catch (refreshError) {
+        isRefreshing = false;
+        store.dispatch(logOutReducer());
+        return Promise.reject(refreshError);
       }
     }
+
     return Promise.reject(error);
   }
 );
