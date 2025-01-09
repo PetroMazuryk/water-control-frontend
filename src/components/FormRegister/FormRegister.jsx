@@ -7,6 +7,7 @@ import clsx from 'clsx';
 import sprite from '../../assets/sprite.svg';
 import { selectIsLoading } from '../../redux/auth/selectors.js';
 import { registration } from '../../redux/auth/operations.js';
+import Loader from '../Loader/Loader.jsx';
 
 import css from './FormRegister.module.css';
 
@@ -133,7 +134,9 @@ const FormRegister = () => {
           </label>
         </div>
         {isLoading ? (
-          <div className={css.registerLoader}>Loading...</div>
+          <div className={css.registerButtonsContainer}>
+            <Loader height={44} width={44} label="Зареєструватися" />
+          </div>
         ) : (
           <div className={css.registerButtonsContainer}>
             <button

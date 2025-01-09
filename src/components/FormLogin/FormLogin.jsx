@@ -6,6 +6,7 @@ import * as Yup from 'yup';
 import sprite from '../../assets/sprite.svg';
 import { selectIsLoading } from '../../redux/auth/selectors.js';
 import { login } from '../../redux/auth/operations.js';
+import Loader from '../Loader/Loader.jsx';
 
 import css from '../FormRegister/FormRegister.module.css';
 
@@ -105,11 +106,8 @@ const FormLogin = () => {
           </label>
         </div>
         {isLoading ? (
-          <div className={css.registerLoader}>
-            <div height={44} width={44}>
-              Loading ...
-            </div>
-            .
+          <div className={css.registerButtonsContainer}>
+            <Loader height={44} width={44} label="Увійти" />
           </div>
         ) : (
           <div className={css.registerButtonsContainer}>

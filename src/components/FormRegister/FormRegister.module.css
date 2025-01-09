@@ -118,15 +118,6 @@
   background-color: var(--color-second-bg);
 }
 
-.registerLoader {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 32px;
-  margin-bottom: 16px;
-}
-
 .registerBtn:hover,
 .registerBtn:focus {
   background-color: var(--color-second-bg-hover);
