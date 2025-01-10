@@ -1,10 +1,13 @@
 import { Link } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 import Logo from '../Logo/Logo';
+import { selectIsLoggedIn } from '../../redux/auth/selectors';
 
 import css from './WelcomeSection.module.css';
 
 const WelcomeSection = () => {
-  const isLoggedIn = false;
+  const isLoggedIn = useSelector(selectIsLoggedIn);
+
   return (
     <div className={css.welcomeSection}>
       <div className={css.header}>
