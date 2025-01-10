@@ -18,7 +18,7 @@
 .normaContainer {
   border-radius: 15px;
   padding: 12px;
-  max-width: 80px;
+  max-width: 120px;
   width: fit-content;
   min-height: 44px;
   box-shadow: var(--box-shadow);

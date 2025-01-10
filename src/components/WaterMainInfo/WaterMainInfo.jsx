@@ -1,5 +1,7 @@
-import css from './WaterMainInfo.module.css';
 import Logo from '../Logo/Logo';
+import AddWaterBtn from '../BtnAddWater/BtnAddWater';
+
+import css from './WaterMainInfo.module.css';
 
 const WaterMainInfo = () => {
   const waterRate = 2;
@@ -19,7 +21,7 @@ const WaterMainInfo = () => {
         </div>
       )}
       {waterRate === 0 ? '' : <div>WaterProgressBar</div>}
-      {waterRate === 0 ? <div> BtnUserSet</div> : <div>AddWaterBtn</div>}
+      {waterRate === 0 ? <div> BtnUserSet</div> : <AddWaterBtn />}
     </div>
   );
 };

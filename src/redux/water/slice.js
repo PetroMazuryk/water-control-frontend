@@ -1,7 +1,31 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { fetchDailyWater } from './operations';
+import {
+  addWater,
+  updateWaterIntakeRecord,
+  fetchDailyWater,
+} from './operations';
 
 import { WATER_INITIAL_STATE } from './initialState';
+import { isToday } from '../../helpers/isToday';
+
+const handleDailyPending = (state) => {
+  state.waterDaily.errorMessage = null;
+  state.waterDaily.successMessage = null;
+};
+
+const roundToTwoDecimals = (num) => parseFloat(num.toFixed(2));
+
+const findDate = (oldDate) => {
+  return ({ date }) => {
+    const firstDate = new Date(Number(date));
+    const secondDate = new Date(Number(oldDate));
+    return (
+      firstDate.getFullYear() === secondDate.getFullYear() &&
+      firstDate.getMonth() === secondDate.getMonth() &&
+      firstDate.getDate() === secondDate.getDate()
+    );
+  };
+};
 
 const waterSlice = createSlice({
   name: 'water',
@@ -24,6 +48,103 @@ const waterSlice = createSlice({
       })
       .addCase(fetchDailyWater.rejected, (state) => {
         state.waterDaily.isLoading = false;
+      })
+      //======================= addWater ======================
+      .addCase(addWater.pending, handleDailyPending)
+      .addCase(addWater.fulfilled, (state, action) => {
+        const newRecord = action.payload.data;
+
+        state.waterDaily.data.push(newRecord);
+        state.waterDaily.data.sort((a, b) => Number(a.date) - Number(b.date));
+        state.waterDaily.amount += newRecord.amount;
+        state.waterDaily.percentage = roundToTwoDecimals(
+          state.waterDaily.percentage + newRecord.percentage
+        );
+
+        const monthlyRecordIndex = state.waterMonthly.data.findIndex(
+          findDate(newRecord.date)
+        );
+        const weekRecordIndex = state.waterWeekly.data.findIndex(
+          findDate(newRecord.date)
+        );
+        if (weekRecordIndex !== -1) {
+          state.waterWeekly.data[weekRecordIndex].amount += newRecord.amount;
+        }
+        if (isToday(newRecord.date)) {
+          state.todayAmount.value += newRecord.amount;
+        }
+        if (monthlyRecordIndex !== -1) {
+          state.waterDaily.successMessage = 'Successfully added';
+          state.waterMonthly.data[monthlyRecordIndex].amount +=
+            newRecord.amount;
+          state.waterMonthly.data[monthlyRecordIndex].percentage =
+            roundToTwoDecimals(
+              state.waterMonthly.data[monthlyRecordIndex].percentage +
+                newRecord.percentage
+            );
+        }
+      })
+      .addCase(addWater.rejected, (state) => {
+        state.waterDaily.errorMessage = 'Something went wrong. Try again';
+      })
+
+      //====================== editWater ======================
+      .addCase(updateWaterIntakeRecord.pending, handleDailyPending)
+      .addCase(updateWaterIntakeRecord.fulfilled, (state, action) => {
+        const updatedRecord = action.payload.data;
+
+        state.waterDaily.successMessage = 'Successfully updated';
+
+        const dailyIndex = state.waterDaily.data.findIndex(
+          (record) => record.id === updatedRecord.id
+        );
+
+        if (dailyIndex !== -1) {
+          const oldRecord = state.waterDaily.data[dailyIndex];
+
+          state.waterDaily.data[dailyIndex] = updatedRecord;
+          state.waterDaily.data.sort((a, b) => Number(a.date) - Number(b.date));
+          const totalAmount = state.waterDaily.data.reduce(
+            (sum, record) => sum + record.amount,
+            0
+          );
+          state.waterDaily.amount = totalAmount;
+
+          const totalPercentage = state.waterDaily.data.reduce(
+            (sum, record) => sum + record.percentage,
+            0
+          );
+          state.waterDaily.percentage = roundToTwoDecimals(totalPercentage);
+
+          const monthlyIndex = state.waterMonthly.data.findIndex(
+            findDate(oldRecord.date)
+          );
+          const weekRecordIndex = state.waterWeekly.data.findIndex(
+            findDate(oldRecord.date)
+          );
+          if (weekRecordIndex !== -1) {
+            state.waterWeekly.data[weekRecordIndex].amount +=
+              updatedRecord.amount - oldRecord.amount;
+          }
+
+          if (isToday(updatedRecord.date)) {
+            state.todayAmount.value += updatedRecord.amount - oldRecord.amount;
+          }
+          if (monthlyIndex !== -1) {
+            state.waterMonthly.data[monthlyIndex].amount +=
+              updatedRecord.amount - oldRecord.amount;
+
+            state.waterMonthly.data[monthlyIndex].percentage =
+              roundToTwoDecimals(
+                state.waterMonthly.data[monthlyIndex].percentage +
+                  updatedRecord.percentage -
+                  oldRecord.percentage
+              );
+          }
+        }
+      })
+      .addCase(updateWaterIntakeRecord.rejected, (state) => {
+        state.waterDaily.errorMessage = 'Something went wrong. Try again';
       });
   },
 });
