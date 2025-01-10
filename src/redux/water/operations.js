@@ -22,7 +22,7 @@ export const dateToUTC = (ms) => {
 };
 
 export const fetchDailyWater = createAsyncThunk(
-  'water/fetchDay',
+  'water/fetchDailyWater',
   async (date, thunkAPI) => {
     try {
       const dateUTC = String(dateToUTC(date).getTime());
