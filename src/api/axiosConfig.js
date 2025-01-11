@@ -3,14 +3,15 @@ import { logOutReducer, setToken } from '../redux/auth/slice';
 
 const BASE_URL = import.meta.env.VITE_API_URL;
 
-const instance = axios.create({
-  baseURL: BASE_URL,
-});
-
 let store;
 export const injectStore = (_store) => {
   store = _store;
 };
+
+const instance = axios.create({
+  baseURL: BASE_URL,
+  withCredentials: true,
+});
 
 let isRefreshing = false;
 let subscribers = [];
