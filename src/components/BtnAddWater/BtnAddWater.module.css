@@ -7,14 +7,14 @@
   position: absolute;
   bottom: 32px;
   right: 16px;
-  background-color: #323f47;
+  background-color: var(--color-btn-bg);
   display: flex;
 }
 
 .btnAdd:hover .btnText,
 .btnAdd:hover .plus {
-  color: #9be1a0;
-  stroke: #9be1a0;
+  color: var(--color-btn);
+  stroke: var(--color-btn);
 }
 
 .btnText {
@@ -23,7 +23,7 @@
   line-height: 129%;
   letter-spacing: -0.01em;
   text-align: center;
-  color: #fff;
+  color: var(--white);
   transition: color 0.3s ease;
 }
 
@@ -32,7 +32,7 @@
   height: 20px;
   margin-right: 10px;
 
-  stroke: #fff;
+  stroke: var(--white);
   transition: stroke 0.3s ease;
 }
 
