@@ -1,7 +1,7 @@
 import { useCallback } from 'react';
 
 import { useModal } from '../../hooks/useModal.js';
-import ModalLogout from '../ModalLogOut/ModalLogOut.jsx';
+import ModalLogout from '../ModalLogout/ModalLogout.jsx';
 import sprite from '../../assets/sprite.svg';
 
 import css from './UserBarPopup.module.css';
