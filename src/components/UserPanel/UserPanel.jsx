@@ -9,8 +9,8 @@ const UserPanel = () => {
   return (
     <div className={styles.userPanel}>
       <h1 className={styles.userPanelTitle}>
-        Привіт
-        <span className={styles.userPanelTitleName}>{` ${userName}!`}</span>
+        Привіт,
+        <span className={styles.userPanelTitleName}>{userName}</span>
       </h1>
       <UserBar name={userName} />
     </div>
