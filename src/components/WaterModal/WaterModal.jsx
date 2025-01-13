@@ -3,6 +3,7 @@ import { ANIMATION } from '../../constants/constants.js';
 import sprite from '../../assets/sprite.svg';
 
 import css from './WaterModal.module.css';
+
 const WaterModal = ({
   operationType,
   onClose,
@@ -78,7 +79,7 @@ const WaterModal = ({
         className={css.WaterModalCloseBtn}
       >
         <svg>
-          <use xlinkHref={sprite + '#icon-x'}></use>
+          <use xlinkHref={`${sprite}#icon-x`}></use>
         </svg>
       </button>
     </div>

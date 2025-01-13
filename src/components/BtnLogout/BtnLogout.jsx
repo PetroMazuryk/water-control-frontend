@@ -1,24 +1,25 @@
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 import { logOut } from '../../redux/auth/operations';
-import { selectIsLoading } from '../../redux/auth/selectors';
 
 import css from './BtnLogout.module.css';
 
-const BtnLogout = () => {
+const BtnLogout = ({ handleClose }) => {
   const dispatch = useDispatch();
-  const isLoading = useSelector(selectIsLoading);
+  const navigate = useNavigate();
 
   const handleLogout = () => {
-    dispatch(logOut());
+    dispatch(logOut()).then(({ error }) => {
+      if (!error) {
+        navigate('/');
+        handleClose();
+      }
+    });
   };
 
   return (
-    <button
-      className={css.btnLogout}
-      onClick={handleLogout}
-      disabled={isLoading}
-    >
-      {isLoading ? 'Вихід...' : 'Вийти'}
+    <button type="button" onClick={handleLogout} className={css.btnLogout}>
+      Вийти
     </button>
   );
 };

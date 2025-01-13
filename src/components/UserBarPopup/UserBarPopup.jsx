@@ -1,20 +1,24 @@
 import { useCallback } from 'react';
 
-import sprite from '../../assets/sprite.svg';
 import { useModal } from '../../hooks/useModal.js';
+import ModalLogOut from '../ModalLogOut/ModalLogOut.jsx';
+import sprite from '../../assets/sprite.svg';
 
 import css from './UserBarPopup.module.css';
 
 const UserBarPopup = () => {
   const setModal = useModal();
+  const closeModal = useCallback(() => {
+    setModal();
+  }, [setModal]);
 
   const openSettingsModal = useCallback(() => {
     setModal(<div>ModalUserSetting</div>);
   }, [setModal]);
 
-  const openLogOutModal = useCallback(() => {
-    setModal(<div>ModalLogOut</div>);
-  }, [setModal]);
+  const openModalLogOut = useCallback(() => {
+    setModal(<ModalLogOut onClose={closeModal} />);
+  }, [setModal, closeModal]);
 
   return (
     <div className={css.userBarPopup}>
@@ -26,7 +30,7 @@ const UserBarPopup = () => {
           Профіль
         </li>
 
-        <li className={css.userBarPopupListItem} onClick={openLogOutModal}>
+        <li className={css.userBarPopupListItem} onClick={openModalLogOut}>
           <svg className={css.userBarPopupIcon}>
             <use xlinkHref={`${sprite}#icon-log-out`}></use>
           </svg>
