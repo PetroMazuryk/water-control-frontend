@@ -1,7 +1,7 @@
 .userPanel {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 10px;
 }
 
 .userPanelTitle {
@@ -9,7 +9,7 @@
   align-items: center;
   flex-direction: row;
   gap: 10px;
-  font-size: 32px;
+  font-size: 24px;
   font-weight: 400;
   letter-spacing: -0.01em;
   text-wrap: nowrap;
@@ -17,10 +17,11 @@
 
 .userPanelTitleName {
   display: inline-block;
-  font-weight: 700;
+  font-weight: 600;
   white-space: nowrap;
-  text-overflow: ellipsis;
   max-width: 200px;
+  text-overflow: ellipsis;
+  overflow: hidden;
   overflow: hidden;
 }
 
@@ -34,7 +35,7 @@
   }
 
   .userPanelTitle {
-    font-size: 36px;
+    font-size: 32px;
     line-height: 1.06;
   }
 
