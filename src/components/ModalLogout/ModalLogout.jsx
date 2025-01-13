@@ -1,7 +1,7 @@
 import { useSelector } from 'react-redux';
 import { selectIsLoading } from '../../redux/auth/selectors.js';
 import { ANIMATION } from '../../constants/constants.js';
-import BtnLogout from '../BtnLogOut/BtnLogOut.jsx';
+import BtnLogout from '../BtnLogout/BtnLogout.jsx';
 import LoaderComponent from '../LoaderComponent/LoaderComponent.jsx';
 import sprite from '../../assets/sprite.svg';
 
