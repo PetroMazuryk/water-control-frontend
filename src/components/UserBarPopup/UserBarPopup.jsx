@@ -1,7 +1,7 @@
 import { useCallback } from 'react';
 
 import { useModal } from '../../hooks/useModal.js';
-import ModalLogOut from '../ModalLogOut/ModalLogOut.jsx';
+import ModalLogout from '../ModalLogOut/ModalLogOut.jsx';
 import sprite from '../../assets/sprite.svg';
 
 import css from './UserBarPopup.module.css';
@@ -17,7 +17,7 @@ const UserBarPopup = () => {
   }, [setModal]);
 
   const openModalLogOut = useCallback(() => {
-    setModal(<ModalLogOut onClose={closeModal} />);
+    setModal(<ModalLogout onClose={closeModal} />);
   }, [setModal, closeModal]);
 
   return (
