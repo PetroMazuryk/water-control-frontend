@@ -1,12 +1,14 @@
 import BtnLogout from '../../components/BtnLogout/BtnLogout';
-import UserBarPopup from '../../components/UserBarPopup/UserBarPopup';
+
 import WaterMainInfo from '../../components/WaterMainInfo/WaterMainInfo';
+import UserBar from '../../components/UserBar/UserBar';
+
 const WaterControlPage = () => {
   return (
     <div>
       <WaterMainInfo />
       <BtnLogout />
-      <UserBarPopup />
+      <UserBar />
     </div>
   );
 };
