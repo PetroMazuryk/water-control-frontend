@@ -8,7 +8,7 @@ const UserPanel = () => {
   const userName = useSelector(selectUserName);
   const userEmail = useSelector(selectUserEmail);
 
-  const emailUsername = userEmail.split('@')[0];
+  const emailUsername = userEmail ? userEmail.split('@')[0] : null;
 
   const displayName = userName === 'User' ? emailUsername : userName;
 

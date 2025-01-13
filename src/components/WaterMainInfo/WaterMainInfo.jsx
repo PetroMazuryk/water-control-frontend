@@ -1,5 +1,6 @@
 import Logo from '../Logo/Logo';
 import AddWaterBtn from '../BtnAddWater/BtnAddWater';
+import WaterProgressBar from '../WaterProgressBar/WaterProgressBar';
 
 import css from './WaterMainInfo.module.css';
 
@@ -20,7 +21,7 @@ const WaterMainInfo = () => {
           <p className={css.normaText}>Моя щоденна норма</p>
         </div>
       )}
-      {waterRate === 0 ? '' : <div>WaterProgressBar</div>}
+      {waterRate === 0 ? '' : <WaterProgressBar />}
       {waterRate === 0 ? <div> BtnUserSet</div> : <AddWaterBtn />}
     </div>
   );
