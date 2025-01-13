@@ -1,14 +1,13 @@
-import BtnLogout from '../../components/BtnLogout/BtnLogout';
-
 import WaterMainInfo from '../../components/WaterMainInfo/WaterMainInfo';
-import UserBar from '../../components/UserBar/UserBar';
+import WaterDetailedInfo from '../../components/WaterDetailedInfo/WaterDetailedInfo.jsx';
+
+import css from './WaterControlPage.module.css';
 
 const WaterControlPage = () => {
   return (
-    <div>
+    <div className={css.waterPage}>
       <WaterMainInfo />
-      <BtnLogout />
-      <UserBar />
+      <WaterDetailedInfo />
     </div>
   );
 };

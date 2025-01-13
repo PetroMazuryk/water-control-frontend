@@ -22,7 +22,7 @@ function App() {
       dispatch(current());
       dispatch(setLoggedIn(true));
     }
-  }, []);
+  }, [token, dispatch]);
 
   return (
     <SharedLayout>

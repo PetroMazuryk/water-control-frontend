@@ -1,6 +1,7 @@
 .userBarPopup {
   position: absolute;
   width: 100%;
+  margin-top: 6px;
   padding: 14px 0;
   border-radius: 15px;
   background-color: var(--white);
@@ -24,7 +25,7 @@
   justify-content: center;
   gap: 8px;
   width: 100%;
-  padding: 8px 0;
+  padding: 4px 0;
   color: var(--color-second-bg-hover);
   cursor: pointer;
   transition:
