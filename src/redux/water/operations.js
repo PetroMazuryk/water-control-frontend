@@ -4,6 +4,7 @@ import {
   createWater,
   updateWater,
   deleteWater,
+  getMonthWater,
 } from '../../api/water.js';
 
 export const dateToLocal = (ms) => {
@@ -89,6 +90,24 @@ export const deleteWaterIntakeRecord = createAsyncThunk(
     } catch (error) {
       console.error('Помилка API:', error);
       return thunkAPI.rejectWithValue(error.response?.data || error.message);
+    }
+  }
+);
+
+export const fetchMonthlyWater = createAsyncThunk(
+  'water/fetchWaters',
+  async (formData, thunkAPI) => {
+    try {
+      const dateUTC = String(dateToUTC(formData).getTime());
+      const { data } = await getMonthWater(dateUTC);
+      data.data = data.data.map((item) => ({
+        ...item,
+        date: dateToLocal(item.date),
+      }));
+
+      return data;
+    } catch (error) {
+      return thunkAPI.rejectWithValue(error.response.data || error.message);
     }
   }
 );

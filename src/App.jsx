@@ -11,7 +11,9 @@ import { selectToken } from './redux/auth/selectors.js';
 const HomePage = lazy(() => import('./pages/HomePage/HomePage'));
 const RegisterPage = lazy(() => import('./pages/RegisterPage/RegisterPage'));
 const LoginPage = lazy(() => import('./pages/LoginPage/LoginPage'));
-import WaterControlPage from './pages/WaterControlPage/WaterControlPage';
+const WaterControlPage = lazy(() =>
+  import('./pages/WaterControlPage/WaterControlPage.jsx')
+);
 
 function App() {
   const token = useSelector(selectToken);

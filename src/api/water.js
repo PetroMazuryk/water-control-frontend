@@ -18,3 +18,8 @@ export const getDayWater = async (date) => {
   const { data } = await instance.get(`/water/day/${date}`);
   return data;
 };
+
+export const getMonthWater = async (date) => {
+  const data = await instance.get(`/water/month/${date}`);
+  return data;
+};

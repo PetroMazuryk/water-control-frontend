@@ -4,6 +4,7 @@ import {
   updateWaterIntakeRecord,
   deleteWaterIntakeRecord,
   fetchDailyWater,
+  fetchMonthlyWater,
 } from './operations';
 
 import { WATER_INITIAL_STATE } from './initialState';
@@ -185,6 +186,20 @@ const waterSlice = createSlice({
       })
       .addCase(deleteWaterIntakeRecord.rejected, (state) => {
         state.errorMessage = 'Something went wrong. Try again';
+      })
+
+      //================== fetchMonthlyWater ==================
+      .addCase(fetchMonthlyWater.pending, (state) => {
+        state.waterMonthly.isLoading = true;
+        state.waterMonthly.isError = null;
+      })
+      .addCase(fetchMonthlyWater.fulfilled, (state, action) => {
+        state.waterMonthly.isLoading = false;
+        state.waterMonthly.data = action.payload.data;
+      })
+      .addCase(fetchMonthlyWater.rejected, (state) => {
+        state.waterMonthly.isLoading = false;
+        state.waterMonthly.isError = true;
       });
   },
 });

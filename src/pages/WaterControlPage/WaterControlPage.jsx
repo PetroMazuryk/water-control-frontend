@@ -2,7 +2,10 @@ import { useDispatch } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { parseDateTime } from '../../helpers/parseDate.js';
-import { fetchDailyWater } from '../../redux/water/operations.js';
+import {
+  fetchDailyWater,
+  fetchMonthlyWater,
+} from '../../redux/water/operations.js';
 import WaterMainInfo from '../../components/WaterMainInfo/WaterMainInfo';
 import WaterDetailedInfo from '../../components/WaterDetailedInfo/WaterDetailedInfo.jsx';
 
@@ -17,6 +20,7 @@ const WaterControlPage = () => {
   useEffect(() => {
     if (isRefreshingPage) {
       dispatch(fetchDailyWater(parsedDate));
+      dispatch(fetchMonthlyWater(parsedDate));
       setIsRefreshingPage(false);
     }
   }, [isRefreshingPage, parsedDate, dispatch]);
