@@ -36,9 +36,9 @@
 }
 
 .belowAim {
-  background-color: var(--color-accent);
-  color: var(--color-accent);
-  border: solid 2px var(--color-accent);
+  background-color: var(--color-btn);
+  color: var(--color-btn);
+  border: solid 2px var(--color-btn);
 }
 
 .aboveAim {
