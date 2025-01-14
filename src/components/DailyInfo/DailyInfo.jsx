@@ -1,7 +1,6 @@
 import SelectDate from '../SelectDate/SelectDate';
 import BtnAddWaterSecond from '../BtnAddWaterSecond/BtnAddWaterSecond';
-import BtnDelete from '../BtnDelete/BtnDelete';
-import ModalDelete from '../ModalDelete/ModalDelete';
+import WaterList from '../WaterList/WaterList';
 import css from './DailyInfo.module.css';
 
 const DailyInfo = () => {
@@ -11,8 +10,8 @@ const DailyInfo = () => {
         <SelectDate />
         <BtnAddWaterSecond />
       </div>
-      <BtnDelete />
-      <ModalDelete />
+
+      <WaterList />
     </div>
   );
 };

@@ -77,11 +77,18 @@ export const deleteWaterIntakeRecord = createAsyncThunk(
   'water/deleteWater',
   async (id, thunkAPI) => {
     try {
-      const { data } = await deleteWater(id);
+      const data = await deleteWater(id);
+
+      if (!data?.data) {
+        return id;
+      }
+
       data.data.date = dateToLocal(data.data.date);
-      return data;
+
+      return data.data;
     } catch (error) {
-      return thunkAPI.rejectWithValue(error.response.data || error.message);
+      console.error('Помилка API:', error);
+      return thunkAPI.rejectWithValue(error.response?.data || error.message);
     }
   }
 );

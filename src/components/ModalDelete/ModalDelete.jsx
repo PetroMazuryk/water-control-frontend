@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { ANIMATION } from '../../constants/animations.js';
+import { ANIMATION } from '../../constants/constants.js';
 import { deleteWaterIntakeRecord } from '../../redux/water/operations.js';
 import BtnDelete from '../BtnDelete/BtnDelete.jsx';
 import LoaderComponent from '../LoaderComponent/LoaderComponent.jsx';
@@ -8,12 +8,13 @@ import sprite from '../../assets/sprite.svg';
 
 import css from './ModalDelete.module.css';
 
-const ModalDelete = ({ id }) => {
+const ModalDelete = ({ id, onClose }) => {
   const dispatch = useDispatch();
   const [isLoading, setIsLoading] = useState(false);
 
   const handleClose = () => {
     const id = setTimeout(() => {
+      onClose();
       clearTimeout(id);
     }, ANIMATION.DURATION);
   };
@@ -23,6 +24,8 @@ const ModalDelete = ({ id }) => {
     dispatch(deleteWaterIntakeRecord(id)).then(({ error }) => {
       if (!error) {
         handleClose();
+      } else {
+        console.error('Помилка видалення запису:', error);
       }
       setIsLoading(false);
     });
