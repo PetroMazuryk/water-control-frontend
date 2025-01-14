@@ -1,5 +1,10 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import { getDayWater, createWater, updateWater } from '../../api/water.js';
+import {
+  getDayWater,
+  createWater,
+  updateWater,
+  deleteWater,
+} from '../../api/water.js';
 
 export const dateToLocal = (ms) => {
   const dateObject = Number(ms);
@@ -60,6 +65,19 @@ export const updateWaterIntakeRecord = createAsyncThunk(
         formData.date = String(dateToUTC(formData.date).getTime());
       }
       const { data } = await updateWater(id, formData);
+      data.data.date = dateToLocal(data.data.date);
+      return data;
+    } catch (error) {
+      return thunkAPI.rejectWithValue(error.response.data || error.message);
+    }
+  }
+);
+
+export const deleteWaterIntakeRecord = createAsyncThunk(
+  'water/deleteWater',
+  async (id, thunkAPI) => {
+    try {
+      const { data } = await deleteWater(id);
       data.data.date = dateToLocal(data.data.date);
       return data;
     } catch (error) {

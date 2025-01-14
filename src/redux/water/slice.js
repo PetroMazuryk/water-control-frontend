@@ -2,6 +2,7 @@ import { createSlice } from '@reduxjs/toolkit';
 import {
   addWater,
   updateWaterIntakeRecord,
+  deleteWaterIntakeRecord,
   fetchDailyWater,
 } from './operations';
 

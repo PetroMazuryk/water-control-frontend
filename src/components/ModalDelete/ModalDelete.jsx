@@ -8,13 +8,12 @@ import sprite from '../../assets/sprite.svg';
 
 import css from './ModalDelete.module.css';
 
-const ModalDelete = ({ id, onClose }) => {
+const ModalDelete = ({ id }) => {
   const dispatch = useDispatch();
   const [isLoading, setIsLoading] = useState(false);
 
   const handleClose = () => {
     const id = setTimeout(() => {
-      onClose();
       clearTimeout(id);
     }, ANIMATION.DURATION);
   };

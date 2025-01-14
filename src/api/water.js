@@ -8,6 +8,10 @@ export const updateWater = async (id, water) => {
   const data = await instance.patch(`/water/${id}`, water);
   return data;
 };
+export const deleteWater = async (id) => {
+  const data = await instance.delete(`/water/${id}`);
+  return data;
+};
 
 export const getDayWater = async (date) => {
   const { data } = await instance.get(`/water/day/${date}`);
