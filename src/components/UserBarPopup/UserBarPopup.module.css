@@ -9,6 +9,7 @@
   font-size: 14px;
   line-height: 1.49;
   font-weight: 700;
+  z-index: 11;
   overflow: hidden;
 }
 
