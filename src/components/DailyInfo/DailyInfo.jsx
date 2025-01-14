@@ -1,5 +1,6 @@
 import SelectDate from '../SelectDate/SelectDate';
 import BtnAddWaterSecond from '../BtnAddWaterSecond/BtnAddWaterSecond';
+import BtnDelete from '../BtnDelete/BtnDelete';
 import css from './DailyInfo.module.css';
 
 const DailyInfo = () => {
@@ -9,6 +10,7 @@ const DailyInfo = () => {
         <SelectDate />
         <BtnAddWaterSecond />
       </div>
+      <BtnDelete />
     </div>
   );
 };
