@@ -57,6 +57,7 @@ const CalendarPagination = () => {
   return (
     <div className={css.calendarTitle}>
       <TitleCalendar title={title} styles={css.month} />
+
       <div className={css.monthInd}>
         <button onClick={decrement} className={css.btn} disabled={isLoading}>
           <svg className={css.svgArrowLeft}>
@@ -73,6 +74,7 @@ const CalendarPagination = () => {
             <use xlinkHref={`${sprite}#icon-arrow`}></use>
           </svg>
         </button>
+
         <NavLink
           to="calendar"
           className={({ isActive }) => {
@@ -82,7 +84,7 @@ const CalendarPagination = () => {
           }}
         >
           <svg className={css.svgSchedule}>
-            <use xlinkHref={`${sprite}'#icon-pie-chart`}></use>
+            <use xlinkHref={`${sprite}#icon-pie-chart`}></use>
           </svg>
         </NavLink>
         <NavLink

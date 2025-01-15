@@ -1,6 +1,6 @@
 import { lazy, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Route, Routes } from 'react-router-dom';
+import { Route, Routes, Navigate } from 'react-router-dom';
 import SharedLayout from './components/SharedLayout/SharedLayout';
 import PrivateRoute from './components/PrivateRoute';
 import RestrictedRoute from './components/RestrictedRoute';
@@ -59,7 +59,11 @@ function App() {
               component={<WaterControlPage />}
             />
           }
-        ></Route>
+        >
+          <Route path="calendar" element={<div>ControlCalendar</div>} />
+          <Route path="schedule" element={<div>ControlSchedule</div>} />
+          <Route index element={<Navigate to="calendar" replace />} />
+        </Route>
 
         <Route path="*" element={<div>NotFoundPage </div>} />
       </Routes>

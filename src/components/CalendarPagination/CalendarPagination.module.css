@@ -14,17 +14,14 @@
   opacity: 0.5;
 }
 
-.btnDisabled:hover {
-  transform: scale(1);
-}
-
-.svgSchedule {
+.svgSchedule,
+.svgPie {
   width: 20px;
   height: 20px;
 }
 
-.isHidden {
-  display: none;
+.svgPie {
+  opacity: 0.4;
 }
 
 @media screen and (max-width: 767px) {
@@ -37,7 +34,6 @@
     min-height: 24px;
     max-height: 56px;
     margin-bottom: 24px;
-    padding-right: 0;
   }
 
   .month {
@@ -47,42 +43,27 @@
     font-weight: bold;
   }
 
-  @media screen and (max-width: 375px) {
-    .month {
-      margin-bottom: 8px;
-    }
-  }
-
   .monthInd {
     display: flex;
     align-items: center;
-
     width: 194px;
     height: 18px;
-
     background-color: var(--color-main-bg);
-
-    padding: 3px 0 3px 0;
-
+    padding: 3px 0;
     font-size: 14px;
     margin-left: auto;
   }
 
   .btn {
     padding: 0;
-
     width: 18px;
     height: 18px;
-
     display: inline-flex;
     align-items: center;
     justify-content: center;
-
     background-color: var(--color-main-bg);
-
     border: none;
     cursor: pointer;
-    transition: transform 0.2s ease;
   }
 
   .monthYear {
@@ -102,17 +83,8 @@
     cursor: pointer;
   }
 
-  .svgPie {
-    width: 20px;
-    height: 20px;
-    opacity: 0.4;
-  }
-
-  .opacity1 {
-    opacity: 1;
-  }
-
-  .svgArrowLeft {
+  .svgArrowLeft,
+  .svgArrowRight {
     stroke: var(--color-font-main);
     fill: var(--color-main-bg);
     width: 7px;
@@ -120,12 +92,9 @@
   }
 
   .svgArrowRight {
-    stroke: var(--color-font-main);
-    fill: var(--color-main-bg);
-    width: 7px;
-    height: 14px;
     transform: rotate(180deg);
   }
+
   .isHidden {
     display: none;
   }
@@ -138,7 +107,6 @@
     width: 640px;
     height: 32px;
     margin-bottom: 24px;
-    padding-right: 0;
   }
 
   .month {
@@ -164,8 +132,7 @@
     background-color: var(--color-main-bg);
     width: 224px;
     height: 24px;
-    padding: 3px 0 3px 0;
-
+    padding: 3px 0;
     font-size: 14px;
     margin-left: auto;
   }
@@ -187,21 +154,8 @@
     cursor: pointer;
   }
 
-  .svgPie {
-    width: 24px;
-    height: 24px;
-    opacity: 0.4;
-  }
-  .svgSchedule {
-    width: 24px;
-    height: 24px;
-  }
-
-  .opacity1 {
-    opacity: 1;
-  }
-
-  .svgArrowLeft {
+  .svgArrowLeft,
+  .svgArrowRight {
     stroke: var(--color-font-main);
     fill: var(--color-main-bg);
     width: 7px;
@@ -209,12 +163,9 @@
   }
 
   .svgArrowRight {
-    stroke: var(--color-font-main);
-    fill: var(--color-main-bg);
-    width: 7px;
-    height: 14px;
     transform: rotate(180deg);
   }
+
   .isHidden {
     display: none;
   }
@@ -227,7 +178,6 @@
     width: 608px;
     height: 32px;
     margin-bottom: 24px;
-    padding-right: 0;
   }
 
   .month {
@@ -243,7 +193,6 @@
     align-items: center;
     justify-content: center;
     background-color: var(--color-main-bg);
-
     border: none;
     cursor: pointer;
   }
@@ -254,8 +203,7 @@
     background-color: var(--color-main-bg);
     width: 224px;
     height: 24px;
-    padding: 3px 0 3px 0;
-
+    padding: 3px 0;
     font-size: 14px;
     margin-left: auto;
   }
@@ -276,20 +224,9 @@
     margin-left: 24px;
     cursor: pointer;
   }
-  .svgPie {
-    width: 20px;
-    height: 20px;
-    opacity: 0.4;
-  }
-  .svgSchedule {
-    width: 20px;
-    height: 20px;
-  }
-  .opacity1 {
-    opacity: 1;
-  }
 
-  .svgArrowLeft {
+  .svgArrowLeft,
+  .svgArrowRight {
     stroke: var(--color-font-main);
     fill: var(--color-main-bg);
     width: 7px;
@@ -297,12 +234,9 @@
   }
 
   .svgArrowRight {
-    stroke: var(--color-font-main);
-    fill: var(--color-main-bg);
-    width: 7px;
-    height: 14px;
     transform: rotate(180deg);
   }
+
   .isHidden {
     display: none;
   }
