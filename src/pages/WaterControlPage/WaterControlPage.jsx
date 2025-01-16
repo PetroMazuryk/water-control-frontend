@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { parseDateTime } from '../../helpers/parseDate.js';
 import {
+  fetchTodayWater,
   fetchDailyWater,
   fetchMonthlyWater,
 } from '../../redux/water/operations.js';
@@ -19,6 +20,7 @@ const WaterControlPage = () => {
 
   useEffect(() => {
     if (isRefreshingPage) {
+      dispatch(fetchTodayWater());
       dispatch(fetchDailyWater(parsedDate));
       dispatch(fetchMonthlyWater(parsedDate));
       setIsRefreshingPage(false);

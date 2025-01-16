@@ -9,7 +9,7 @@ const SelectDate = () => {
   const { date } = useParams();
   const { isToday, day, month } = getDateMonthString(parseDateTime(date));
 
-  const dateString = isToday ? 'Сьогодні' : `${day} ${month + 'Day'}`;
+  const dateString = isToday ? 'Сьогодні' : `${day} ${month}`;
   return <h3 className={css.selectedDate}>{dateString}</h3>;
 };
 export default SelectDate;

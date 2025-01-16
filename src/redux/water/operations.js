@@ -111,3 +111,18 @@ export const fetchMonthlyWater = createAsyncThunk(
     }
   }
 );
+
+export const fetchTodayWater = createAsyncThunk(
+  'water/today',
+  async (_, thunkAPI) => {
+    try {
+      const dateUTC = String(dateToUTC(new Date().getTime()).getTime());
+      const response = await getDayWater(dateUTC);
+      return response.dailyAmount;
+    } catch (error) {
+      return thunkAPI.rejectWithValue(
+        error.response?.data?.message || error.message
+      );
+    }
+  }
+);

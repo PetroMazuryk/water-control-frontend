@@ -6,7 +6,7 @@
   height: 415px;
   background-color: var(--color-main-bg);
   position: relative;
-  background-image: url(../../assets/images/glass-senter.png);
+  background-image: url(../../assets/images/glass.png);
   background-position: center;
   background-repeat: no-repeat;
   background-size: 200px 335px;
@@ -39,7 +39,7 @@
   font-size: 10px;
 
   line-height: 1.33;
-  color: rgba(47, 47, 47, 0.6);
+  color: var(--color-font-secondary);
 }
 
 @media screen and (min-width: 768px) {

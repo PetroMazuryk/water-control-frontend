@@ -14,6 +14,9 @@ const LoginPage = lazy(() => import('./pages/LoginPage/LoginPage'));
 const WaterControlPage = lazy(() =>
   import('./pages/WaterControlPage/WaterControlPage.jsx')
 );
+const ControlCalendar = lazy(() =>
+  import('./components/ControlCalendar/ControlCalendar.jsx')
+);
 
 function App() {
   const token = useSelector(selectToken);
@@ -60,7 +63,7 @@ function App() {
             />
           }
         >
-          <Route path="calendar" element={<div>ControlCalendar</div>} />
+          <Route path="calendar" element={<ControlCalendar />} />
           <Route path="schedule" element={<div>ControlSchedule</div>} />
           <Route index element={<Navigate to="calendar" replace />} />
         </Route>
