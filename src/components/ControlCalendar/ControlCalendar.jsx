@@ -19,7 +19,7 @@ const ControlCalendar = () => {
   if (isError)
     return (
       <div className={css.container}>
-        <h2 className={css.errorMessage}>{'waterMonthErrorMessage'}</h2>
+        <h2 className={css.errorMessage}>water Month Error Message</h2>
       </div>
     );
   return (

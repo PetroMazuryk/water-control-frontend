@@ -23,7 +23,7 @@ const WaterList = () => {
   if (!data.length) {
     return (
       <div className={css.messageContainer}>
-        <h2 className={css.noWater}>Вода ще не додана !</h2>
+        <h2 className={css.noWater}>Вода ще не додана</h2>
       </div>
     );
   }

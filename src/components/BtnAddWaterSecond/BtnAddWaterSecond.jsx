@@ -30,7 +30,7 @@ const BtnAddWaterSecond = () => {
   return (
     <button className={css.btnStyle} type="button" onClick={openModal}>
       <div className={css.iconWrapper}>
-        <svg className={css.iconStyle} width="16" height="16">
+        <svg className={css.iconStyle}>
           <use xlinkHref={sprite + '#icon-plus'}></use>
         </svg>
       </div>

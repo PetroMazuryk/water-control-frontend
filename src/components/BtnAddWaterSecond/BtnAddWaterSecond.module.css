@@ -23,17 +23,13 @@
 .iconStyle {
   background-color: var(--color-second-bg);
   border-radius: 50%;
-  width: 30px;
-  height: 30px;
-  padding: 6px;
+  width: 20px;
+  height: 20px;
+  padding: 5px;
   stroke: var(--color-font-main);
   transition:
     background-color 0.3s ease,
     stroke 0.3s ease;
-}
-
-.btnStyle:hover {
-  color: var(--color-font-second);
 }
 
 .btnStyle:hover .iconStyle {
@@ -59,11 +55,4 @@
 .btnStyle:hover .btnStyleText::after {
   width: 100%;
   left: 30;
-}
-
-@media screen and (min-width: 768px) {
-  .iconStyle {
-    width: 30px;
-    height: 30px;
-  }
 }

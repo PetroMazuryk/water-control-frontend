@@ -29,11 +29,11 @@
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    max-width: 303px;
     min-width: 196px;
     min-height: 24px;
     max-height: 56px;
     margin-bottom: 24px;
+    padding-right: 0;
   }
 
   .month {
@@ -104,7 +104,6 @@
   .calendarTitle {
     display: flex;
     align-items: center;
-    width: 640px;
     height: 32px;
     margin-bottom: 24px;
   }
@@ -175,7 +174,6 @@
   .calendarTitle {
     display: flex;
     align-items: center;
-    width: 608px;
     height: 32px;
     margin-bottom: 24px;
   }
