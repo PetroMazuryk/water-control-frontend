@@ -29,11 +29,10 @@ const BtnAddWaterSecond = () => {
 
   return (
     <button className={css.btnStyle} type="button" onClick={openModal}>
-      <div className={css.iconWrapper}>
-        <svg className={css.iconStyle}>
-          <use xlinkHref={sprite + '#icon-plus'}></use>
-        </svg>
-      </div>
+      <svg className={css.iconStyle}>
+        <use xlinkHref={sprite + '#icon-plus'}></use>
+      </svg>
+
       <span className={css.btnStyleText}>Додати воду</span>
     </button>
   );

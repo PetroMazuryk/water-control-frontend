@@ -9,22 +9,14 @@
   font-weight: 700;
   font-size: 16px;
   line-height: 1.5;
-  border-radius: 30px;
-  position: relative;
   transition: color 0.3s ease;
-}
-
-.iconWrapper {
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 .iconStyle {
   background-color: var(--color-second-bg);
   border-radius: 50%;
-  width: 20px;
-  height: 20px;
+  width: 30px;
+  height: 30px;
   padding: 5px;
   stroke: var(--color-font-main);
   transition:
