@@ -6,6 +6,7 @@ import {
   current,
   logOut,
   refreshToken,
+  updateUserProfile,
 } from './operations';
 const authSlice = createSlice({
   name: 'auth',
@@ -87,6 +88,20 @@ const authSlice = createSlice({
         state.user = action.payload;
       })
       .addCase(current.rejected, (state) => {
+        state.isLoading = false;
+        state.errorMessage = 'Something went wrong, try again later';
+      })
+      .addCase(updateUserProfile.pending, (state, action) => {
+        state.isLoading = true;
+        state.errorMessage = null;
+        state.successMessage = null;
+      })
+      .addCase(updateUserProfile.fulfilled, (state, action) => {
+        state.isLoading = false;
+        state.successMessage = 'Profile updated';
+        state.user = action.payload;
+      })
+      .addCase(updateUserProfile.rejected, (state) => {
         state.isLoading = false;
         state.errorMessage = 'Something went wrong, try again later';
       })

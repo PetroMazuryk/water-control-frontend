@@ -4,6 +4,7 @@ import {
   loginUser,
   currentUser,
   logOutUser,
+  updateUserInfo,
 } from '../../api/auth';
 import { fetchRefreshToken } from '../../api/axiosConfig';
 
@@ -62,6 +63,18 @@ export const refreshToken = createAsyncThunk(
       return token;
     } catch (err) {
       return thunkAPI.rejectWithValue(err.response);
+    }
+  }
+);
+
+export const updateUserProfile = createAsyncThunk(
+  'auth/update',
+  async (userData, thunkAPI) => {
+    try {
+      const response = await updateUserInfo(userData);
+      return response.data;
+    } catch (err) {
+      return thunkAPI.rejectWithValue(err.response.data.data.message);
     }
   }
 );

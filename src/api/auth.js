@@ -18,3 +18,8 @@ export const currentUser = async () => {
   const data = await instance.get('/users/current');
   return data;
 };
+
+export const updateUserInfo = async (userInfo) => {
+  const data = await instance.patch('/users/info', userInfo);
+  return data;
+};
