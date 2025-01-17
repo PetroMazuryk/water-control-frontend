@@ -4,7 +4,7 @@ import { NavLink, useLocation, useParams } from 'react-router-dom';
 
 import TitleCalendar from '../TitleCalendar/TitleCalendar.jsx';
 import { parseDateTime } from '../../helpers/parseDate.js';
-import { monthsName } from '../../constants/monthsName.js';
+import { listMonths } from '../../constants/listMonths.js';
 import { fetchMonthlyWater } from '../../redux/water/operations.js';
 import { selectMonthlyIsLoading } from '../../redux/water/selectors.js';
 
@@ -26,10 +26,9 @@ const CalendarPagination = () => {
 
   const increment = () => {
     if (month === 11) {
-      dispatch(fetchMonthlyWater(new Date(year + 1, 4).getTime()));
+      dispatch(fetchMonthlyWater(new Date(year + 1, 0, 4).getTime()));
       setMonth(0);
       setYear(year + 1);
-
       return;
     }
     dispatch(fetchMonthlyWater(new Date(year, month + 1, 4).getTime()));
@@ -47,7 +46,7 @@ const CalendarPagination = () => {
     setMonth(month - 1);
   };
 
-  const selectedMonth = monthsName[month];
+  const selectedMonth = listMonths[month];
   const title = pathname === 'schedule' ? 'Статистика' : 'Місяць';
   const yearNow = new Date(Date.now()).getFullYear();
   const monthNow = new Date(Date.now()).getMonth();
