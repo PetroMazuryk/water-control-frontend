@@ -1,1 +1,0 @@
-const r=e=>{const t=Number(e);if(!t||t<1||t>Date.now())return new Date;const s=365.25*24*60*60*1e3*3,a=Date.now()-s;return a>t?new Date(a):new Date(t)},o=e=>e.water.waterDaily.data,l=e=>e.water.waterDaily.isLoading,c=e=>e.water.waterMonthly.data,i=e=>e.water.waterMonthly.isLoading,w=e=>e.water.waterMonthly.isError;export{l as a,i as b,c,w as d,r as p,o as s};
