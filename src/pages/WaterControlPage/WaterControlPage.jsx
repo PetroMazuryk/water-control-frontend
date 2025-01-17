@@ -6,6 +6,7 @@ import {
   fetchTodayWater,
   fetchDailyWater,
   fetchMonthlyWater,
+  fetchWeeklyWater,
 } from '../../redux/water/operations.js';
 import WaterMainInfo from '../../components/WaterMainInfo/WaterMainInfo';
 import WaterDetailedInfo from '../../components/WaterDetailedInfo/WaterDetailedInfo.jsx';
@@ -20,9 +21,11 @@ const WaterControlPage = () => {
 
   useEffect(() => {
     if (isRefreshingPage) {
+      const formattedDate = Date.now();
       dispatch(fetchTodayWater());
       dispatch(fetchDailyWater(parsedDate));
       dispatch(fetchMonthlyWater(parsedDate));
+      dispatch(fetchWeeklyWater(formattedDate));
       setIsRefreshingPage(false);
     }
   }, [isRefreshingPage, parsedDate, dispatch]);

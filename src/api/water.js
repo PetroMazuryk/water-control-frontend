@@ -19,6 +19,11 @@ export const getDayWater = async (date) => {
   return data;
 };
 
+export const getWeekWater = async (date) => {
+  const data = await instance.get(`/water/week/${date}`);
+  return data;
+};
+
 export const getMonthWater = async (date) => {
   const data = await instance.get(`/water/month/${date}`);
   return data;

@@ -5,6 +5,7 @@ import {
   updateWater,
   deleteWater,
   getMonthWater,
+  getWeekWater,
 } from '../../api/water.js';
 
 export const dateToLocal = (ms) => {
@@ -123,6 +124,23 @@ export const fetchTodayWater = createAsyncThunk(
       return thunkAPI.rejectWithValue(
         error.response?.data?.message || error.message
       );
+    }
+  }
+);
+
+export const fetchWeeklyWater = createAsyncThunk(
+  'water/fetchWeek',
+  async (formattedDate, thunkAPI) => {
+    try {
+      const dateUTC = String(dateToUTC(formattedDate).getTime());
+      const { data } = await getWeekWater(dateUTC);
+      data.data = data.data.map((item) => ({
+        ...item,
+        date: dateToLocal(item.date),
+      }));
+      return data;
+    } catch (error) {
+      return thunkAPI.rejectWithValue(error.response.data || error.message);
     }
   }
 );

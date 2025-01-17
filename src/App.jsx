@@ -18,6 +18,10 @@ const ControlCalendar = lazy(() =>
   import('./components/ControlCalendar/ControlCalendar.jsx')
 );
 
+const ControlSchedule = lazy(() =>
+  import('./components/ControlSchedule/ControlSchedule.jsx')
+);
+
 function App() {
   const token = useSelector(selectToken);
   const dispatch = useDispatch();
@@ -64,7 +68,7 @@ function App() {
           }
         >
           <Route path="calendar" element={<ControlCalendar />} />
-          <Route path="schedule" element={<div>ControlSchedule</div>} />
+          <Route path="schedule" element={<ControlSchedule />} />
           <Route index element={<Navigate to="calendar" replace />} />
         </Route>
 

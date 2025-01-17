@@ -7,3 +7,5 @@ export const selectWaterMonthlyRecord = (state) =>
 export const selectMonthlyIsLoading = (state) =>
   state.water.waterMonthly.isLoading;
 export const selectMonthlyIsError = (state) => state.water.waterMonthly.isError;
+
+export const selectWaterWeeklyData = (state) => state.water.waterWeekly.data;

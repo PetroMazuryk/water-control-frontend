@@ -1,5 +1,5 @@
 import WaterForm from '../WaterForm/WaterForm';
-import { ANIMATION } from '../../constants/constants.js';
+import { ANIMATION } from '../../constants/animations.js';
 import sprite from '../../assets/sprite.svg';
 
 import css from './WaterModal.module.css';
