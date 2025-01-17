@@ -137,7 +137,7 @@ const FormSetting = ({ handleClose }) => {
       <form onSubmit={handleSubmit(onSubmit)} className={css.userSettingForm}>
         <div className={css.genderContainer}>
           <label className={css.genderIdentity}>
-            <span className={css.boldText}>Налаштування</span>
+            <span className={css.boldText}>Ваша стать</span>
             <div className={css.radioContainer}>
               <input
                 type="radio"
