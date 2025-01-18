@@ -1,3 +1,78 @@
+.userAvatar {
+  height: 103px;
+  width: 133px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.userAvatar img {
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+  background-color: transparent;
+  margin-bottom: 10px;
+  object-fit: cover;
+}
+
+.loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 85px;
+  height: 85px;
+}
+
+.uploadContainer {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+  width: max-content;
+}
+
+.icon {
+  fill: var(--white);
+  stroke: var(--color-font-second);
+  width: 18px;
+  height: 18px;
+  margin-right: 8px;
+  transition: fill 0.3s ease;
+}
+
+.uploadContainer:hover .icon {
+  fill: var(--color-btn);
+}
+
+.ordinaryText {
+  font-size: 14px;
+  line-height: 18px;
+  color: var(--color-font-second);
+  position: relative;
+}
+
+.ordinaryText::after {
+  content: '';
+  position: absolute;
+  bottom: 1px;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background-color: var(--color-btn);
+  transform: translateX(-50%);
+  transition: width 0.3s ease;
+}
+
+.uploadContainer:hover .ordinaryText::after {
+  width: 100%;
+}
+
+.hideBtn {
+  display: none;
+}
+
 .userSettingForm {
   display: flex;
   flex-direction: column;

@@ -4,16 +4,28 @@ import { useDispatch, useSelector } from 'react-redux';
 import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
 import LoaderComponent from '../LoaderComponent/LoaderComponent.jsx';
-import { updateUserProfile } from '../../redux/auth/operations.js';
-import { selectIsLoading, selectUser } from '../../redux/auth/selectors.js';
+import {
+  updateUserProfile,
+  uploadUserPhoto,
+} from '../../redux/auth/operations.js';
+import {
+  selectIsLoading,
+  selectUser,
+  selectIsLoadingPhoto,
+  selectUserPhoto,
+} from '../../redux/auth/selectors.js';
+import avatarDefault from '../../assets/avatarDefault.png';
+import sprite from '../../assets/sprite.svg';
 
 import css from './FormSettings.module.css';
 
 const FormSetting = ({ handleClose }) => {
   const dispatch = useDispatch();
   const user = useSelector(selectUser);
+  const avatar = useSelector(selectUserPhoto);
   const [waterIntake, setWaterIntake] = useState(0);
   const isLoading = useSelector(selectIsLoading);
+  const isLoadingPhoto = useSelector(selectIsLoadingPhoto);
 
   const schema = yup.object({
     name: yup
@@ -110,6 +122,15 @@ const FormSetting = ({ handleClose }) => {
     }
   };
 
+  const handleAvatarChange = (e) => {
+    const formData = new FormData();
+    const file = e.target.files[0];
+    if (file) {
+      formData.append('avatar', file);
+      dispatch(uploadUserPhoto(formData));
+    }
+  };
+
   const handleOnChange = (field) => (e) => {
     let value = e.target.value;
     const regex = /^(\d+(\.\d{0,3})?|\.\d{1,3})$/;
@@ -134,6 +155,31 @@ const FormSetting = ({ handleClose }) => {
 
   return (
     <>
+      <div className={css.userAvatar}>
+        {!isLoadingPhoto ? (
+          <img src={avatar || `${avatarDefault}`} alt="User photo" />
+        ) : (
+          <div className={css.loader}>
+            <LoaderComponent />
+          </div>
+        )}
+        <label>
+          <div className={css.uploadContainer}>
+            <svg className={css.icon}>
+              <use xlinkHref={`${sprite}#icon-upload`}></use>
+            </svg>
+            <span className={css.ordinaryText}>Завантажити фото</span>
+          </div>
+          <input
+            className={css.hideBtn}
+            type="file"
+            accept="image/*"
+            onChange={handleAvatarChange}
+          />
+          {errors.avatar && <p>{errors.avatar.message}</p>}
+        </label>
+      </div>
+
       <form onSubmit={handleSubmit(onSubmit)} className={css.userSettingForm}>
         <div className={css.genderContainer}>
           <label className={css.genderIdentity}>
