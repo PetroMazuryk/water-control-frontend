@@ -5,6 +5,7 @@ import {
   currentUser,
   logOutUser,
   updateUserInfo,
+  updateUserPhoto,
 } from '../../api/auth';
 import { fetchRefreshToken } from '../../api/axiosConfig';
 
@@ -73,6 +74,18 @@ export const updateUserProfile = createAsyncThunk(
     try {
       const response = await updateUserInfo(userData);
       return response.data;
+    } catch (err) {
+      return thunkAPI.rejectWithValue(err.response.data.data.message);
+    }
+  }
+);
+
+export const uploadUserPhoto = createAsyncThunk(
+  'users/uploadUserPhoto',
+  async (formData, thunkAPI) => {
+    try {
+      const response = await updateUserPhoto(formData);
+      return response.data.photo;
     } catch (err) {
       return thunkAPI.rejectWithValue(err.response.data.data.message);
     }

@@ -19,7 +19,9 @@ const ControlCalendar = () => {
   if (isError)
     return (
       <div className={css.container}>
-        <h2 className={css.errorMessage}>water Month Error Message</h2>
+        <h2 className={css.errorMessage}>
+          Сталася помилка отримання даних води за місяць. Спробуйте пізніше.
+        </h2>
       </div>
     );
   return (

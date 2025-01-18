@@ -117,7 +117,7 @@ export const fetchTodayWater = createAsyncThunk(
   'water/today',
   async (_, thunkAPI) => {
     try {
-      const dateUTC = String(dateToUTC(new Date().getTime()).getTime());
+      const dateUTC = String(dateToUTC(new Date().getTime()));
       const response = await getDayWater(dateUTC);
       return response.dailyAmount;
     } catch (error) {
@@ -132,7 +132,7 @@ export const fetchWeeklyWater = createAsyncThunk(
   'water/fetchWeek',
   async (formattedDate, thunkAPI) => {
     try {
-      const dateUTC = String(dateToUTC(formattedDate).getTime());
+      const dateUTC = dateToUTC(formattedDate).getTime();
       const { data } = await getWeekWater(dateUTC);
       data.data = data.data.map((item) => ({
         ...item,

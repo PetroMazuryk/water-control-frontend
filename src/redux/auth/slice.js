@@ -7,6 +7,7 @@ import {
   logOut,
   refreshToken,
   updateUserProfile,
+  uploadUserPhoto,
 } from './operations';
 const authSlice = createSlice({
   name: 'auth',
@@ -91,7 +92,7 @@ const authSlice = createSlice({
         state.isLoading = false;
         state.errorMessage = 'Something went wrong, try again later';
       })
-      .addCase(updateUserProfile.pending, (state, action) => {
+      .addCase(updateUserProfile.pending, (state) => {
         state.isLoading = true;
         state.errorMessage = null;
         state.successMessage = null;
@@ -103,6 +104,20 @@ const authSlice = createSlice({
       })
       .addCase(updateUserProfile.rejected, (state) => {
         state.isLoading = false;
+        state.errorMessage = 'Something went wrong, try again later';
+      })
+      .addCase(uploadUserPhoto.pending, (state) => {
+        state.isLoadingPhoto = true;
+        state.errorMessage = null;
+        state.successMessage = null;
+      })
+      .addCase(uploadUserPhoto.fulfilled, (state, action) => {
+        state.isLoadingPhoto = false;
+        state.successMessage = 'Photo updated';
+        state.user.photo = action.payload;
+      })
+      .addCase(uploadUserPhoto.rejected, (state) => {
+        state.isLoadingPhoto = false;
         state.errorMessage = 'Something went wrong, try again later';
       })
       .addCase(refreshToken.pending, (state) => {

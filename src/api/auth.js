@@ -23,3 +23,10 @@ export const updateUserInfo = async (userInfo) => {
   const data = await instance.patch('/users/info', userInfo);
   return data;
 };
+
+export const updateUserPhoto = async (formData) => {
+  const data = await instance.patch('/users/photo', formData, {
+    headers: { 'Content-Type': 'multipart/form-data' },
+  });
+  return data;
+};
