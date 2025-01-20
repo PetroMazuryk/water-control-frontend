@@ -1,7 +1,8 @@
 import { useSelector } from 'react-redux';
 import { selectWaterRate } from '../../redux/auth/selectors';
 import Logo from '../Logo/Logo';
-import AddWaterBtn from '../BtnAddWater/BtnAddWater';
+import BtnAddWater from '../BtnAddWater/BtnAddWater';
+import BtnAdmin from '../BtnAdmin/BtnAdmin';
 
 import WaterProgressBar from '../WaterProgressBar/WaterProgressBar';
 
@@ -25,7 +26,8 @@ const WaterMainInfo = () => {
         </div>
       )}
       {waterRate === 0 ? '' : <WaterProgressBar />}
-      {waterRate === 0 ? '' : <AddWaterBtn />}
+      {waterRate === 0 ? '' : <BtnAddWater />}
+      {waterRate === 0 ? '' : <BtnAdmin />}
     </div>
   );
 };
