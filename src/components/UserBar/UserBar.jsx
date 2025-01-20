@@ -1,6 +1,7 @@
+import { useSelector } from 'react-redux';
 import { useEffect, useRef, useState } from 'react';
-
 import UserBarPopup from '../UserBarPopup/UserBarPopup.jsx';
+import { selectUserPhoto } from '../../redux/auth/selectors.js';
 import avatarDefault from '../../assets/avatarDefault.png';
 import sprite from '../../assets/sprite.svg';
 
@@ -8,6 +9,7 @@ import css from './UserBar.module.css';
 
 const UserBar = ({ name }) => {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
+  const userAvatar = useSelector(selectUserPhoto);
   const userBarPopupRef = useRef(null);
 
   const handleOutsideClick = (e) => {
@@ -48,7 +50,7 @@ const UserBar = ({ name }) => {
         <div className={css.userBarText}>{name}</div>
         <div
           className={css.userBarAvatar}
-          style={{ backgroundImage: `url(${avatarDefault})` }}
+          style={{ backgroundImage: `url(${userAvatar || avatarDefault})` }}
         ></div>
         <svg className={`${css.userBarIcon} ${isPopupOpen ? css.rotate : ''}`}>
           <use xlinkHref={`${sprite}#icon-chevron-down`}></use>
