@@ -1,11 +1,14 @@
+import { useSelector } from 'react-redux';
+import { selectWaterRate } from '../../redux/auth/selectors';
 import Logo from '../Logo/Logo';
 import AddWaterBtn from '../BtnAddWater/BtnAddWater';
+
 import WaterProgressBar from '../WaterProgressBar/WaterProgressBar';
 
 import css from './WaterMainInfo.module.css';
 
 const WaterMainInfo = () => {
-  const waterRate = 2;
+  const waterRate = useSelector(selectWaterRate);
 
   const waterRateString =
     waterRate < 1 ? `${waterRate * 1000} ${'мл'}` : `${waterRate} ${'л'}`;
