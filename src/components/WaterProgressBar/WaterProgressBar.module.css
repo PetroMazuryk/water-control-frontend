@@ -1,10 +1,10 @@
 .progressBarContainer {
   position: absolute;
   width: 203px;
-  height: 85px;
+  height: 100px;
   padding: 12px;
   border-radius: 15px;
-  margin-top: 214px;
+  margin-top: 200px;
   box-shadow: var(--box-shadow);
   background-color: var(--white);
   left: 50%;
@@ -94,7 +94,7 @@
 @media screen and (min-width: 768px) {
   .progressBarContainer {
     width: 295px;
-    height: 106px;
+    height: 116px;
     padding: 20px;
     margin-top: 310px;
   }
@@ -126,7 +126,7 @@
 
 @media screen and (min-width: 1440px) {
   .progressBarContainer {
-    height: 115px;
+    height: 120px;
     margin-top: 440px;
   }
 

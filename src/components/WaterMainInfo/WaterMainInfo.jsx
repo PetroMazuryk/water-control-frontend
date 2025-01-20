@@ -25,7 +25,7 @@ const WaterMainInfo = () => {
         </div>
       )}
       {waterRate === 0 ? '' : <WaterProgressBar />}
-      {waterRate === 0 ? <div> BtnUserSet</div> : <AddWaterBtn />}
+      {waterRate === 0 ? '' : <AddWaterBtn />}
     </div>
   );
 };

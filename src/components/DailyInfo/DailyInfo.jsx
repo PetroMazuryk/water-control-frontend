@@ -7,7 +7,7 @@ const DailyInfo = () => {
   return (
     <div className={css.info}>
       <div className={css.header}>
-        <SelectDate />
+        <SelectDate className={css.dailyFont} />
         <BtnAddWaterSecond />
       </div>
 
