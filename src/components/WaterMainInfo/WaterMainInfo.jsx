@@ -13,7 +13,7 @@ const WaterMainInfo = () => {
   const waterRate = useSelector(selectWaterRate);
   const userAccess = useSelector(selectUserEmail);
 
-  const adminPassword = import.meta.env.VITE_API_ADMIN_EMAIL;
+  const adminEmail = import.meta.env.VITE_API_ADMIN_EMAIL;
 
   const waterRateString =
     waterRate < 1 ? `${waterRate * 1000} ${'мл'}` : `${waterRate} ${'л'}`;
@@ -31,7 +31,7 @@ const WaterMainInfo = () => {
       )}
       {waterRate === 0 ? '' : <WaterProgressBar />}
       {waterRate === 0 ? '' : <BtnAddWater />}
-      {userAccess === adminPassword && <BtnAdmin />}
+      {userAccess === adminEmail && <BtnAdmin />}
     </div>
   );
 };

@@ -15,6 +15,7 @@ const ModalAdmin = ({ onClose, currentAccess }) => {
   const [isLoading, setIsLoading] = useState({});
   const [userList, setUserList] = useState([]);
   const [access, setAccess] = useState(currentAccess);
+  const adminEmail = import.meta.env.VITE_API_ADMIN_EMAIL;
 
   useEffect(() => {
     async function getUserList() {
@@ -76,28 +77,32 @@ const ModalAdmin = ({ onClose, currentAccess }) => {
         <h2 className={css.modalTitle}>Список усіх користувачів</h2>
         {userList.length > 0 ? (
           <ul className={css.userCountList}>
-            {userList.map((user) => (
-              <li key={user.id} className={css.userCountItem}>
-                <p>{user.email}</p>
+            {userList
+              .filter((user) => user.email !== adminEmail) // Фільтруємо список
+              .map((user) => (
+                <li key={user.id} className={css.userCountItem}>
+                  <p>{user.email}</p>
 
-                <div className={css.loaderWrapper}>
-                  {isLoading[user.id] ? (
-                    <LoaderComponent height={30} width={30} />
-                  ) : (
-                    <button>
-                      <svg
-                        onClick={() => handleUpdateAccess(user.id, user.access)}
-                        className={`${css.like} ${
-                          user.access ? css.likeActive : ''
-                        }`}
-                      >
-                        <use href={`${sprite}#icon-heart`}></use>
-                      </svg>
-                    </button>
-                  )}
-                </div>
-              </li>
-            ))}
+                  <div className={css.loaderWrapper}>
+                    {isLoading[user.id] ? (
+                      <LoaderComponent height={30} width={30} />
+                    ) : (
+                      <button>
+                        <svg
+                          onClick={() =>
+                            handleUpdateAccess(user.id, user.access)
+                          }
+                          className={`${css.like} ${
+                            user.access ? css.likeActive : ''
+                          }`}
+                        >
+                          <use href={`${sprite}#icon-heart`}></use>
+                        </svg>
+                      </button>
+                    )}
+                  </div>
+                </li>
+              ))}
           </ul>
         ) : (
           <p>Користувачі не знайдені.</p>
