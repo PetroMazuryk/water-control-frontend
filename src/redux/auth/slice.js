@@ -8,6 +8,7 @@ import {
   refreshToken,
   updateUserProfile,
   uploadUserPhoto,
+  updateUserAccess,
 } from './operations';
 const authSlice = createSlice({
   name: 'auth',
@@ -23,7 +24,7 @@ const authSlice = createSlice({
       state.isLoggedIn = action.payload;
     },
     setUser: (state, action) => {
-      state.user = action.payload;
+      state.user = { ...state.user, ...action.payload };
     },
   },
   extraReducers: (builder) => {
@@ -119,6 +120,18 @@ const authSlice = createSlice({
       .addCase(uploadUserPhoto.rejected, (state) => {
         state.isLoadingPhoto = false;
         state.errorMessage = 'Something went wrong, try again later';
+      })
+      .addCase(updateUserAccess.pending, (state) => {
+        state.isLoading = true;
+        state.error = null;
+      })
+      .addCase(updateUserAccess.fulfilled, (state, { payload }) => {
+        state.isLoading = false;
+        state.user.access = payload.access;
+      })
+      .addCase(updateUserAccess.rejected, (state, { payload }) => {
+        state.isLoading = false;
+        state.error = payload;
       })
       .addCase(refreshToken.pending, (state) => {
         state.isLoggedIn = false;

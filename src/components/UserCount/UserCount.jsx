@@ -23,7 +23,7 @@ const UserCount = () => {
     }
 
     getCount();
-  });
+  }, []);
 
   return (
     <div className={css.userCountComponent}>

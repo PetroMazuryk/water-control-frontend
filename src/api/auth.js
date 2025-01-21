@@ -1,3 +1,4 @@
+import axios from 'axios';
 import instance from './axiosConfig';
 
 export const registerUser = async (userInfo) => {
@@ -33,5 +34,10 @@ export const updateUserPhoto = async (formData) => {
 
 export const requestUserCount = async () => {
   const data = await instance.get('/users/count');
+  return data;
+};
+
+export const updateUserAccessById = async (id, { access }) => {
+  const data = await instance.patch(`/users/${id}/access`, { access });
   return data;
 };

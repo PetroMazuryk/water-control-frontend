@@ -1,5 +1,6 @@
 import { useSelector } from 'react-redux';
-import { selectWaterRate } from '../../redux/auth/selectors';
+import { selectWaterRate, selectUserEmail } from '../../redux/auth/selectors';
+
 import Logo from '../Logo/Logo';
 import BtnAddWater from '../BtnAddWater/BtnAddWater';
 import BtnAdmin from '../BtnAdmin/BtnAdmin';
@@ -10,6 +11,9 @@ import css from './WaterMainInfo.module.css';
 
 const WaterMainInfo = () => {
   const waterRate = useSelector(selectWaterRate);
+  const userAccess = useSelector(selectUserEmail);
+
+  const adminPassword = import.meta.env.VITE_API_ADMIN_EMAIL;
 
   const waterRateString =
     waterRate < 1 ? `${waterRate * 1000} ${'мл'}` : `${waterRate} ${'л'}`;
@@ -27,7 +31,7 @@ const WaterMainInfo = () => {
       )}
       {waterRate === 0 ? '' : <WaterProgressBar />}
       {waterRate === 0 ? '' : <BtnAddWater />}
-      {waterRate === 0 ? '' : <BtnAdmin />}
+      {userAccess === adminPassword && <BtnAdmin />}
     </div>
   );
 };
