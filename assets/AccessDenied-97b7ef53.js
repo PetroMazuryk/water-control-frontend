@@ -1,1 +1,0 @@
-import{j as n,L as s}from"./index-990a52a9.js";const e="_container_ekfo4_1",c={container:e},t=()=>n.jsxs("div",{className:c.container,children:[n.jsx("h1",{children:"Доступ заборонено"}),n.jsx("p",{children:"У вас немає доступу до цієї сторінки."}),n.jsx(s,{to:"/",children:"Повернутися на головну"})]});export{t as default};
