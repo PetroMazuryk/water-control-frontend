@@ -5,6 +5,7 @@ on:
     branches: [main]
 env:
   VITE_API_URL: ${{secrets.VITE_API_URL}}
+  VITE_API_ADMIN_EMAIL: ${{secrets.VITE_API_ADMIN_EMAIL}}
 
 jobs:
   build-and-deploy:
