@@ -1,0 +1,10 @@
+.container {
+  text-align: center;
+  margin-top: 50px;
+  color: #ff0000;
+}
+
+.container a {
+  color: #0000ff;
+  text-decoration: underline;
+}

@@ -126,8 +126,13 @@ const authSlice = createSlice({
         state.error = null;
       })
       .addCase(updateUserAccess.fulfilled, (state, { payload }) => {
+        const adminEmail = import.meta.env.VITE_API_ADMIN_EMAIL;
         state.isLoading = false;
-        state.user.access = payload.access;
+        if (state.user.email === adminEmail) {
+          state.user.access = true;
+        } else {
+          state.user.access = payload.access;
+        }
       })
       .addCase(updateUserAccess.rejected, (state, { payload }) => {
         state.isLoading = false;

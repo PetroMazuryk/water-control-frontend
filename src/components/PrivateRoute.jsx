@@ -1,13 +1,24 @@
 import { Navigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-import { selectIsAuthenticated, selectToken } from '../redux/auth/selectors';
+import { selectToken, selectIsAuthenticated } from '../redux/auth/selectors';
 
-const PrivateRoute = ({ component: Component, redirectTo = '/' }) => {
+const PrivateRoute = ({
+  component: Component,
+  redirectTo = '/',
+  userAccess,
+}) => {
   const token = useSelector(selectToken);
   const isAuthenticated = useSelector(selectIsAuthenticated);
 
-  // return isLoggedIn ? Component : <Navigate to={redirectTo} />;
-  return token || isAuthenticated ? Component : <Navigate to={redirectTo} />;
+  if (!token || !isAuthenticated) {
+    return <Navigate to={redirectTo} replace />;
+  }
+
+  if (userAccess === false) {
+    return <Navigate to="/access-denied" replace />;
+  }
+
+  return Component;
 };
 
 export default PrivateRoute;
