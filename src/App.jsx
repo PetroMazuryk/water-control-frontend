@@ -13,6 +13,9 @@ import { selectUserAccess } from './redux/auth/selectors.js';
 const HomePage = lazy(() => import('./pages/HomePage/HomePage'));
 const RegisterPage = lazy(() => import('./pages/RegisterPage/RegisterPage'));
 const LoginPage = lazy(() => import('./pages/LoginPage/LoginPage'));
+const NotFoundPage = lazy(() =>
+  import('./pages/NotFoundPage/NotFoundPage.jsx')
+);
 const WaterControlPage = lazy(() =>
   import('./pages/WaterControlPage/WaterControlPage.jsx')
 );
@@ -85,7 +88,7 @@ function App() {
         </Route>
 
         <Route path="/access-denied" element={<AccessDenied />} />
-        <Route path="*" element={<div>NotFoundPage </div>} />
+        <Route path="*" element={<NotFoundPage />} />
       </Routes>
     </SharedLayout>
   );

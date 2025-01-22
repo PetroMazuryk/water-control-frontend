@@ -13,8 +13,10 @@
   --white: #ffffff;
   --form-input-focus: 1px solid rgba(47, 47, 47, 0.4);
   --color-form-error: #ef5050;
+  --text-shadow: 4px 4px 5px #808080, 2px 2px 1px #ff0000;
   --border-form: 1px solid rgba(47, 47, 47, 0.2);
   --border-form-error: 1px solid #ef5050;
   --box-shadow: 0 4px 50px 0 rgba(0, 0, 0, 0.15);
   --transition-color: 300ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition: all 250ms ease;
 }
