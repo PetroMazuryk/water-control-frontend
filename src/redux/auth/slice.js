@@ -65,6 +65,7 @@ const authSlice = createSlice({
       .addCase(login.rejected, (state, action) => {
         state.isLoading = false;
         state.errorMessage = action.payload;
+        state.errorMessage = 'Невірний емейл або пароль ';
       })
       .addCase(logOut.pending, (state) => {
         state.isLoading = true;
