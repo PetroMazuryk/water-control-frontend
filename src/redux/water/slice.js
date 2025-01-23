@@ -78,7 +78,7 @@ const waterSlice = createSlice({
           state.todayAmount.value += newRecord.amount;
         }
         if (monthlyRecordIndex !== -1) {
-          state.waterDaily.successMessage = 'Successfully added';
+          state.waterDaily.successMessage = 'Успішно додано';
           state.waterMonthly.data[monthlyRecordIndex].amount +=
             newRecord.amount;
           state.waterMonthly.data[monthlyRecordIndex].percentage =
@@ -89,7 +89,7 @@ const waterSlice = createSlice({
         }
       })
       .addCase(addWater.rejected, (state) => {
-        state.waterDaily.errorMessage = 'Something went wrong. Try again';
+        state.waterDaily.errorMessage = 'Щось пішло не так. Спробуйте знову';
       })
 
       //====================== editWater ========================
@@ -97,7 +97,7 @@ const waterSlice = createSlice({
       .addCase(updateWaterIntakeRecord.fulfilled, (state, action) => {
         const updatedRecord = action.payload.data;
 
-        state.waterDaily.successMessage = 'Successfully updated';
+        state.waterDaily.successMessage = 'Успішно оновлено';
 
         const dailyIndex = state.waterDaily.data.findIndex(
           (record) => record.id === updatedRecord.id
@@ -148,7 +148,7 @@ const waterSlice = createSlice({
         }
       })
       .addCase(updateWaterIntakeRecord.rejected, (state) => {
-        state.waterDaily.errorMessage = 'Something went wrong. Try again';
+        state.waterDaily.errorMessage = 'Щось пішло не так. Спробуйте знову';
       })
 
       //===================== deleteWater =====================
@@ -159,7 +159,7 @@ const waterSlice = createSlice({
         const dailyIndex = state.waterDaily.data.findIndex(
           (record) => record.id === recordId
         );
-        state.waterDaily.successMessage = 'Successfully edited';
+        state.waterDaily.successMessage = 'Успішно видалено';
         if (dailyIndex !== -1) {
           const [removedRecord] = state.waterDaily.data.splice(dailyIndex, 1);
           state.waterDaily.amount -= removedRecord.amount;
@@ -187,7 +187,7 @@ const waterSlice = createSlice({
         }
       })
       .addCase(deleteWaterIntakeRecord.rejected, (state) => {
-        state.errorMessage = 'Something went wrong. Try again';
+        state.errorMessage = 'Щось пішло не так. Спробуйте знову';
       })
 
       //================== fetchMonthlyWater ==================
@@ -228,7 +228,7 @@ const waterSlice = createSlice({
       .addCase(fetchWeeklyWater.rejected, (state) => {
         state.waterWeekly.isLoading = false;
 
-        state.waterWeekly.errorMessage = 'An error occurred';
+        state.waterWeekly.errorMessage = 'Сталася помилка';
       });
   },
 });

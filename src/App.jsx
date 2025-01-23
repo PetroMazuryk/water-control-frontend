@@ -16,6 +16,11 @@ import {
   selectAuthSuccessMessage,
 } from './redux/auth/selectors.js';
 
+import {
+  selectDailyErrorMessage,
+  selectDailySuccessMessage,
+} from './redux/water/selectors.js';
+
 const HomePage = lazy(() => import('./pages/HomePage/HomePage'));
 const RegisterPage = lazy(() => import('./pages/RegisterPage/RegisterPage'));
 const LoginPage = lazy(() => import('./pages/LoginPage/LoginPage'));
@@ -45,6 +50,8 @@ function App() {
   const navigate = useNavigate();
   const authErrorMessage = useSelector(selectAuthErrorMessage);
   const authSuccessMessage = useSelector(selectAuthSuccessMessage);
+  const waterErrorMessage = useSelector(selectDailyErrorMessage);
+  const waterSuccessMessage = useSelector(selectDailySuccessMessage);
 
   useEffect(() => {
     if (userAccess === false) {
@@ -66,6 +73,15 @@ function App() {
       toast.success(authSuccessMessage);
     }
   }, [authSuccessMessage, authErrorMessage]);
+
+  useEffect(() => {
+    if (waterErrorMessage) {
+      toast.error(waterErrorMessage);
+    }
+    if (waterSuccessMessage) {
+      toast.success(waterSuccessMessage);
+    }
+  }, [waterErrorMessage, waterSuccessMessage]);
 
   return (
     <SharedLayout>
