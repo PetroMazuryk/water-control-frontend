@@ -1,12 +1,17 @@
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import css from './AccessDenied.module.css';
 
 const AccessDenied = () => {
   return (
-    <div className={css.container}>
-      <h1>Доступ заборонено</h1>
-      <p>У вас немає доступу до цієї сторінки.</p>
-      <Link to="/">Повернутися на головну</Link>
+    <div className={css.errorWrapper}>
+      <h1 className={css.errorTitle}>Доступ заборонено</h1>
+      <p className={css.errorText}>У вас недостатньо коштів на балансі</p>
+      <p className={css.errorText}>
+        Будь ласка, поповніть рахунок на суму від 199 грн
+      </p>
+      <NavLink className={css.backLink} to="/">
+        На головну
+      </NavLink>
     </div>
   );
 };
