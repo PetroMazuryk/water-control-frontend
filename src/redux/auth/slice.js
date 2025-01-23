@@ -40,7 +40,7 @@ const authSlice = createSlice({
         state.isLoading = false;
         state.isLoggedIn = true;
         state.isNewUser = true;
-        state.successMessage = 'Successfully registered';
+        state.successMessage = 'Успішно зареєстровано';
         state.user = action.payload.user;
         state.token = action.payload.token;
       })
@@ -60,7 +60,7 @@ const authSlice = createSlice({
         state.token = action.payload.token;
         state.user = action.payload.user;
         state.isLoggedIn = true;
-        state.successMessage = 'Successfully logged in';
+        state.successMessage = 'Успішно ввійшли';
       })
       .addCase(login.rejected, (state, action) => {
         state.isLoading = false;
@@ -77,7 +77,7 @@ const authSlice = createSlice({
       .addCase(logOut.rejected, (_, action) => {
         return {
           ...INITIAL_STATE,
-          errorMessage: action.payload || 'Error while logout',
+          errorMessage: action.payload || 'Помилка під час виходу',
         };
       })
       .addCase(current.pending, (state) => {
@@ -91,7 +91,7 @@ const authSlice = createSlice({
       })
       .addCase(current.rejected, (state) => {
         state.isLoading = false;
-        state.errorMessage = 'Something went wrong, try again later';
+        state.errorMessage = 'Щось пішло не так, повторіть спробу пізніше';
       })
       .addCase(updateUserProfile.pending, (state) => {
         state.isLoading = true;
@@ -100,12 +100,12 @@ const authSlice = createSlice({
       })
       .addCase(updateUserProfile.fulfilled, (state, action) => {
         state.isLoading = false;
-        state.successMessage = 'Profile updated';
+        state.successMessage = 'Профіль оновлено';
         state.user = action.payload;
       })
       .addCase(updateUserProfile.rejected, (state) => {
         state.isLoading = false;
-        state.errorMessage = 'Something went wrong, try again later';
+        state.errorMessage = 'Щось пішло не так, повторіть спробу пізніше';
       })
       .addCase(uploadUserPhoto.pending, (state) => {
         state.isLoadingPhoto = true;
@@ -114,12 +114,12 @@ const authSlice = createSlice({
       })
       .addCase(uploadUserPhoto.fulfilled, (state, action) => {
         state.isLoadingPhoto = false;
-        state.successMessage = 'Photo updated';
+        state.successMessage = 'Фото оновлено';
         state.user.photo = action.payload;
       })
       .addCase(uploadUserPhoto.rejected, (state) => {
         state.isLoadingPhoto = false;
-        state.errorMessage = 'Something went wrong, try again later';
+        state.errorMessage = 'Щось пішло не так, повторіть спробу пізніше';
       })
       .addCase(updateUserAccess.pending, (state) => {
         state.isLoading = true;

@@ -1,14 +1,20 @@
 import { lazy, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { toast } from 'react-hot-toast';
 import { useDispatch, useSelector } from 'react-redux';
-import { Route, Routes, Navigate } from 'react-router-dom';
+import { Route, Routes, Navigate, useNavigate } from 'react-router-dom';
 import SharedLayout from './components/SharedLayout/SharedLayout';
 import PrivateRoute from './components/PrivateRoute';
 import RestrictedRoute from './components/RestrictedRoute';
 import { current } from './redux/auth/operations';
 import { setLoggedIn } from './redux/auth/slice.js';
-import { selectToken } from './redux/auth/selectors.js';
-import { selectUserAccess } from './redux/auth/selectors.js';
+import { ToasterBar } from './components/ToasterBar.jsx';
+
+import {
+  selectToken,
+  selectUserAccess,
+  selectAuthErrorMessage,
+  selectAuthSuccessMessage,
+} from './redux/auth/selectors.js';
 
 const HomePage = lazy(() => import('./pages/HomePage/HomePage'));
 const RegisterPage = lazy(() => import('./pages/RegisterPage/RegisterPage'));
@@ -37,18 +43,29 @@ function App() {
   const dispatch = useDispatch();
   const userAccess = useSelector(selectUserAccess);
   const navigate = useNavigate();
+  const authErrorMessage = useSelector(selectAuthErrorMessage);
+  const authSuccessMessage = useSelector(selectAuthSuccessMessage);
 
   useEffect(() => {
     if (userAccess === false) {
       navigate('/access-denied');
       setTimeout(() => {
         dispatch(logOut());
-      }, 100);
+      }, 200);
     } else if (token) {
       dispatch(current());
       dispatch(setLoggedIn(true));
     }
   }, [token, dispatch, userAccess, navigate]);
+
+  useEffect(() => {
+    if (authErrorMessage) {
+      toast.error(authErrorMessage);
+    }
+    if (authSuccessMessage) {
+      toast.success(authSuccessMessage);
+    }
+  }, [authSuccessMessage, authErrorMessage]);
 
   return (
     <SharedLayout>
@@ -92,6 +109,7 @@ function App() {
         <Route path="/access-denied" element={<AccessDenied />} />
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
+      <ToasterBar />
     </SharedLayout>
   );
 }

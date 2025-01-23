@@ -45,7 +45,7 @@ const CustomTooltip = ({ active, payload, coordinate }) => {
 
     return (
       <div className="custom-tooltip" style={tooltipStyle}>
-        <p style={labelStyle}>{`${payload[0].value} ${'ml'}`}</p>
+        <p style={labelStyle}>{`${payload[0].value} ${'мл'}`}</p>
       </div>
     );
   }
