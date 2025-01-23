@@ -1,1 +1,0 @@
-const t=a=>a.water.waterDaily.data,e=a=>a.water.waterDaily.isLoading,s=a=>a.water.waterMonthly.data,r=a=>a.water.waterMonthly.isLoading,o=a=>a.water.waterMonthly.isError,l=a=>a.water.waterWeekly.data;export{e as a,r as b,s as c,o as d,l as e,t as s};
