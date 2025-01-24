@@ -62,9 +62,8 @@ const authSlice = createSlice({
         state.isLoggedIn = true;
         state.successMessage = 'Успішно ввійшли';
       })
-      .addCase(login.rejected, (state, action) => {
+      .addCase(login.rejected, (state) => {
         state.isLoading = false;
-        state.errorMessage = action.payload;
         state.errorMessage = 'Невірний емейл або пароль ';
       })
       .addCase(logOut.pending, (state) => {
@@ -137,10 +136,10 @@ const authSlice = createSlice({
       })
       .addCase(updateUserAccess.rejected, (state, { payload }) => {
         state.isLoading = false;
-        state.error = payload;
+        state.errorMessage = payload;
       })
       .addCase(refreshToken.pending, (state) => {
-        state.isLoggedIn = false;
+        state.isLoggedIn = true;
       })
       .addCase(refreshToken.fulfilled, (state, action) => {
         state.isLoggedIn = true;

@@ -55,10 +55,9 @@ function App() {
 
   useEffect(() => {
     if (userAccess === false) {
-      navigate('/access-denied');
-      setTimeout(() => {
-        dispatch(logOut());
-      }, 200);
+      dispatch(logOut()).then(() => {
+        navigate('/access-denied');
+      });
     } else if (token) {
       dispatch(current());
       dispatch(setLoggedIn(true));
