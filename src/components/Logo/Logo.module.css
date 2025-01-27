@@ -1,9 +1,34 @@
 .logo {
+  position: relative;
   font-weight: 700;
   font-size: 18px;
   line-height: 111%;
   text-transform: uppercase;
   width: fit-content;
+  color: var(--color-font-main);
+}
+
+.logo::before {
+  content: attr(data-text);
+  width: 0;
+  height: 100%;
+  color: var(--color-second-bg-hover);
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  animation: animate 5s linear alternate;
+}
+@keyframes animate {
+  0%,
+  10%,
+  100% {
+    width: 0;
+  }
+  70%,
+  90% {
+    width: 100%;
+  }
 }
 
 @media screen and (min-width: 768px) {
