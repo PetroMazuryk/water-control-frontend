@@ -4,8 +4,8 @@
   height: 100px;
   display: grid;
   place-items: center;
-  height: 100vh;
-  width: 100vw;
+  /* height: 100vh; */
+  /* width: 100vw; */
   opacity: 0.9;
 }
 
@@ -50,6 +50,9 @@
 }
 
 @media screen and (min-width: 768px) {
+  .loaderContainer {
+    height: 220px;
+  }
   .mask {
     width: 510px;
     font-size: 90px;
