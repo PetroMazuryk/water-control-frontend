@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import Logo from '../Logo/Logo';
+import LangSwitchBar from '../LangSwitchBar/LangSwitchBar';
 import { selectIsLoggedIn } from '../../redux/auth/selectors';
 
 import css from './WelcomeSection.module.css';
@@ -12,6 +13,7 @@ const WelcomeSection = () => {
     <div className={css.welcomeSection}>
       <div className={css.header}>
         <Logo />
+        <LangSwitchBar />
       </div>
       <div className={css.welcomeSectionContainer}>
         <p className={css.welcomeSectionDescribe}>
