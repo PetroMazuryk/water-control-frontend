@@ -1,6 +1,6 @@
 import { forwardRef, useEffect } from 'react';
 import i18next from 'i18next';
-import { LOCALS } from '../../lang/constants';
+import { LOCALS } from '../../i18n/constants';
 
 import css from './LangSwitchBar.module.css';
 
