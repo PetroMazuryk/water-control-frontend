@@ -1,1 +1,0 @@
-import{j as o,L as t}from"./index-1c5e8504.js";const a="_logo_1eccw_1",s="_animate_1eccw_1",e={logo:a,animate:s},c=()=>o.jsx(t,{to:"/",className:e.logo,"data-text":"WATERCONTROL",children:"WaterControl"});export{c as L};
