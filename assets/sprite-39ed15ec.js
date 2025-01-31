@@ -1,1 +1,0 @@
-import{j as o,L as t}from"./index-81204a8e.js";const s="_logo_1eccw_1",a="_animate_1eccw_1",e={logo:s,animate:a},r=()=>o.jsx(t,{to:"/",className:e.logo,"data-text":"WATERCONTROL",children:"WaterControl"}),c="/water-control-frontend/assets/sprite-04e1e4aa.svg";export{r as L,c as s};
