@@ -6,6 +6,7 @@ import { injectStore } from './api/axiosConfig.js';
 import { persistor, store } from './redux/store.js';
 import { PersistGate } from 'redux-persist/integration/react';
 import { ModalProvider } from './components/ModalProvider.jsx';
+import './i18n/index.js';
 
 import App from './App.jsx';
 import './styles/styles.js';
