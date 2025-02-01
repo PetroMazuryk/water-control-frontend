@@ -1,3 +1,9 @@
 {
-  "language": "English"
+  "language": "English",
+  "recordWater": "Record daily water intake and control",
+  "waterTitle": "Water consumption controller",
+  "tryWater": "Try water",
+  "checkWater": "Check water",
+  "logInTitle": "Log In",
+  "logIn": "LogIn"
 }

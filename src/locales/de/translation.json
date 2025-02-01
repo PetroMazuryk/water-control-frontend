@@ -1,3 +1,9 @@
 {
-  "language": "Deutsch"
+  "language": "Deutsch",
+  "recordWater": "Erfassen und verfolgen Sie Ihre tägliche Wasseraufnahme",
+  "waterTitle": "Sparregler Wasser",
+  "tryWater": "Ausprobieren",
+  "checkWater": "Überprüfen Sie das Wasser",
+  "logInTitle": "Versuchen",
+  "logIn": "Einloggen"
 }

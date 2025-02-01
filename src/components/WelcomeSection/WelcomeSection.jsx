@@ -3,10 +3,12 @@ import { useSelector } from 'react-redux';
 import Logo from '../Logo/Logo';
 import LangSwitch from '../LangSwitch/LangSwitch';
 import { selectIsLoggedIn } from '../../redux/auth/selectors';
+import { useTranslation } from 'react-i18next';
 
 import css from './WelcomeSection.module.css';
 
 const WelcomeSection = () => {
+  const { t } = useTranslation();
   const isLoggedIn = useSelector(selectIsLoggedIn);
 
   return (
@@ -16,17 +18,15 @@ const WelcomeSection = () => {
         <LangSwitch />
       </div>
       <div className={css.welcomeSectionContainer}>
-        <p className={css.welcomeSectionDescribe}>
-          Записуйте та відстежуйте щоденне споживання води
-        </p>
-        <h1 className={css.welcomeSectionTitle}>Контролер спожитої води</h1>
+        <p className={css.welcomeSectionDescribe}>{t('recordWater')}</p>
+        <h1 className={css.welcomeSectionTitle}>{t('waterTitle')}</h1>
         <div className={css.welcomeSectionLinks}>
           {isLoggedIn ? (
             <Link
               to={`/water/${Date.now()}`}
               className={`${css.welcomeSectionLink} ${css.welcomeSectionLinkSignup}`}
             >
-              Спробувати
+              {t('checkWater')}
             </Link>
           ) : (
             <>
@@ -34,13 +34,13 @@ const WelcomeSection = () => {
                 to={`/register`}
                 className={`${css.welcomeSectionLink} ${css.welcomeSectionLinkSignup}`}
               >
-                Спробувати
+                {t('tryWater')}
               </Link>
               <Link
                 to={`/login`}
                 className={`${css.welcomeSectionLink} ${css.welcomeSectionLinkSignin}`}
               >
-                Увійти
+                {t('logIn')}
               </Link>
             </>
           )}
