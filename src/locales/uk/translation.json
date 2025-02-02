@@ -5,5 +5,9 @@
   "checkWater": "Перевірити воду",
   "tryWater": "Спробувати",
   "logInTitle": "Вхід",
-  "logIn": "Увійти"
+  "logIn": "Увійти",
+
+  "habitDrive": "Вироблення звички",
+  "viewStats": "Статистики",
+  "personalRate": "Налаштування особистої норми"
 }

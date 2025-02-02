@@ -1,8 +1,10 @@
+import { useTranslation } from 'react-i18next';
 import UserCount from '../UserCount/UserCount';
 
 import css from './AdvantagesSection.module.css';
 
 const AdvantagesSection = () => {
+  const { t } = useTranslation();
   return (
     <div className={css.advantagesSection}>
       <div className={css.userCount}>
@@ -10,9 +12,9 @@ const AdvantagesSection = () => {
       </div>
 
       <ul className={css.advantagesList}>
-        <li className={css.advantagesHabit}>Вироблення звички</li>
-        <li className={css.advantagesStatistics}>Статистики</li>
-        <li className={css.advantagesSetting}>Налаштування особистої норми</li>
+        <li className={css.advantagesHabit}>{t('habitDrive')}</li>
+        <li className={css.advantagesStatistics}>{t('viewStats')}</li>
+        <li className={css.advantagesSetting}>{t('personalRate')}</li>
       </ul>
     </div>
   );

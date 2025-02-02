@@ -5,5 +5,9 @@
   "tryWater": "Ausprobieren",
   "checkWater": "Überprüfen Sie das Wasser",
   "logInTitle": "Versuchen",
-  "logIn": "Einloggen"
+  "logIn": "Einloggen",
+
+  "habitDrive": "Gewohnheitsantrieb",
+  "viewStats": "Statistiken",
+  "personalRate": "Persönliche Raten-Einstellung"
 }
