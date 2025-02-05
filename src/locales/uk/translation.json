@@ -9,5 +9,7 @@
 
   "habitDrive": "Вироблення звички",
   "viewStats": "Статистики",
-  "personalRate": "Налаштування особистої норми"
+  "personalRate": "Налаштування особистої норми",
+
+  "userCountText": "Наші <span class=\"{{userCountTextColor}}\">{{count}} щасливі</span><br/> клієнти"
 }

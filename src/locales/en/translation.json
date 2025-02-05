@@ -9,5 +9,7 @@
 
   "habitDrive": "Habit drive",
   "viewStats": "View statistics",
-  "personalRate": "Personal rate setting"
+  "personalRate": "Personal rate setting",
+
+  "userCountText": "Our <span class=\"{{userCountTextColor}}\">{{count}} happy</span><br/> customers"
 }

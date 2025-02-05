@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 import { photoOne, photoTwo, photoTree } from '../../assets/images';
 import { requestUserCount } from '../../api/auth';
 const users = [
@@ -10,7 +11,12 @@ const users = [
 import css from './UserCount.module.css';
 
 const UserCount = () => {
+  const { t } = useTranslation();
   const [userCount, setUserCount] = useState();
+  const translatedText = t('userCountText', {
+    count: userCount,
+    userCountTextColor: css.userCountTextColor,
+  });
 
   useEffect(() => {
     async function getCount() {
@@ -34,11 +40,15 @@ const UserCount = () => {
           </li>
         ))}
       </ul>
-      <p className={css.userCountText}>
+      {/* <p className={css.userCountText}>
         Наші
         <span className={css.userCountTextColor}>{userCount} щасливі</span>{' '}
         клієнти
-      </p>
+      </p> */}
+      <p
+        className={css.userCountText}
+        dangerouslySetInnerHTML={{ __html: translatedText }}
+      />
     </div>
   );
 };
