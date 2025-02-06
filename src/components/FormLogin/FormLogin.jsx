@@ -7,25 +7,24 @@ import sprite from '../../assets/sprite.svg';
 import { selectIsLoading } from '../../redux/auth/selectors.js';
 import { login } from '../../redux/auth/operations.js';
 import Loader from '../Loader/Loader.jsx';
+import { useTranslation } from 'react-i18next';
 
 import css from '../FormRegister/FormRegister.module.css';
 
 const FormLogin = () => {
+  const { t } = useTranslation();
   const dispatch = useDispatch();
   const isLoading = useSelector(selectIsLoading);
   const [showPassword, setShowPassword] = useState(false);
 
   const schemaValidation = Yup.object({
     email: Yup.string()
-      .required('Потрібна електронна адреса')
-      .email('Недійсна адреса електронної пошти'),
+      .required(t('emailRequired'))
+      .email(t('enterValidEmail')),
     password: Yup.string()
-      .required('Потрібен пароль')
-      .min(7, 'Пароль має містити принаймні 7 символів')
-      .matches(
-        /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/,
-        'Пароль повинен містити принаймні одну літеру та одну цифру'
-      ),
+      .required(t('passwordRequired'))
+      .min(7, t('passwordTooShort'))
+      .matches(/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/, t('passwordMatches')),
   });
 
   const togglePasswordVisibility = () => {

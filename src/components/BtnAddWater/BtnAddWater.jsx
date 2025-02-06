@@ -3,11 +3,13 @@ import { useParams } from 'react-router-dom';
 import { useModal } from '../../hooks/useModal';
 import { parseDateTime } from '../../helpers/parseDate';
 import WaterModal from '../WaterModal/WaterModal';
+import { useTranslation } from 'react-i18next';
 import sprite from '../../assets/sprite.svg';
 
 import css from './BtnAddWater.module.css';
 
 const BtnAddWater = () => {
+  const { t } = useTranslation();
   const setModal = useModal();
 
   const { date: dateUrl } = useParams();
@@ -32,7 +34,7 @@ const BtnAddWater = () => {
       <svg className={css.plus}>
         <use xlinkHref={`${sprite}#icon-plus`} />
       </svg>
-      <h2 className={css.btnText}>Додати воду</h2>
+      <h2 className={css.btnText}>{t('addWater')}</h2>
     </button>
   );
 };

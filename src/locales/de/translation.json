@@ -11,5 +11,7 @@
   "viewStats": "Statistiken",
   "personalRate": "Persönliche Raten-Einstellung",
 
-  "userCountText": "Unsere <span class=\"{{userCountTextColor}}\">{{count}} glücklichen</span><br/> Kunden"
+  "userCountText": "Unsere <span class=\"{{userCountTextColor}}\">{{count}} glücklichen</span><br/> Kunden",
+
+  "addWater": "Wasser hinzufügen"
 }
