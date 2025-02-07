@@ -13,5 +13,11 @@
 
   "userCountText": "Unsere <span class=\"{{userCountTextColor}}\">{{count}} glücklichen</span><br/> Kunden",
 
-  "addWater": "Wasser hinzufügen"
+  "addWater": "Wasser hinzufügen",
+
+  "emailRequired": "E-Mail ist erforderlich",
+  "enterValidEmail": "Geben Sie eine gültige E-Mail-Adresse ein",
+  "passwordRequired": "Passwort ist erforderlich",
+  "passwordTooShort": "Muss mindestens 7 Zeichen lang sein",
+  "passwordMatches": "Das Passwort muss mindestens einen Buchstaben und eine Zahl enthalten"
 }

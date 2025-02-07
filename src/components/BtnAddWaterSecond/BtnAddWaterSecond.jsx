@@ -3,11 +3,13 @@ import { useParams } from 'react-router-dom';
 import { useModal } from '../../hooks/useModal';
 import { parseDateTime } from '../../helpers/parseDate';
 import WaterModal from '../../components/WaterModal/WaterModal';
+import { useTranslation } from 'react-i18next';
 import sprite from '../../assets/sprite.svg';
 
 import css from './BtnAddWaterSecond.module.css';
 
 const BtnAddWaterSecond = () => {
+  const { t } = useTranslation();
   const setModal = useModal();
 
   const closeModal = useCallback(() => {
@@ -30,10 +32,10 @@ const BtnAddWaterSecond = () => {
   return (
     <button className={css.btnStyle} type="button" onClick={openModal}>
       <svg className={css.iconStyle}>
-        <use xlinkHref={sprite + '#icon-plus'}></use>
+        <use xlinkHref={`${sprite}#icon-plus`}></use>
       </svg>
 
-      <span className={css.btnStyleText}>Додати воду</span>
+      <span className={css.btnStyleText}> {t('addWater')}</span>
     </button>
   );
 };
