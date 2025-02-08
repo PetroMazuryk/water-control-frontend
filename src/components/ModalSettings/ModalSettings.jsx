@@ -1,4 +1,5 @@
 import FormSettings from '../FormSettings/FormSettings';
+import LangSwitch from '../LangSwitch/LangSwitch.jsx';
 import sprite from '../../assets/sprite.svg';
 import css from './ModalSettings.module.css';
 
@@ -7,6 +8,7 @@ const ModalSettings = ({ onClose }) => {
     <div className={css.modalSettingContainer}>
       <div className={css.modalHeader}>
         <h2>Налаштування</h2>
+        <LangSwitch />
         <button
           type="button"
           aria-label={'closeSettingModal'}

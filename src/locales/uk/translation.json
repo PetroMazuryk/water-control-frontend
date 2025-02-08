@@ -13,6 +13,8 @@
 
   "userCountText": "Наші <span class=\"{{userCountTextColor}}\">{{count}} щасливі</span><br/> клієнти",
 
+  "addWater": "Додати воду",
+
   "emailRequired": "Електронна пошта є обов'язковою",
   "enterValidEmail": "Введіть дійсну адресу електронної пошти",
   "passwordRequired": "Пароль є обов'язковим",
