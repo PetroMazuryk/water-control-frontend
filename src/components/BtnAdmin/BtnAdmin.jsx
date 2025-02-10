@@ -1,5 +1,5 @@
 import { useCallback } from 'react';
-
+import { useTranslation } from 'react-i18next';
 import { useModal } from '../../hooks/useModal';
 import ModalAdmin from '../ModalAdmin/ModalAdmin';
 import sprite from '../../assets/sprite.svg';
@@ -7,6 +7,7 @@ import sprite from '../../assets/sprite.svg';
 import css from './BtnAdmin.module.css';
 
 const BtnAdmin = () => {
+  const { t } = useTranslation();
   const setModal = useModal();
 
   const openModal = useCallback(() => {
@@ -18,7 +19,7 @@ const BtnAdmin = () => {
       <svg className={css.plus}>
         <use xlinkHref={`${sprite}#icon-admin`} />
       </svg>
-      <h2 className={css.btnText}>Адмін</h2>
+      <h2 className={css.btnText}>{t('adminBtn')}</h2>
     </button>
   );
 };

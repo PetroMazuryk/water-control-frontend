@@ -13,7 +13,8 @@
 
   "userCountText": "Unsere <span class=\"{{userCountTextColor}}\">{{count}} glücklichen</span><br/> Kunden",
 
-  "addWater": "Wasser hinzufügen",
+  "addWater": "Wasser hinz.",
+  "adminBtn": "Verw",
 
   "emailRequired": "E-Mail ist erforderlich",
   "enterValidEmail": "Geben Sie eine gültige E-Mail-Adresse ein",

@@ -37,6 +37,7 @@
 }
 
 .welcomeSectionLink {
+  min-width: 150px;
   font-weight: 700;
   font-size: 16px;
   line-height: 121%;
@@ -92,6 +93,7 @@
   }
 
   .welcomeSectionLink {
+    min-width: 186px;
     font-size: 16px;
     line-height: 150%;
     padding: 18px 40px;
