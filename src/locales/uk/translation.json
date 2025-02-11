@@ -13,6 +13,10 @@
 
   "userCountText": "Наші <span class=\"{{userCountTextColor}}\">{{count}} щасливі</span><br/> клієнти",
 
+  "dailyNorm": "Моя щоденна норма",
+  "l": "л",
+  "ml": "мл",
+
   "addWater": "Додати воду",
   "adminBtn": "Адмін",
 

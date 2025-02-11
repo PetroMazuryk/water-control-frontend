@@ -13,6 +13,10 @@
 
   "userCountText": "Our <span class=\"{{userCountTextColor}}\">{{count}} happy</span><br/> customers",
 
+  "dailyNorm": "My daily norma",
+  "l": "L",
+  "ml": "ml",
+
   "addWater": "Add water",
   "adminBtn": "Admin",
 
