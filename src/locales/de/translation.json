@@ -24,5 +24,7 @@
   "enterValidEmail": "Geben Sie eine gültige E-Mail-Adresse ein",
   "passwordRequired": "Passwort ist erforderlich",
   "passwordTooShort": "Muss mindestens 7 Zeichen lang sein",
-  "passwordMatches": "Das Passwort muss mindestens einen Buchstaben und eine Zahl enthalten"
+  "passwordMatches": "Das Passwort muss mindestens einen Buchstaben und eine Zahl enthalten",
+
+  "hello": "Hallo,"
 }

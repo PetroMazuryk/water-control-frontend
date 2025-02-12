@@ -24,5 +24,7 @@
   "enterValidEmail": "Enter a valid email address",
   "passwordRequired": "Password is required",
   "passwordTooShort": "Must be at least 7 characters long",
-  "passwordMatches": "Password must contain at least one letter and one number"
+  "passwordMatches": "Password must contain at least one letter and one number",
+
+  "hello": "Hello,"
 }
