@@ -1,5 +1,5 @@
 import { useCallback } from 'react';
-
+import { useTranslation } from 'react-i18next';
 import { useModal } from '../../hooks/useModal.js';
 import ModalLogout from '../ModalLogout/ModalLogout.jsx';
 import ModalSettings from '../ModalSettings/ModalSettings.jsx';
@@ -8,6 +8,7 @@ import sprite from '../../assets/sprite.svg';
 import css from './UserBarPopup.module.css';
 
 const UserBarPopup = () => {
+  const { t } = useTranslation();
   const setModal = useModal();
   const closeModal = useCallback(() => {
     setModal();
@@ -28,14 +29,14 @@ const UserBarPopup = () => {
           <svg className={css.userBarPopupIcon}>
             <use xlinkHref={`${sprite}#icon-settings`}></use>
           </svg>
-          Профіль
+          {t('settingLink')}
         </li>
 
         <li className={css.userBarPopupListItem} onClick={openModalLogOut}>
           <svg className={css.userBarPopupIcon}>
             <use xlinkHref={`${sprite}#icon-log-out`}></use>
           </svg>
-          Вийти
+          {t('logout')}
         </li>
       </ul>
     </div>

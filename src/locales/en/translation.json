@@ -26,5 +26,8 @@
   "passwordTooShort": "Must be at least 7 characters long",
   "passwordMatches": "Password must contain at least one letter and one number",
 
-  "hello": "Hello,"
+  "hello": "Hello,",
+
+  "settingLink": "Setting",
+  "logout": "Logout"
 }
