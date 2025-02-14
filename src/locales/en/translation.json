@@ -27,6 +27,7 @@
   "passwordMatches": "Password must contain at least one letter and one number",
 
   "hello": "Hello,",
+  "today": "Today",
 
   "settingLink": "Setting",
   "logout": "Logout"
