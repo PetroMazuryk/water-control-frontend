@@ -43,7 +43,7 @@ const WaterItem = ({ water }) => {
           aria-label="Edit the entered amount of water"
         >
           <svg className={css.iconAction} width="14" height="14">
-            <use xlinkHref={sprite + '#icon-edit'}></use>
+            <use href={`${sprite}#icon-edit`}></use>
           </svg>
         </button>
         <button
@@ -52,7 +52,7 @@ const WaterItem = ({ water }) => {
           aria-label="Delete the entered amount of water"
         >
           <svg className={css.iconAction} width="14" height="14">
-            <use xlinkHref={sprite + '#icon-trash'}></use>
+            <use xlinkHref={`${sprite}#icon-trash`}></use>
           </svg>
         </button>
       </div>
