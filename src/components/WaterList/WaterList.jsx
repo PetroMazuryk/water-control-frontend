@@ -1,4 +1,5 @@
 import { useSelector } from 'react-redux';
+import { useTranslation } from 'react-i18next';
 import WaterItem from '../WaterItem/WaterItem';
 import {
   selectWaterDailyRecord,
@@ -8,6 +9,7 @@ import {
 import css from './WaterList.module.css';
 
 const WaterList = () => {
+  const { t } = useTranslation();
   const data = useSelector(selectWaterDailyRecord);
   const isLoading = useSelector(selectDailyIsLoading);
 
@@ -23,7 +25,7 @@ const WaterList = () => {
   if (!data.length) {
     return (
       <div className={css.messageContainer}>
-        <h2 className={css.noWater}>Вода ще не додана</h2>
+        <h2 className={css.noWater}>{t('noWaterMessage')}</h2>
       </div>
     );
   }

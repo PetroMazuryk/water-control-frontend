@@ -28,6 +28,7 @@
 
   "hello": "Привіт,",
   "today": "Сьогодні",
+  "noWaterMessage": "Вода ще не додана",
 
   "settingLink": "Профіль",
   "logout": "Вийти"

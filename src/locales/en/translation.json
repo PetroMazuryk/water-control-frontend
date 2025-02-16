@@ -28,6 +28,7 @@
 
   "hello": "Hello,",
   "today": "Today",
+  "noWaterMessage": "Water not added yet",
 
   "settingLink": "Setting",
   "logout": "Logout"

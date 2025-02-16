@@ -28,6 +28,7 @@
 
   "hello": "Hallo,",
   "today": "Heute",
+  "noWaterMessage": "Wasser noch nicht hinzugefügt",
 
   "settingLink": "Profil",
   "logout": "Ausloggen"
