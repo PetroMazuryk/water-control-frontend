@@ -31,5 +31,8 @@
   "noWaterMessage": "Вода ще не додана",
 
   "settingLink": "Профіль",
-  "logout": "Вийти"
+  "logout": "Вийти",
+
+  "statistics": "Статистика",
+  "month": "Місяць"
 }

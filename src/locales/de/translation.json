@@ -31,5 +31,8 @@
   "noWaterMessage": "Wasser noch nicht hinzugefügt",
 
   "settingLink": "Profil",
-  "logout": "Ausloggen"
+  "logout": "Ausloggen",
+
+  "statistics": "Statistiken",
+  "month": "Monat"
 }
