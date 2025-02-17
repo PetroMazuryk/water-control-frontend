@@ -29,6 +29,7 @@
   "hello": "Привіт,",
   "today": "Сьогодні",
   "noWaterMessage": "Вода ще не додана",
+  "noScheduleMessage": "НЕМАЄ ДАНИХ ДЛЯ ТИЖНЕВОЇ СТАТИСТИЧНОЇ ГРАФІКИ",
 
   "settingLink": "Профіль",
   "logout": "Вийти",

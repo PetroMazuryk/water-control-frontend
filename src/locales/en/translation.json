@@ -29,6 +29,7 @@
   "hello": "Hello,",
   "today": "Today",
   "noWaterMessage": "Water not added yet",
+  "noScheduleMessage": "NO DATA FOR WEEKLY STATISTICAL GRAPHICS",
 
   "settingLink": "Setting",
   "logout": "Logout",

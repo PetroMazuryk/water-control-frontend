@@ -8,6 +8,7 @@ import {
 } from 'recharts';
 
 import { useSelector } from 'react-redux';
+import { useTranslation } from 'react-i18next';
 import { selectWaterWeeklyData } from '../../redux/water/selectors';
 
 import css from './ControlSchedule.module.css';
@@ -54,6 +55,7 @@ const CustomTooltip = ({ active, payload, coordinate }) => {
 };
 
 const ControlSchedule = () => {
+  const { t } = useTranslation();
   const waterWeeklyData = useSelector(selectWaterWeeklyData);
 
   const formattedData = waterWeeklyData.slice(0, 7).map((item) => ({
@@ -124,9 +126,7 @@ const ControlSchedule = () => {
           </AreaChart>
         </ResponsiveContainer>
       ) : (
-        <p className={css.noData}>
-          НЕМАЄ ДАНИХ ДЛЯ ТИЖНЕВОЇ СТАТИСТИЧНОЇ ГРАФІКИ
-        </p>
+        <p className={css.noData}>{t('noScheduleMessage')}</p>
       )}
     </div>
   );
