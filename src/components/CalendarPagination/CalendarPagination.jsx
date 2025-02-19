@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
 import { useTranslation } from 'react-i18next';
+import { useDispatch, useSelector } from 'react-redux';
 import { NavLink, useLocation, useParams } from 'react-router-dom';
 
 import TitleCalendar from '../TitleCalendar/TitleCalendar.jsx';
@@ -48,7 +48,7 @@ const CalendarPagination = () => {
     setMonth(month - 1);
   };
 
-  const selectedMonth = listMonths[month];
+  const selectedMonth = t(listMonths[month]);
   const title = pathname === 'schedule' ? t('statistics') : t('month');
   const yearNow = new Date(Date.now()).getFullYear();
   const monthNow = new Date(Date.now()).getMonth();
