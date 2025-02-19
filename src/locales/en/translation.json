@@ -48,5 +48,18 @@
   "september": "September",
   "october": "October",
   "november": "November",
-  "december": "December"
+  "december": "December",
+
+  "januaryDay": "january",
+  "februaryDay": "february",
+  "marchDay": "march",
+  "aprilDay": "april",
+  "mayDay": "may",
+  "juneDay": "june",
+  "julyDay": "july",
+  "augustDay": "august",
+  "septemberDay": "september",
+  "octoberDay": "october",
+  "novemberDay": "november",
+  "decemberDay": "december"
 }

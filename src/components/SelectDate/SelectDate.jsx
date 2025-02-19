@@ -9,7 +9,7 @@ import css from './SelectDate.module.css';
 const SelectDate = ({ className }) => {
   const { t } = useTranslation();
   const { date } = useParams();
-  const { isToday, day, month } = getDateMonthString(parseDateTime(date));
+  const { isToday, day, month } = getDateMonthString(parseDateTime(date), t);
 
   const dateString = isToday ? t('today') : `${day} ${month}`;
   return <p className={clsx(css.selectedDate, className)}>{dateString}</p>;

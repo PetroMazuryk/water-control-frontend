@@ -48,5 +48,18 @@
   "september": "Вересень",
   "october": "Жовтень",
   "november": "Листопад",
-  "december": "Грудень"
+  "december": "Грудень",
+
+  "januaryDay": "січня",
+  "februaryDay": "лютого",
+  "marchDay": "березня",
+  "aprilDay": "квітня",
+  "mayDay": "травня",
+  "juneDay": "червня",
+  "julyDay": "липня",
+  "augustDay": "серпнья",
+  "septemberDay": "вересня",
+  "octoberDay": "жовтня",
+  "novemberDay": "листопада",
+  "decemberDay": "грудня"
 }
