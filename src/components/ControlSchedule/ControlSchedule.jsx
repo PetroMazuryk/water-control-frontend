@@ -25,6 +25,7 @@ const formatDate = (timestamp) => {
 };
 
 const CustomTooltip = ({ active, payload, coordinate }) => {
+  const { t } = useTranslation();
   if (active && payload && payload.length) {
     const tooltipStyle = {
       backgroundColor: 'white',
@@ -46,7 +47,7 @@ const CustomTooltip = ({ active, payload, coordinate }) => {
 
     return (
       <div className="custom-tooltip" style={tooltipStyle}>
-        <p style={labelStyle}>{`${payload[0].value} ${'мл'}`}</p>
+        <p style={labelStyle}>{`${payload[0].value} ${t('ml')}`}</p>
       </div>
     );
   }
@@ -73,7 +74,7 @@ const ControlSchedule = () => {
       return '0%';
     }
 
-    return `${(tick / 1000).toFixed(1)} ${'Л'}`;
+    return `${(tick / 1000).toFixed(1)} ${t('l')}`;
   };
 
   return (
