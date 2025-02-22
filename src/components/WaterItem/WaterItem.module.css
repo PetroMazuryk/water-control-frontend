@@ -9,21 +9,6 @@
   padding: 14px;
   gap: 3px;
 }
-.waterInfo {
-  width: fit-content;
-}
-.waterAmount {
-  font-size: 14px;
-  font-weight: 700;
-  line-height: 1;
-  margin-bottom: 6px;
-}
-
-.waterDate {
-  font-size: 12px;
-  line-height: 1;
-  color: var(--color-font-secondary);
-}
 
 .iconWaterGlass {
   display: flex;
@@ -37,17 +22,21 @@
   stroke-width: 0;
 }
 
-.editButton,
-.deleteButton {
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 0;
+.waterInfo {
+  width: fit-content;
 }
 
-.editButton:hover,
-.deleteButton:hover {
-  transform: scale(1.1);
+.waterAmount {
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1;
+  margin-bottom: 6px;
+}
+
+.waterDate {
+  font-size: 12px;
+  line-height: 1;
+  color: var(--color-font-secondary);
 }
 
 .containerButtons {
@@ -56,13 +45,23 @@
   gap: 8px;
 }
 
+.editButton,
+.deleteButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
 .iconAction {
   fill: none;
   stroke: var(--color-font-main);
   transition: opacity 0.3s ease;
 }
 
-.iconAction:hover {
+.editButton:hover .iconAction,
+.deleteButton:hover .iconAction {
+  transform: scale(1.1);
   opacity: 0.8;
   fill: var(--color-second-bg-hover);
 }
@@ -73,10 +72,12 @@
     height: 86px;
     padding: 0 20px;
   }
+
   .iconWaterGlass {
     width: 44px;
     height: 45px;
   }
+
   .waterInfo {
     width: fit-content;
   }
@@ -86,9 +87,11 @@
     line-height: 1.49;
     margin-bottom: 0;
   }
+
   .waterDate {
     line-height: 1.87;
   }
+
   .iconAction {
     width: 16px;
     height: 16px;
