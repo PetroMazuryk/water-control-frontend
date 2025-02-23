@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import { useForm, Controller } from 'react-hook-form';
+import { useTranslation } from 'react-i18next';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as Yup from 'yup';
 
-import clsx from 'clsx';
 import sprite from '../../assets/sprite.svg';
 import { useDispatch } from 'react-redux';
 import {
@@ -12,6 +12,7 @@ import {
 } from '../../redux/water/operations';
 import LoaderComponent from '../LoaderComponent/LoaderComponent';
 
+import clsx from 'clsx';
 import css from './WaterForm.module.css';
 
 const WaterForm = ({
@@ -21,6 +22,7 @@ const WaterForm = ({
   waterID,
   handleClose,
 }) => {
+  const { t } = useTranslation();
   const [waterAmount, setWaterAmount] = useState(waterPortion);
   const dispatch = useDispatch();
   const [isLoading, setIsLoading] = useState(false);
@@ -108,16 +110,11 @@ const WaterForm = ({
     }
   };
 
-  const FormHeader = (operationType) => {
-    switch (operationType) {
-      case 'add':
-        return <p className={css.FormHeader}>Оберіть значення:</p>;
-      case 'edit':
-        return <p className={css.FormHeader}>Виправити дані:</p>;
-      default:
-        return <p className={css.FormHeader}>Оберіть значення:</p>;
-    }
-  };
+  const FormHeader = (operationType) => (
+    <p className={css.FormHeader}>
+      {operationType === 'edit' ? t('correctData') : t('chooseValue')}
+    </p>
+  );
 
   const handleWaterAmountChange = (amount) => {
     setWaterAmount(amount);
