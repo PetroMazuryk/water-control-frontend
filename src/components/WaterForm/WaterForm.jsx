@@ -127,7 +127,7 @@ const WaterForm = ({
   return (
     <form className={css.WaterForm} onSubmit={handleSubmit(onSubmit)}>
       {FormHeader(operationType)}
-      <p className={css.AmountOfWater}>Кількість води:</p>
+      <p className={css.AmountOfWater}>{t('waterAmount')}</p>
       <div className={css.TapAddWaterWrapper}>
         <button
           type="button"
@@ -155,7 +155,7 @@ const WaterForm = ({
       </div>
 
       <label className={css.RecordingTimeLabel}>
-        Час запису:
+        {t('recordTime')}
         <Controller
           name="recordingTime"
           control={control}
@@ -179,7 +179,7 @@ const WaterForm = ({
         )}
       </label>
       <label className={css.WaterValueLabel}>
-        Введіть обєм води:
+        {t('enterWaterValue')}
         <Controller
           name="waterValue"
           control={control}

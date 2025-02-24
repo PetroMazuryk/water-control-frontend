@@ -28,6 +28,9 @@
 
   "correctData": "Виправити дані:",
   "chooseValue": "Виберіть значення:",
+  "waterAmount": "Кількість води:",
+  "recordTime": "Час запису:",
+  "enterWaterValue": "Введіть обєм води:",
 
   "hello": "Привіт,",
   "today": "Сьогодні",

@@ -28,6 +28,9 @@
 
   "correctData": "Correct entered data:",
   "chooseValue": "Choose a value:",
+  "waterAmount": "Amount of water:",
+  "recordTime": "Recording time:",
+  "enterWaterValue": "Enter the value of the water used:",
 
   "hello": "Hello,",
   "today": "Today",

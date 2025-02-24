@@ -28,6 +28,9 @@
 
   "correctData": "Eingegebene Daten korrigieren:",
   "chooseValue": "Wert auswählen:",
+  "waterAmount": "Wassermenge:",
+  "recordTime": "Aufnahmezeit:",
+  "enterWaterValue": "Geben Sie die Wassermenge ein:",
 
   "hello": "Hallo,",
   "today": "Heute",
