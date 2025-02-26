@@ -198,7 +198,7 @@ const WaterForm = ({
         )}
       </label>
       <button type="submit" className={css.SaveBtn} disabled={isLoading}>
-        {isLoading ? <LoaderComponent height={44} width={44} /> : 'Зберегти'}
+        {isLoading ? <LoaderComponent height={44} width={44} /> : t('save')}
       </button>
     </form>
   );
