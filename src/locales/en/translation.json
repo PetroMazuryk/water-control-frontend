@@ -26,6 +26,8 @@
   "passwordTooShort": "Must be at least 7 characters long",
   "passwordMatches": "Password must contain at least one letter and one number",
 
+  "addWaterTitle": "Add water",
+  "editWaterAmount": "Edit the entered amount of water",
   "correctData": "Correct entered data:",
   "chooseValue": "Choose a value:",
   "waterAmount": "Amount of water:",

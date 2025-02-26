@@ -1,4 +1,5 @@
 import WaterForm from '../WaterForm/WaterForm';
+import { useTranslation } from 'react-i18next';
 import { ANIMATION } from '../../constants/animations.js';
 import sprite from '../../assets/sprite.svg';
 
@@ -10,6 +11,7 @@ const WaterModal = ({
   water = {},
   timestampFromUrl = '',
 }) => {
+  const { t } = useTranslation();
   const handleClose = () => {
     const id = setTimeout(() => {
       onClose();
@@ -18,16 +20,13 @@ const WaterModal = ({
   };
 
   const modalHeader = (operationType) => {
-    switch (operationType) {
-      case 'add':
-        return 'Додавання води';
-      case 'edit':
-        return 'Редагувати кількість води';
-      default:
-        return 'Додавання води';
-    }
-  };
+    const titles = {
+      add: t('addWaterTitle'),
+      edit: t('editWaterAmount'),
+    };
 
+    return titles[operationType] || t('addWaterTitle');
+  };
   const curentTimestamp = Number(timestampFromUrl);
   const recordTimestamp = Number(water.date);
 
