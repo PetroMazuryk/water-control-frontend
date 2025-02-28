@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
+import { useTranslation } from 'react-i18next';
 import { ANIMATION } from '../../constants/constants.js';
 import { deleteWaterIntakeRecord } from '../../redux/water/operations.js';
 import BtnDelete from '../BtnDelete/BtnDelete.jsx';
@@ -9,6 +10,7 @@ import sprite from '../../assets/sprite.svg';
 import css from './ModalDelete.module.css';
 
 const ModalDelete = ({ id, onClose }) => {
+  const { t } = useTranslation();
   const dispatch = useDispatch();
   const [isLoading, setIsLoading] = useState(false);
 
@@ -44,8 +46,8 @@ const ModalDelete = ({ id, onClose }) => {
         </svg>
       </button>
       <div className={css.modalTextBox}>
-        <h2 className={css.modalTitle}>Видалити запис</h2>
-        <p className={css.modalText}>Ви дійсно хочете видалити запис ?</p>
+        <h2 className={css.modalTitle}>{t('deleteEntry')}</h2>
+        <p className={css.modalText}>{t('confirmDeleteEntry')}</p>
       </div>
       <div className={css.modalBtnBox}>
         {isLoading ? (
@@ -57,7 +59,7 @@ const ModalDelete = ({ id, onClose }) => {
               onClick={handleClose}
               className={css.btnCancel}
             >
-              Відміна
+              {t('cancel')}
             </button>
             <BtnDelete handleDelete={handleDelete} id={id} />
           </>

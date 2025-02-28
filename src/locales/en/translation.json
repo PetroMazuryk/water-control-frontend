@@ -35,6 +35,10 @@
   "enterWaterValue": "Enter the value of the water used:",
   "save": "Save",
 
+  "deleteEntry": "Delete entry",
+  "confirmDeleteEntry": "Are you sure you want to delete the entry?",
+  "cancel": "Cancel",
+
   "hello": "Hello,",
   "today": "Today",
   "noWaterMessage": "Water not added yet",

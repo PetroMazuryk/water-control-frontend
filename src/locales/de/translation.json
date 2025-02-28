@@ -35,6 +35,10 @@
   "enterWaterValue": "Geben Sie die Wassermenge ein:",
   "save": "Speichern",
 
+  "deleteEntry": "Eintrag löschen",
+  "confirmDeleteEntry": "Sind Sie sicher, dass Sie den Eintrag löschen möchten?",
+  "cancel": "Abbrechen",
+
   "hello": "Hallo,",
   "today": "Heute",
   "noWaterMessage": "Wasser noch nicht hinzugefügt",

@@ -35,6 +35,10 @@
   "enterWaterValue": "Введіть обєм води:",
   "save": "Зберегти",
 
+  "deleteEntry": "Видалити запис",
+  "confirmDeleteEntry": "Ви дійсно хочете видалити запис?",
+  "cancel": "Відміна",
+
   "hello": "Привіт,",
   "today": "Сьогодні",
   "noWaterMessage": "Вода ще не додана",
