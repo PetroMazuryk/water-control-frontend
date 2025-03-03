@@ -112,8 +112,9 @@ const FormSetting = ({ handleClose }) => {
       }, {});
 
     if (JSON.stringify(compareUserOrdered) !== JSON.stringify(dataOrdered)) {
-      // eslint-disable-next-line no-unused-vars
-      const { email, ...payload } = data;
+      const payload = { ...data }; // Створюємо копію
+      delete payload.email; // Видаляємо email без деструктуризації
+
       dispatch(updateUserProfile(payload)).then(({ error }) => {
         if (!error) {
           handleClose();
