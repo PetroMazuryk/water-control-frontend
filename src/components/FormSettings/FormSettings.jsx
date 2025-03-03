@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Controller, useForm } from 'react-hook-form';
 import { useDispatch, useSelector } from 'react-redux';
+import { useTranslation } from 'react-i18next';
 import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
 import LoaderComponent from '../LoaderComponent/LoaderComponent.jsx';
@@ -20,6 +21,7 @@ import sprite from '../../assets/sprite.svg';
 import css from './FormSettings.module.css';
 
 const FormSetting = ({ handleClose }) => {
+  const { t } = useTranslation();
   const dispatch = useDispatch();
   const user = useSelector(selectUser);
   const avatar = useSelector(selectUserPhoto);
@@ -168,7 +170,7 @@ const FormSetting = ({ handleClose }) => {
             <svg className={css.icon}>
               <use xlinkHref={`${sprite}#icon-upload`}></use>
             </svg>
-            <span className={css.ordinaryText}>Завантажити фото</span>
+            <span className={css.ordinaryText}>{t('uploadPhoto')}</span>
           </div>
           <input
             className={css.hideBtn}
