@@ -221,7 +221,7 @@ const FormSetting = ({ handleClose }) => {
         <div className={css.userPreferences}>
           <div className={css.formNameEmail}>
             <label>
-              <span className={css.boldText}>Ваше ім'я</span>
+              <span className={css.boldText}>{t('yourName')}</span>
               <Controller
                 render={({ field }) => (
                   <input
