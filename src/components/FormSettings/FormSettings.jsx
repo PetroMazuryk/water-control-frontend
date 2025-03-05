@@ -186,7 +186,7 @@ const FormSetting = ({ handleClose }) => {
       <form onSubmit={handleSubmit(onSubmit)} className={css.userSettingForm}>
         <div className={css.genderContainer}>
           <label className={css.genderIdentity}>
-            <span className={css.boldText}>Ваша стать</span>
+            <span className={css.boldText}>{t('genderIdentity')}</span>
             <div className={css.radioContainer}>
               <input
                 type="radio"
@@ -197,7 +197,7 @@ const FormSetting = ({ handleClose }) => {
                 checked={watchGender === 'woman'}
               />
               <label htmlFor="woman" className={css.ordinaryText}>
-                Жіноче
+                {t('woman')}
               </label>
 
               <input
@@ -209,7 +209,7 @@ const FormSetting = ({ handleClose }) => {
                 checked={watchGender === 'man'}
               />
               <label htmlFor="man" className={css.ordinaryText}>
-                Чоловіче
+                {t('man')}
               </label>
             </div>
             {errors.gender && (

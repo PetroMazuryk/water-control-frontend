@@ -49,6 +49,9 @@
   "logout": "Вийти",
   "settings": "Налаштування",
   "uploadPhoto": "Завантажити фото",
+  "genderIdentity": "Ваша стать",
+  "woman": "Жіноча",
+  "man": "Чоловіча",
 
   "statistics": "Статистика",
   "month": "Місяць",

@@ -49,6 +49,9 @@
   "logout": "Ausloggen",
   "settings": "Einstellungen",
   "uploadPhoto": "Foto hochladen",
+  "genderIdentity": "Ihre Geschlechtsidentität",
+  "woman": "Weiblich",
+  "man": "Männlich",
 
   "statistics": "Statistiken",
   "month": "Monat",
