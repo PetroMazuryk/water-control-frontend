@@ -247,7 +247,7 @@ const FormSetting = ({ handleClose }) => {
             </label>
 
             <label>
-              <span className={css.boldText}>Пошта</span>
+              <span className={css.boldText}>{t('email')}</span>
               <input
                 disabled
                 {...register('email')}
