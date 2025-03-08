@@ -257,7 +257,7 @@ const FormSetting = ({ handleClose }) => {
             </label>
 
             <div className={css.formula}>
-              <p className={css.boldText}>Моя щоденна норма</p>
+              <p className={css.boldText}>{t('dailyNorm')}</p>
               <div className={css.formulaDescription}>
                 <p className={css.ordinaryText}>
                   <span>Для жінок: </span>
