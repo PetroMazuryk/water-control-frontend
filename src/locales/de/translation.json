@@ -56,6 +56,7 @@
   "email": "E-Mail",
   "forWomen": "Für Frau:",
   "forMen": "Für Mann:",
+  "formulaExplanation": "V ist das Volumen der Wasser-Norm in Litern pro Tag, M ist Ihr Körpergewicht, T ist die Zeit des aktiven Sports oder eine andere Art von Aktivität im Verhältnis zur Belastung (falls diese nicht vorhanden sind, müssen Sie 0 setzen)",
 
   "statistics": "Statistiken",
   "month": "Monat",

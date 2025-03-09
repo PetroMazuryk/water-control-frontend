@@ -275,9 +275,7 @@ const FormSetting = ({ handleClose }) => {
               <p className={css.ordinaryText}>
                 <span className={css.formulaExpression}>*&nbsp;</span>
                 <span className={css.formulaDescriptionText}>
-                  * V - об'єм водної норми в літрах на день, М - ваша вага, Т -
-                  час активних занять спортом або іншої активної діяльності (у
-                  разі відсутності встановіть 0)
+                  {t('formulaExplanation')}
                 </span>
               </p>
               <p className={css.ordinaryText}>
