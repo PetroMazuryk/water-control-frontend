@@ -260,13 +260,13 @@ const FormSetting = ({ handleClose }) => {
               <p className={css.boldText}>{t('dailyNorm')}</p>
               <div className={css.formulaDescription}>
                 <p className={css.ordinaryText}>
-                  <span>Для жінок: </span>
+                  <span>{t('forWomen')} </span>
                   <span className={css.formulaExpression}>
                     V=(M*0,03) + (T*0,4)
                   </span>
                 </p>
                 <p className={css.ordinaryText}>
-                  <span>Для чоловіків: </span>
+                  <span>{t('forMen')} </span>
                   <span className={css.formulaExpression}>
                     V=(M*0,04) + (T*0,6)
                   </span>
