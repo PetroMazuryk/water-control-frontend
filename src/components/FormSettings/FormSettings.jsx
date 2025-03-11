@@ -287,7 +287,7 @@ const FormSetting = ({ handleClose }) => {
 
           <div className={css.formWeightTime}>
             <label>
-              <span className={css.ordinaryText}>Ваша вага (кг):</span>
+              <span className={css.ordinaryText}>{t('yourWeight')}</span>
               <Controller
                 name="weight"
                 control={control}
