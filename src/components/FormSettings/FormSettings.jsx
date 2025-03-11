@@ -280,7 +280,7 @@ const FormSetting = ({ handleClose }) => {
               </p>
               <p className={css.ordinaryText}>
                 <span className={css.temporarySymbol}>!&nbsp;</span>
-                Активний час (години)
+                {t('activeTime')}
               </p>
             </div>
           </div>
