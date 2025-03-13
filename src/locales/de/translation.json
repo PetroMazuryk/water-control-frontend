@@ -59,6 +59,7 @@
   "formulaExplanation": "V ist das Volumen der Wasser-Norm in Litern pro Tag, M ist Ihr Körpergewicht, T ist die Zeit des aktiven Sports oder eine andere Art von Aktivität im Verhältnis zur Belastung (falls diese nicht vorhanden sind, müssen Sie 0 setzen)",
   "activeTime": "Aktivitätszeit in Stunden",
   "yourWeight": "Your weight in kilograms:",
+  "activeSportsTime": "Zeit für aktive Sportaktivitäten:",
 
   "statistics": "Statistiken",
   "month": "Monat",

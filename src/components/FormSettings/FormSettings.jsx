@@ -307,9 +307,7 @@ const FormSetting = ({ handleClose }) => {
             </label>
 
             <label>
-              <span className={css.ordinaryText}>
-                Час активних занять спортом:
-              </span>
+              <span className={css.ordinaryText}>{t('activeSportsTime')}</span>
               <Controller
                 name="dailyActiveTime"
                 control={control}
