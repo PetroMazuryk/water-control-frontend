@@ -331,7 +331,7 @@ const FormSetting = ({ handleClose }) => {
 
             <div className={css.consumeWater}>
               <p className={css.ordinaryText}>
-                Потрібна кількість води в літрах на день: &nbsp;
+                {t('requiredWaterAmount')}&nbsp;
                 <span className={css.userNorma}>
                   {isNaN(waterIntake) ? 0 : waterIntake}&nbsp;L
                 </span>
