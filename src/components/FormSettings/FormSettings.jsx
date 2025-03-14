@@ -338,9 +338,7 @@ const FormSetting = ({ handleClose }) => {
               </p>
 
               <label>
-                <span className={css.boldText}>
-                  Запишіть, скільки води ви вип'єте:
-                </span>
+                <span className={css.boldText}>{t('recordWaterIntake')}</span>
                 <Controller
                   name="dailyWaterConsumption"
                   control={control}
