@@ -367,7 +367,7 @@ const FormSetting = ({ handleClose }) => {
           type="submit"
           className={`${css.submitBtn} ${css.boldTextBtn}`}
         >
-          Зберегти
+          {t('save')}
           {isLoading && (
             <div className={css.loaderWrapper}>
               <LoaderComponent height={56} width={56} />
