@@ -32,7 +32,7 @@ const ModalLogout = ({ onClose }) => {
         </svg>
       </button>
       <div className={css.modalTextBox}>
-        <h2 className={css.modalTitle}>Вийти</h2>
+        <h2 className={css.modalTitle}>{t('logout')}</h2>
         <p className={css.modalText}>Ви дійсно хочете вийти?</p>
       </div>
       <div className={css.modalBtnBox}>
