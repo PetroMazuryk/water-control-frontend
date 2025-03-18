@@ -1,4 +1,5 @@
 import { useSelector } from 'react-redux';
+import { useTranslation } from 'react-i18next';
 import { selectIsLoading } from '../../redux/auth/selectors.js';
 import { ANIMATION } from '../../constants/constants.js';
 import BtnLogout from '../BtnLogout/BtnLogout.jsx';
@@ -8,6 +9,7 @@ import sprite from '../../assets/sprite.svg';
 import css from './ModalLogout.module.css';
 
 const ModalLogout = ({ onClose }) => {
+  const { t } = useTranslation();
   const isLoading = useSelector(selectIsLoading);
 
   const handleClose = () => {
@@ -43,7 +45,7 @@ const ModalLogout = ({ onClose }) => {
               onClick={handleClose}
               className={css.btnCancel}
             >
-              Скасувати
+              {t('cancelOut')}
             </button>
             <BtnLogout handleClose={handleClose} />
           </>

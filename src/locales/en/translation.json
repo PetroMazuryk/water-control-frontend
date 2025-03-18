@@ -63,6 +63,8 @@
   "requiredWaterAmount": "The required amount of water in liters per day:",
   "recordWaterIntake": "Write down how much water you will drink:",
 
+  "cancelOut": "Cancel",
+
   "statistics": "Statistics",
   "month": "Month",
 
