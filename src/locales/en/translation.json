@@ -63,6 +63,7 @@
   "requiredWaterAmount": "The required amount of water in liters per day:",
   "recordWaterIntake": "Write down how much water you will drink:",
 
+  "confirmLogout": "Do you really want to leave?",
   "cancelOut": "Cancel",
 
   "statistics": "Statistics",
