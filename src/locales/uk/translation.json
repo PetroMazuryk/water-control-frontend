@@ -62,6 +62,7 @@
   "activeSportsTime": "Час активних занять спортом:",
   "requiredWaterAmount": "Потрібна кількість води в літрах на день:",
   "recordWaterIntake": "Запишіть, скільки води ви вип'єте:",
+  "nameMinCharacters": "Назва має містити не менше 2 символів",
 
   "confirmLogout": "Ви дійсно хочете вийти?",
   "cancelOut": "Скасувати",

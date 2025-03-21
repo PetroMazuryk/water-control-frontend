@@ -62,6 +62,7 @@
   "activeSportsTime": "Zeit für aktive Sportaktivitäten:",
   "requiredWaterAmount": "Benötigte Wassermenge in Litern pro Tag:",
   "recordWaterIntake": "Notieren Sie, wie viel Wasser Sie trinken:",
+  "nameMinCharacters": "Der Name muss mindestens 2 Zeichen enthalten.",
 
   "confirmLogout": "Möchten Sie wirklich gehen?",
   "cancelOut": "Abbrechen",

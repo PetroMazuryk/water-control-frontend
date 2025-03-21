@@ -32,7 +32,7 @@ const FormSetting = ({ handleClose }) => {
   const schema = yup.object({
     name: yup
       .string()
-      .min(2, 'Назва має містити не менше 2 символів')
+      .min(2, t('nameMinCharacters'))
       .max(60, 'Максимальна кількість символів імені 60')
       .required('Імя обовязково'),
     weight: yup
