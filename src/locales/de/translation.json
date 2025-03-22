@@ -63,6 +63,7 @@
   "requiredWaterAmount": "Benötigte Wassermenge in Litern pro Tag:",
   "recordWaterIntake": "Notieren Sie, wie viel Wasser Sie trinken:",
   "nameMinCharacters": "Der Name muss mindestens 2 Zeichen enthalten.",
+  "nameMaxCharacters": "Die maximale Anzahl von Zeichen im Namen beträgt 40",
 
   "confirmLogout": "Möchten Sie wirklich gehen?",
   "cancelOut": "Abbrechen",

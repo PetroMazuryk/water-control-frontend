@@ -33,7 +33,7 @@ const FormSetting = ({ handleClose }) => {
     name: yup
       .string()
       .min(2, t('nameMinCharacters'))
-      .max(60, 'Максимальна кількість символів імені 60')
+      .max(40, t('nameMaxCharacters'))
       .required('Імя обовязково'),
     weight: yup
       .number()
