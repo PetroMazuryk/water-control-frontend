@@ -64,6 +64,7 @@
   "recordWaterIntake": "Запишіть, скільки води ви вип'єте:",
   "nameMinCharacters": "Назва має містити не менше 2 символів",
   "nameMaxCharacters": "Максимальна кількість символів імені 40",
+  "nameRequired": "Ім'я обов'язкове",
 
   "confirmLogout": "Ви дійсно хочете вийти?",
   "cancelOut": "Скасувати",

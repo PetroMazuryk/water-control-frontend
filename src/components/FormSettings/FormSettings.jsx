@@ -32,9 +32,9 @@ const FormSetting = ({ handleClose }) => {
   const schema = yup.object({
     name: yup
       .string()
+      .required(t('nameRequired'))
       .min(2, t('nameMinCharacters'))
-      .max(40, t('nameMaxCharacters'))
-      .required('Імя обовязково'),
+      .max(40, t('nameMaxCharacters')),
     weight: yup
       .number()
       .min(0)
@@ -155,6 +155,7 @@ const FormSetting = ({ handleClose }) => {
       field.onChange('0' + field.value);
     }
   };
+  console.log(t('nameRequired'));
 
   return (
     <>

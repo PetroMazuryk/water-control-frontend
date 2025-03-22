@@ -64,6 +64,7 @@
   "recordWaterIntake": "Write down how much water you will drink:",
   "nameMinCharacters": "The name must contain at least 2 characters.",
   "nameMaxCharacters": "Maximum number of characters for name 40",
+  "nameRequired": "Name is required",
 
   "confirmLogout": "Do you really want to leave?",
   "cancelOut": "Cancel",
