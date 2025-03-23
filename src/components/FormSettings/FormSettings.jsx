@@ -38,7 +38,7 @@ const FormSetting = ({ handleClose }) => {
     weight: yup
       .number()
       .min(0)
-      .max(300, 'Вага значення менше 300')
+      .max(250, t('weightValueLess'))
       .typeError('Має бути числом'),
     dailyActiveTime: yup
       .number()
