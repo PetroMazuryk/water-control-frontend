@@ -66,6 +66,7 @@
   "nameMaxCharacters": "Максимальна кількість символів імені 40",
   "nameRequired": "Ім'я обов'язкове",
   "weightValueLess": "Значення ваги повинно бути меншим або рівним 250",
+  "hasToBeNumber": "Має бути число",
 
   "confirmLogout": "Ви дійсно хочете вийти?",
   "cancelOut": "Скасувати",

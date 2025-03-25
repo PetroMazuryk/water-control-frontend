@@ -66,6 +66,7 @@
   "nameMaxCharacters": "Maximum number of characters for name 40",
   "nameRequired": "Name is required",
   "weightValueLess": "Weight value must be less than or equal to 250",
+  "hasToBeNumber": "Must be a number",
 
   "confirmLogout": "Do you really want to leave?",
   "cancelOut": "Cancel",

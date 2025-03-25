@@ -39,17 +39,17 @@ const FormSetting = ({ handleClose }) => {
       .number()
       .min(0)
       .max(250, t('weightValueLess'))
-      .typeError('Має бути числом'),
+      .typeError(t('hasToBeNumber')),
     dailyActiveTime: yup
       .number()
       .min(0)
       .max(12, 'Час активного спорту')
-      .typeError('Має бути числом'),
+      .typeError(t('hasToBeNumber')),
     dailyWaterConsumption: yup
       .number()
       .min(0)
       .max(8, 'Добове споживання води максимум 8 л')
-      .typeError('Має бути числом'),
+      .typeError(t('hasToBeNumber')),
   });
 
   const {
