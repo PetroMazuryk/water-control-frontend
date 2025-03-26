@@ -68,6 +68,7 @@
   "weightValueLess": "Gewichtswert muss kleiner oder gleich 250 sein",
   "hasToBeNumber": "Muss eine Zahl sein",
   "activeSportTime": "Die aktive Sportzeit muss ≤ 12 sein",
+  "dailyWaterConsumption": "Täglicher Wasserverbrauch maximal 8 Liter",
 
   "confirmLogout": "Möchten Sie wirklich gehen?",
   "cancelOut": "Abbrechen",

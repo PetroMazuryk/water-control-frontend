@@ -48,7 +48,7 @@ const FormSetting = ({ handleClose }) => {
     dailyWaterConsumption: yup
       .number()
       .min(0)
-      .max(8, 'Добове споживання води максимум 8 л')
+      .max(8, t('dailyWaterConsumption'))
       .typeError(t('hasToBeNumber')),
   });
 

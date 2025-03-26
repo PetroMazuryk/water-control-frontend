@@ -68,6 +68,7 @@
   "weightValueLess": "Weight value must be less than or equal to 250",
   "hasToBeNumber": "Must be a number",
   "activeSportTime": "Active sports time must be ≤ 12",
+  "dailyWaterConsumption": "Daily water consumption maximum 8 liters",
 
   "confirmLogout": "Do you really want to leave?",
   "cancelOut": "Cancel",
