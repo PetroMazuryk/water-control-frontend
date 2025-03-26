@@ -43,7 +43,7 @@ const FormSetting = ({ handleClose }) => {
     dailyActiveTime: yup
       .number()
       .min(0)
-      .max(12, 'Час активного спорту')
+      .max(12, t('activeSportTime'))
       .typeError(t('hasToBeNumber')),
     dailyWaterConsumption: yup
       .number()
