@@ -155,13 +155,12 @@ const FormSetting = ({ handleClose }) => {
       field.onChange('0' + field.value);
     }
   };
-  console.log(t('nameRequired'));
 
   return (
     <>
       <div className={css.userAvatar}>
         {!isLoadingPhoto ? (
-          <img src={avatar || `${avatarDefault}`} alt="User photo" />
+          <img src={avatar || `${avatarDefault}`} alt={t('userPhoto')} />
         ) : (
           <div className={css.loader}>
             <LoaderComponent />
