@@ -159,12 +159,12 @@ const FormSetting = ({ handleClose }) => {
   return (
     <>
       <div className={css.userAvatar}>
-        {!isLoadingPhoto ? (
-          <img src={avatar || `${avatarDefault}`} alt={t('userPhoto')} />
-        ) : (
+        {isLoadingPhoto ? (
           <div className={css.loader}>
             <LoaderComponent />
           </div>
+        ) : (
+          <img src={avatar ?? avatarDefault} alt={t('userPhoto')} />
         )}
         <label>
           <div className={css.uploadContainer}>
