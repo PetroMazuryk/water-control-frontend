@@ -337,7 +337,8 @@ const FormSetting = ({ handleClose }) => {
               <p className={css.ordinaryText}>
                 {t('requiredWaterAmount')}&nbsp;
                 <span className={css.userNorma}>
-                  {isNaN(waterIntake) ? 0 : waterIntake}&nbsp;L
+                  {isNaN(waterIntake) ? 0 : waterIntake}&nbsp;
+                  {t('l')}
                 </span>
               </p>
 
