@@ -23,11 +23,15 @@ import css from './FormSettings.module.css';
 const FormSetting = ({ handleClose }) => {
   const { t } = useTranslation();
   const dispatch = useDispatch();
-  const user = useSelector(selectUser);
-  const avatar = useSelector(selectUserPhoto);
+
+  const { user, avatar, isLoading, isLoadingPhoto } = useSelector((state) => ({
+    user: selectUser(state),
+    avatar: selectUserPhoto(state),
+    isLoading: selectIsLoading(state),
+    isLoadingPhoto: selectIsLoadingPhoto(state),
+  }));
+
   const [waterIntake, setWaterIntake] = useState(0);
-  const isLoading = useSelector(selectIsLoading);
-  const isLoadingPhoto = useSelector(selectIsLoadingPhoto);
 
   const schema = yup.object({
     name: yup
