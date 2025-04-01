@@ -4,17 +4,20 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useTranslation } from 'react-i18next';
 import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
+
 import LoaderComponent from '../LoaderComponent/LoaderComponent.jsx';
 import {
   updateUserProfile,
   uploadUserPhoto,
 } from '../../redux/auth/operations.js';
+
 import {
   selectIsLoading,
   selectUser,
   selectIsLoadingPhoto,
   selectUserPhoto,
 } from '../../redux/auth/selectors.js';
+
 import avatarDefault from '../../assets/avatarDefault.png';
 import sprite from '../../assets/sprite.svg';
 
