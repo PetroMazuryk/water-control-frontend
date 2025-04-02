@@ -8,6 +8,7 @@ import sprite from '../../assets/sprite.svg';
 import { selectIsLoading } from '../../redux/auth/selectors.js';
 import { registration } from '../../redux/auth/operations.js';
 import Loader from '../Loader/Loader.jsx';
+import GoogleBtn from '../GoogleBtn/GoogleBtn.jsx';
 
 import css from './FormRegister.module.css';
 
@@ -146,6 +147,7 @@ const FormRegister = () => {
             >
               Зареєструватися
             </button>
+            <GoogleBtn />
           </div>
         )}
       </form>
