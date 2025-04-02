@@ -3,12 +3,13 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as Yup from 'yup';
-import sprite from '../../assets/sprite.svg';
 import { selectIsLoading } from '../../redux/auth/selectors.js';
+import { useTranslation } from 'react-i18next';
 import { login } from '../../redux/auth/operations.js';
 import Loader from '../Loader/Loader.jsx';
-import { useTranslation } from 'react-i18next';
+import GoogleBtn from '../GoogleBtn/GoogleBtn.jsx';
 
+import sprite from '../../assets/sprite.svg';
 import css from '../FormRegister/FormRegister.module.css';
 
 const FormLogin = () => {
@@ -117,6 +118,7 @@ const FormLogin = () => {
             >
               Увійти
             </button>
+            <GoogleBtn />
           </div>
         )}
       </form>
