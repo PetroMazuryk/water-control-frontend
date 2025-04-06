@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import Logo from '../Logo/Logo';
-import LangSwitch from '../LangSwitch/LangSwitch';
+// import LangSwitch from '../LangSwitch/LangSwitch';
 import { selectIsLoggedIn } from '../../redux/auth/selectors';
 import { useTranslation } from 'react-i18next';
 
@@ -13,10 +13,8 @@ const WelcomeSection = () => {
 
   return (
     <div className={css.welcomeSection}>
-      <div className={css.header}>
-        <Logo />
-        <LangSwitch />
-      </div>
+      <Logo />
+
       <div className={css.welcomeSectionContainer}>
         <p className={css.welcomeSectionDescribe}>{t('recordWater')}</p>
         <h1 className={css.welcomeSectionTitle}>{t('waterTitle')}</h1>

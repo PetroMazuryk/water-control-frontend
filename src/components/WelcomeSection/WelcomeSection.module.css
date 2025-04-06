@@ -12,11 +12,6 @@
   margin-top: 61px;
 }
 
-.header {
-  display: flex;
-  justify-content: space-between;
-}
-
 .welcomeSectionDescribe {
   font-size: 14px;
   line-height: 129%;

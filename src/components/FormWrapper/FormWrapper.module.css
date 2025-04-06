@@ -17,12 +17,6 @@
   left: 16px;
 }
 
-.formLangWrapper {
-  position: absolute;
-  top: 30px;
-  right: 33px;
-}
-
 @media screen and (min-width: 768px) {
   .formWrapper {
     padding: 32px;
