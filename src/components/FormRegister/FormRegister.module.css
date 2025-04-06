@@ -1,6 +1,8 @@
 .registerComponent {
   width: 100%;
-  margin: 0 auto;
+  margin-top: 80px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .registerTitle {
