@@ -45,7 +45,7 @@ const FormLogin = () => {
   return (
     <div className={css.registerComponent}>
       <form onSubmit={handleSubmit(onSubmitForm)}>
-        <h2 className={css.registerTitle}>Вхід</h2>
+        <h2 className={css.registerTitle}>{t('logInTitle')}</h2>
         <div className={css.registerForm}>
           <label className={css.registerLabel}>
             Електронна пошта
