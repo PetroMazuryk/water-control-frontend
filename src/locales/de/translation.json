@@ -7,6 +7,8 @@
   "logInTitle": "Anmeldung",
   "logIn": "Einloggen",
 
+  "placeholderEmail": "Geben Sie Ihre E-Mail ein",
+
   "userCountText": "Unsere <span class=\"{{userCountTextColor}}\">{{count}} glücklichen</span><br/> Kunden",
   "habitDrive": "Gewohnheitsantrieb",
   "viewStats": "Statistiken",

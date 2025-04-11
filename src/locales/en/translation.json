@@ -7,6 +7,8 @@
   "logInTitle": "Log In",
   "logIn": "LogIn",
 
+  "placeholderEmail": "Enter your email",
+
   "userCountText": "Our <span class=\"{{userCountTextColor}}\">{{count}} happy</span><br/> customers",
   "habitDrive": "Habit drive",
   "viewStats": "View statistics",
