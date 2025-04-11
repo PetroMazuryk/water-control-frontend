@@ -7,11 +7,10 @@
   "logInTitle": "Вхід",
   "logIn": "Увійти",
 
+  "userCountText": "Наші <span class=\"{{userCountTextColor}}\">{{count}} щасливі</span><br/> клієнти",
   "habitDrive": "Вироблення звички",
   "viewStats": "Статистики",
   "personalRate": "Налаштування особистої норми",
-
-  "userCountText": "Наші <span class=\"{{userCountTextColor}}\">{{count}} щасливі</span><br/> клієнти",
 
   "dailyNorm": "Моя щоденна норма",
   "l": "л",

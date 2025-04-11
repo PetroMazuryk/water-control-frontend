@@ -7,11 +7,10 @@
   "logInTitle": "Anmeldung",
   "logIn": "Einloggen",
 
+  "userCountText": "Unsere <span class=\"{{userCountTextColor}}\">{{count}} glücklichen</span><br/> Kunden",
   "habitDrive": "Gewohnheitsantrieb",
   "viewStats": "Statistiken",
   "personalRate": "Persönliche Raten-Einstellung",
-
-  "userCountText": "Unsere <span class=\"{{userCountTextColor}}\">{{count}} glücklichen</span><br/> Kunden",
 
   "dailyNorm": "Meine tägliche Norm",
   "l": "L",

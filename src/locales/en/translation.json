@@ -7,11 +7,10 @@
   "logInTitle": "Log In",
   "logIn": "LogIn",
 
+  "userCountText": "Our <span class=\"{{userCountTextColor}}\">{{count}} happy</span><br/> customers",
   "habitDrive": "Habit drive",
   "viewStats": "View statistics",
   "personalRate": "Personal rate setting",
-
-  "userCountText": "Our <span class=\"{{userCountTextColor}}\">{{count}} happy</span><br/> customers",
 
   "dailyNorm": "My daily norma",
   "l": "L",
