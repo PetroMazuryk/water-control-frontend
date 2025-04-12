@@ -8,6 +8,7 @@
   "logIn": "LogIn",
 
   "placeholderEmail": "Enter your email",
+  "password": "Password",
 
   "userCountText": "Our <span class=\"{{userCountTextColor}}\">{{count}} happy</span><br/> customers",
   "habitDrive": "Habit drive",
