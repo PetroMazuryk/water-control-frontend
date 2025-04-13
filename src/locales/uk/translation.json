@@ -9,6 +9,7 @@
 
   "placeholderEmail": "Введіть свою пошту",
   "password": "Пароль",
+  "placeholderPassword": "Введіть свій пароль",
 
   "userCountText": "Наші <span class=\"{{userCountTextColor}}\">{{count}} щасливі</span><br/> клієнти",
   "habitDrive": "Вироблення звички",

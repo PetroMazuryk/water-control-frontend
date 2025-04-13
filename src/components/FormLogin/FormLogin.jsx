@@ -78,7 +78,7 @@ const FormLogin = () => {
                     : `${css.registerInput}`
                 }
                 {...register('password')}
-                placeholder="Введіть свій пароль"
+                placeholder={t('placeholderPassword')}
               />
               <button
                 className={css.passwordIconBtn}
