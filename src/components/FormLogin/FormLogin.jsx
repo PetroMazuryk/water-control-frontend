@@ -116,7 +116,7 @@ const FormLogin = () => {
               className={css.registerBtn}
               type="submit"
             >
-              Увійти
+             {t('logIn')} 
             </button>
             <GoogleBtn />
           </div>
