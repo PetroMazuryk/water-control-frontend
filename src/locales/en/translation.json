@@ -10,6 +10,7 @@
   "placeholderEmail": "Enter your email",
   "password": "Password",
   "placeholderPassword": "Enter your password",
+  "googleBtn": "Continue with Google",
 
   "userCountText": "Our <span class=\"{{userCountTextColor}}\">{{count}} happy</span><br/> customers",
   "habitDrive": "Habit drive",

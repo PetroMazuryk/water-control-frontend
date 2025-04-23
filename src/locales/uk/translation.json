@@ -10,6 +10,7 @@
   "placeholderEmail": "Введіть свою пошту",
   "password": "Пароль",
   "placeholderPassword": "Введіть свій пароль",
+  "googleBtn": "Продовжити з Google",
 
   "userCountText": "Наші <span class=\"{{userCountTextColor}}\">{{count}} щасливі</span><br/> клієнти",
   "habitDrive": "Вироблення звички",
