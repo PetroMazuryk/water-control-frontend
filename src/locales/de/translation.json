@@ -12,6 +12,8 @@
   "placeholderPassword": "Geben Sie Ihr Passwort ein",
   "googleBtn": "Weiter mit Google",
 
+  "footerText": "Sie haben noch kein Konto?",
+
   "userCountText": "Unsere <span class=\"{{userCountTextColor}}\">{{count}} glücklichen</span><br/> Kunden",
   "habitDrive": "Gewohnheitsantrieb",
   "viewStats": "Statistiken",

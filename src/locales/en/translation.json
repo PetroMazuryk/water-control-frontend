@@ -12,6 +12,8 @@
   "placeholderPassword": "Enter your password",
   "googleBtn": "Continue with Google",
 
+  "footerText": "Don't have an account?",
+
   "userCountText": "Our <span class=\"{{userCountTextColor}}\">{{count}} happy</span><br/> customers",
   "habitDrive": "Habit drive",
   "viewStats": "View statistics",
