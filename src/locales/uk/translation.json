@@ -13,6 +13,7 @@
   "googleBtn": "Продовжити з Google",
 
   "footerText": "Немає облікового запису?",
+  "register": "Зареєструватися",
 
   "userCountText": "Наші <span class=\"{{userCountTextColor}}\">{{count}} щасливі</span><br/> клієнти",
   "habitDrive": "Вироблення звички",

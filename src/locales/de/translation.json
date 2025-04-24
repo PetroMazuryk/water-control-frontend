@@ -13,6 +13,7 @@
   "googleBtn": "Weiter mit Google",
 
   "footerText": "Sie haben noch kein Konto?",
+  "register": "Registrieren",
 
   "userCountText": "Unsere <span class=\"{{userCountTextColor}}\">{{count}} glücklichen</span><br/> Kunden",
   "habitDrive": "Gewohnheitsantrieb",

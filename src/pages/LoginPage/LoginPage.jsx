@@ -16,7 +16,7 @@ const LoginPage = () => {
         <FormFooter
           link="/register"
           text={t('footerText')}
-          linkName="Зареєструватися"
+          linkName={t('register')}
         />
       </FormWrapper>
 
