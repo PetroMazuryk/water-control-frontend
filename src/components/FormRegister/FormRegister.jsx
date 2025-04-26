@@ -1,18 +1,20 @@
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useForm } from 'react-hook-form';
+import { useTranslation } from 'react-i18next';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as Yup from 'yup';
 import clsx from 'clsx';
-import sprite from '../../assets/sprite.svg';
 import { selectIsLoading } from '../../redux/auth/selectors.js';
 import { registration } from '../../redux/auth/operations.js';
 import Loader from '../Loader/Loader.jsx';
 import GoogleBtn from '../GoogleBtn/GoogleBtn.jsx';
 
+import sprite from '../../assets/sprite.svg';
 import css from './FormRegister.module.css';
 
 const FormRegister = () => {
+  const { t } = useTranslation();
   const dispatch = useDispatch();
   const isLoading = useSelector(selectIsLoading);
   const [showPassword, setShowPassword] = useState(false);
@@ -52,7 +54,7 @@ const FormRegister = () => {
   return (
     <div className={css.registerComponent}>
       <form onSubmit={handleSubmit(onSubmitForm)}>
-        <h2 className={css.registerTitle}>Реєстрація</h2>
+        <h2 className={css.registerTitle}>{t('registration')}</h2>
         <div className={css.registerForm}>
           <label className={css.registerLabel}>
             Електронна пошта
