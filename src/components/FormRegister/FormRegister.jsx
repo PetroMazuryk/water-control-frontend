@@ -81,7 +81,7 @@ const FormRegister = () => {
                   [css.registerInputError]: errors.password?.message,
                 })}
                 {...register('password')}
-                placeholder="Введіть свій пароль"
+                placeholder={t('placeholderPassword')}
               />
               <button
                 className={css.passwordIconBtn}
