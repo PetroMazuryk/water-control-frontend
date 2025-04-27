@@ -8,6 +8,7 @@
   "logIn": "LogIn",
 
   "registration": "Registration",
+  "repeatPassword": "Repeat password",
 
   "placeholderEmail": "Enter your email",
   "password": "Password",

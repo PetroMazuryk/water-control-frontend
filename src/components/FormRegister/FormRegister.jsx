@@ -105,7 +105,7 @@ const FormRegister = () => {
           </label>
 
           <label className={css.registerLabel}>
-            <span>Повторіть пароль</span>
+            <span>{t('repeatPassword')}</span>
             <span className={css.registerPassword}>
               <input
                 type={showPasswordRepeat ? 'text' : 'password'}
