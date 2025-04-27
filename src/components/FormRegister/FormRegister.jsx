@@ -63,7 +63,7 @@ const FormRegister = () => {
                 [css.registerInputError]: errors.email?.message,
               })}
               {...register('email')}
-              placeholder="Введіть свою пошту"
+              placeholder={t('placeholderEmail')}
             />
             {errors.email?.message && (
               <p className={css.registerErrorMessage}>
