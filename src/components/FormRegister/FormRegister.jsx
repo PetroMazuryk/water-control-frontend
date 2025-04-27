@@ -73,7 +73,7 @@ const FormRegister = () => {
           </label>
 
           <label className={css.registerLabel}>
-            <span>Пароль</span>
+            <span>{t('password')}</span>
             <span className={css.registerPassword}>
               <input
                 type={showPassword ? 'text' : 'password'}
