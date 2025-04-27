@@ -57,7 +57,7 @@ const FormRegister = () => {
         <h2 className={css.registerTitle}>{t('registration')}</h2>
         <div className={css.registerForm}>
           <label className={css.registerLabel}>
-            Електронна пошта
+            {t('email')}
             <input
               className={clsx(css.registerInput, {
                 [css.registerInputError]: errors.email?.message,
