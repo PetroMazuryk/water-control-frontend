@@ -113,7 +113,7 @@ const FormRegister = () => {
                   [css.registerInputError]: errors.repeatPassword?.message,
                 })}
                 {...register('repeatPassword')}
-                placeholder="Повторіть пароль"
+                placeholder={t('repeatPassword')}
               />
               <button
                 className={css.passwordIconBtn}
