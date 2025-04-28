@@ -8,6 +8,7 @@ import BtnAdmin from '../BtnAdmin/BtnAdmin';
 
 import WaterProgressBar from '../WaterProgressBar/WaterProgressBar';
 
+import sprite from '../../assets/sprite.svg';
 import css from './WaterMainInfo.module.css';
 
 const WaterMainInfo = () => {
@@ -22,6 +23,11 @@ const WaterMainInfo = () => {
   return (
     <div className={css.waterContainer}>
       <Logo className={css.waterTitle} />
+      <button>
+        <svg className={css.iconInfo}>
+          <use xlinkHref={`${sprite}#icon-info`} />
+        </svg>
+      </button>
 
       {waterRate === 0 ? (
         ''
