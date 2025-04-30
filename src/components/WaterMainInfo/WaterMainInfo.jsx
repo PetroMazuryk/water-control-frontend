@@ -1,6 +1,7 @@
 import { useSelector } from 'react-redux';
 import { useTranslation } from 'react-i18next';
 import { selectWaterRate, selectUserEmail } from '../../redux/auth/selectors';
+import { useTour } from '@reactour/tour';
 
 import Logo from '../Logo/Logo';
 import BtnAddWater from '../BtnAddWater/BtnAddWater';
@@ -13,6 +14,7 @@ import css from './WaterMainInfo.module.css';
 
 const WaterMainInfo = () => {
   const { t } = useTranslation();
+  const { setIsOpen } = useTour();
   const waterRate = useSelector(selectWaterRate);
   const userAccess = useSelector(selectUserEmail);
 
@@ -23,11 +25,15 @@ const WaterMainInfo = () => {
   return (
     <div className={css.waterContainer}>
       <Logo className={css.waterTitle} />
-      <button>
-        <svg className={css.iconInfo}>
-          <use xlinkHref={`${sprite}#icon-info`} />
-        </svg>
-      </button>
+      {waterRate === 0 ? (
+        ''
+      ) : (
+        <button onClick={() => setIsOpen(true)}>
+          <svg className={css.iconInfo}>
+            <use xlinkHref={`${sprite}#icon-info`} />
+          </svg>
+        </button>
+      )}
 
       {waterRate === 0 ? (
         ''
