@@ -1,5 +1,6 @@
 
 import { TourProvider } from "@reactour/tour";
+import {onboardingStyles} from '../onboarding/onboardingStyles.js'
 
 
 const TourSteps = ({ children }) => {
@@ -52,7 +53,7 @@ const TourSteps = ({ children }) => {
   return (
     <TourProvider
       steps={steps}
-    
+      styles={onboardingStyles}
       badgeContent={({ totalSteps, currentStep }) =>
         `${currentStep + 1}/${totalSteps}`
       }
