@@ -5,7 +5,7 @@ import css from './DailyInfo.module.css';
 
 const DailyInfo = () => {
   return (
-    <div className={css.info}>
+    <div className={`${css.info} five-step`}>
       <div className={css.header}>
         <SelectDate className={css.dailyFont} />
         <BtnAddWaterSecond />

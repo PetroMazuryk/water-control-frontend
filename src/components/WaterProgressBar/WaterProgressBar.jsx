@@ -21,7 +21,7 @@ const WaterProgressBar = () => {
   const clampedPercentage = Math.min(Math.max(totalPercentage, 0), 100);
 
   return (
-    <div className={css.progressBarContainer}>
+    <div className={`${css.progressBarContainer} second-step`}>
       <h3 className={css.progressBarTitle}>
         <SelectDate />
       </h3>

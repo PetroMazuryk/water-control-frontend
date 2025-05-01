@@ -5,7 +5,7 @@ import Loader from '../Loader/Loader.jsx';
 
 const MonthInfo = () => {
   return (
-    <div>
+    <div className='six-step'>
       <CalendarPagination />
       <Suspense fallback={<Loader />}>
         <Outlet />

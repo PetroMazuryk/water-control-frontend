@@ -38,7 +38,7 @@ const WaterMainInfo = () => {
       {waterRate === 0 ? (
         ''
       ) : (
-        <div className={css.normaContainer}>
+        <div className={`${css.normaContainer} first-step`}>
           <h2 className={css.normaL}>{waterRateString}</h2>
           <p className={css.normaText}>{t('dailyNorm')}</p>
         </div>

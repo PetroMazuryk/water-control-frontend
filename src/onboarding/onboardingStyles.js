@@ -18,8 +18,9 @@ export const onboardingStyles = {
     right: '13px',
     cursor: 'pointer',
     fontSize: '20px',
-    color: 'var(--color-font-main)', 
+    color: 'var(--color-font-main)',  
   }),
   
+
   
 };

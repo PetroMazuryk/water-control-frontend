@@ -39,7 +39,7 @@ const UserBar = ({ name }) => {
   };
 
   return (
-    <div className={css.userBarWrapper}>
+    <div className={`${css.userBarWrapper} four-step`}>
       <button
         className={css.userBar}
         type="button"
