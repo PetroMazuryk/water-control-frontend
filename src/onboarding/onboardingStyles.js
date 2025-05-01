@@ -1,3 +1,7 @@
+import { disableBodyScroll, enableBodyScroll } from "body-scroll-lock";
+
+export const disableBody = () => disableBodyScroll(document.body);
+export const enableBody = () => enableBodyScroll(document.body);
 
 export const onboardingStyles = {
   popover: (base) => ({
@@ -16,4 +20,6 @@ export const onboardingStyles = {
     fontSize: '20px',
     color: 'var(--color-font-main)', 
   }),
+  
+  
 };

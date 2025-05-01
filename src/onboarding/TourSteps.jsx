@@ -1,6 +1,6 @@
 
 import { TourProvider } from "@reactour/tour";
-import {onboardingStyles} from '../onboarding/onboardingStyles.js'
+import {onboardingStyles,disableBody, enableBody,} from '../onboarding/onboardingStyles.js'
 
 
 const TourSteps = ({ children }) => {
@@ -11,10 +11,10 @@ const TourSteps = ({ children }) => {
       content: (
         <div style={{ textAlign: "center" }}>
           <h2>Ласкаво просимо до</h2>
-          <p>Water Control</p>
+          <p>Water Control 🚀</p>
         </div>
       ),
-     
+      position: "center",
     },
     {
       selector: ".first-step",
@@ -43,10 +43,10 @@ const TourSteps = ({ children }) => {
     {
       content: (
         <div style={{ textAlign: "center" }}>
-          <h2>Сподіваємось, вам сподобається користуватися WaterControl!</h2>
+          <h2>Сподіваємось, вам сподобається користуватися WaterControl !</h2>
         </div>
       ),
-    
+      position: "center",
     },
   ];
 
@@ -54,6 +54,8 @@ const TourSteps = ({ children }) => {
     <TourProvider
       steps={steps}
       styles={onboardingStyles}
+      afterOpen={disableBody}
+      beforeClose={enableBody}
       badgeContent={({ totalSteps, currentStep }) =>
         `${currentStep + 1}/${totalSteps}`
       }
