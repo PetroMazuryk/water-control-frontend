@@ -1,18 +1,18 @@
-
+import { useTranslation } from 'react-i18next';
 import { TourProvider } from "@reactour/tour";
-import {onboardingStyles,disableBody, enableBody,} from '../onboarding/onboardingStyles.js'
+import {onboardingStyles, disableBody, enableBody,} from '../onboarding/onboardingStyles.js'
 
 
 const TourSteps = ({ children }) => {
-
+  const { t } = useTranslation();
 
   const steps = [
     {
       content: (
         <div style={{ textAlign: "center" }}>
-          <h2>Ласкаво просимо до</h2>
-          <h2>Water Control 🚀</h2>
-          <p>Цей додаток допоможе вам відстежувати споживання води та підтримувати здоровий баланс. Давайте розберемося, як ним користуватися!</p>
+          <h2>{t('onboardingStartTitle')}</h2>
+          <h2>{t('onboardingStartName')}</h2>
+          <p>{t('onboardingStartText')}</p>
 
         </div>
       ),
@@ -20,32 +20,33 @@ const TourSteps = ({ children }) => {
     },
     {
       selector: ".first-step",
-      content: "У цьому розділі вказана ваша денна норма споживання води.",
+      content: t('first-step'),
     },
     {
       selector: ".second-step",
-      content: "Це ваш індикатор прогресу споживання води.",
+      content: t('second-step')
     },
     {
       selector: ".third-step",
-      content: "Натисніть тут, щоб додати більше води до вашого щоденного споживання.",
+      content: t('third-step')
     },
     {
       selector: ".four-step",
-      content: "Тут ви можете заповнити свої особисті дані та записувати щоденне споживання води у налаштуваннях профілю."
+      content: t('fourth-step')
     },
     {
       selector: ".five-step",
-      content:"Цей розділ показує історію додавання води за окремий  день. Тут можна побачити, скільки разів і в якій кількості була додана вода.",
+      content:t('fifth-step'),
     },
     {
       selector: ".six-step",
-      content: "Тут ви можете переглянути статистику вашого щомісячного споживання води, враховуючи кожен окремий день у відсотках."
+      content: t('sixth-step'),
     },
     {
       content: (
         <div style={{ textAlign: "center" }}>
-          <h2>Сподіваємось, вам сподобається користуватися WaterControl !</h2>
+          <h2>{t('onboardingEndTitle')}</h2>
+          <p>{t('onboardingEndText')}</p>
         </div>
       ),
       position: "center",
