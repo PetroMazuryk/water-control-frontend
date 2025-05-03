@@ -1,10 +1,9 @@
 import { useTranslation } from 'react-i18next';
 import { TourProvider } from "@reactour/tour";
-import {onboardingStyles, disableBody, enableBody,} from '../onboarding/onboardingStyles.js'
-
+import { onboardingStyles, disableBody, enableBody } from '../onboarding/onboardingStyles.js';
 
 const TourSteps = ({ children }) => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
 
   const steps = [
     {
@@ -13,7 +12,6 @@ const TourSteps = ({ children }) => {
           <h2>{t('onboardingStartTitle')}</h2>
           <h2>{t('onboardingStartName')}</h2>
           <p>{t('onboardingStartText')}</p>
-
         </div>
       ),
       position: "center",
@@ -24,19 +22,19 @@ const TourSteps = ({ children }) => {
     },
     {
       selector: ".second-step",
-      content: t('second-step')
+      content: t('second-step'),
     },
     {
       selector: ".third-step",
-      content: t('third-step')
+      content: t('third-step'),
     },
     {
       selector: ".four-step",
-      content: t('fourth-step')
+      content: t('fourth-step'),
     },
     {
       selector: ".five-step",
-      content:t('fifth-step'),
+      content: t('fifth-step'),
     },
     {
       selector: ".six-step",
@@ -55,6 +53,7 @@ const TourSteps = ({ children }) => {
 
   return (
     <TourProvider
+      key={i18n.language}  
       steps={steps}
       styles={onboardingStyles}
       afterOpen={disableBody}
