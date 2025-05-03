@@ -111,5 +111,17 @@
   "septemberDay": "september",
   "octoberDay": "oktober",
   "novemberDay": "november",
-  "decemberDay": "dezember"
+  "decemberDay": "dezember",
+
+  "onboardingStartTitle": "Willkommen bei",
+  "onboardingStartName": "WaterControl 🚀",
+  "onboardingStartText": "Diese App hilft dir, deinen Wasserverbrauch zu verfolgen und ein gesundes Flüssigkeitsgleichgewicht zu halten. Lass uns gemeinsam entdecken, wie sie funktioniert!",
+  "first-step": "Hier siehst du dein tägliches Ziel für die Wasseraufnahme.",
+  "second-step": "Dies ist dein Fortschrittsanzeiger im Laufe des Tages.",
+  "third-step": "Klicke hier, um Wasser zu deiner täglichen Aufnahme hinzuzufügen.",
+  "fourth-step": "In diesem Bereich kannst du persönliche Daten eingeben und deine tägliche Wasseraufnahme in den Profileinstellungen verwalten.",
+  "fifth-step": "Dieser Abschnitt zeigt dir die Trinkhistorie des Tages – wann und wie viel Wasser du hinzugefügt hast.",
+  "sixth-step": "Hier kannst du deine monatliche Wasserverbrauchsstatistik einsehen. Alle Daten werden pro Tag in Prozent angezeigt.",
+  "onboardingEndTitle": "Super! Jetzt bist du bereit, WaterControl zu benutzen.",
+  "onboardingEndText": "Wir wünschen dir viel Erfolg beim täglichen Halten deines Wasserhaushalts 💧"
 }
