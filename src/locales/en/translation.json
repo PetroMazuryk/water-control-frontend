@@ -111,5 +111,17 @@
   "septemberDay": "september",
   "octoberDay": "october",
   "novemberDay": "november",
-  "decemberDay": "december"
+  "decemberDay": "december",
+
+  "onboardingStartTitle": "Welcome to",
+  "onboardingStartName": "WaterControl 🚀",
+  "onboardingStartText": "This app will help you track your water intake and maintain a healthy hydration balance. Let’s explore how to use it together!",
+  "first-step": "Here you’ll see your daily water intake goal.",
+  "second-step": "This is your progress indicator throughout the day.",
+  "third-step": "Click here to add water to your daily intake.",
+  "fourth-step": "In this section, you can enter personal details and manage your daily water tracking in the profile settings.",
+  "fifth-step": "This section shows your water consumption history for the day — when and how much water you added.",
+  "sixth-step": "Here you can view your monthly water intake statistics, with each day shown as a convenient percentage.",
+  "onboardingEndTitle": "Great! Now you're ready to use WaterControl.",
+  "onboardingEndText": "We wish you an easy and consistent way to stay hydrated every day 💧"
 }
