@@ -2,17 +2,20 @@ import AdvantagesSection from '../../components/AdvantagesSection/AdvantagesSect
 import FormWrapper from '../../components/FormWrapper/FormWrapper';
 import FormRegister from '../../components/FormRegister/FormRegister';
 import FormFooter from '../../components/FormFooter/FormFooter';
+import { useTranslation } from 'react-i18next';
 
 import css from './RegisterPage.module.css';
 
 const RegisterPage = () => {
+  const { t } = useTranslation();
+
   return (
     <div className={css.registerPage}>
       <FormWrapper>
         <FormRegister />
         <FormFooter
           link="/login"
-          text="Вже маєте обліковий запис?"
+         text={t('footerText')}
           linkName="Увійти"
         />
       </FormWrapper>
