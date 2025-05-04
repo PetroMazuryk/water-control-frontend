@@ -147,7 +147,7 @@ const FormRegister = () => {
               type="submit"
               disabled={isLoading}
             >
-              Зареєструватися
+             {t('register')}
             </button>
             <GoogleBtn />
           </div>
