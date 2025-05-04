@@ -1,11 +1,13 @@
 import clsx from 'clsx';
 import { useSelector } from 'react-redux';
+import { useTranslation } from 'react-i18next';
 import SelectDate from '../SelectDate/SelectDate';
 import { selectWaterDailyRecord } from '../../redux/water/selectors';
 
 import css from './WaterProgressBar.module.css';
 
 const WaterProgressBar = () => {
+  const { t } = useTranslation();
   const data = useSelector(selectWaterDailyRecord);
 
   const calculateTotalPercentage = (data) => {
@@ -42,7 +44,7 @@ const WaterProgressBar = () => {
             })}
           >
             {totalPercentage >= 100
-              ? 'Норма'
+              ? t('waterNorm')
               : `${totalPercentage.toFixed(0)}%`}
           </p>
           <div
