@@ -6,7 +6,7 @@ const GoogleBtn = () => {
   const { t } = useTranslation();
 
   return (
-    <a className={css.btn} href="http://localhost:3000/users/google">
+    <a className={css.btn} href="http://localhost:4444/api/users/google">
       {t('googleBtn')}
     </a>
   );
