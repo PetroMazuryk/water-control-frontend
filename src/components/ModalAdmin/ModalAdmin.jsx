@@ -78,7 +78,7 @@ const ModalAdmin = ({ onClose, currentAccess }) => {
         {userList.length > 0 ? (
           <ul className={css.userCountList}>
             {userList
-              .filter((user) => user.email !== adminEmail) // Фільтруємо список
+              .filter((user) => user.email !== adminEmail)
               .map((user) => (
                 <li key={user.id} className={css.userCountItem}>
                   <p>{user.email}</p>
