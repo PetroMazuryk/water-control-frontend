@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import LangSwitch from '../LangSwitch/LangSwitch';
+import ThemeToggle from '../ThemeToggle/ThemeToggle.jsx';
 
 import css from './Logo.module.css';
 
@@ -9,6 +10,7 @@ const Logo = () => {
       <Link to={`/`} className={css.logo} data-text="WATERCONTROL">
         WaterControl
       </Link>
+      <ThemeToggle />
       <LangSwitch />
     </div>
   );
