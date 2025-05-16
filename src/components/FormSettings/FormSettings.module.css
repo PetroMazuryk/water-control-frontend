@@ -229,7 +229,7 @@
 }
 
 .formulaDescriptionText {
-  color: rgba(47, 47, 47, 0.6);
+  color: var(--color-formula);
 }
 
 .submitBtn {

@@ -14,7 +14,7 @@
   background-color: var(--color-btn-bg);
   font-size: 14px;
   font-weight: 700;
-  color: var(--white);
+  color: var(--color-white);
 }
 
 .userBar:hover {
@@ -42,7 +42,7 @@
 }
 
 .userBarIcon {
-  fill: var(--white);
+  fill: var(--color-white);
   width: 26px;
   height: 26px;
   pointer-events: none;

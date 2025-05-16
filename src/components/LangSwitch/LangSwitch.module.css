@@ -13,12 +13,12 @@
   border-radius: 28px;
   padding: 1px 6px;
   background-color: var(--color-btn-bg);
-  color: var(--white);
+  color: var(--color-bg-hover);
 }
 
 .icon {
-  fill: var(--white);
-  stroke: var(--white);
+  fill: var(--color-bg-hover);
+  stroke: var(--color-bg-hover);
   width: 20px;
   height: 20px;
   pointer-events: none;
@@ -30,6 +30,6 @@
 
 @media screen and (min-width: 768px) {
   .currentLang {
-    padding: 4px 12px;
+    padding: 6px 12px;
   }
 }

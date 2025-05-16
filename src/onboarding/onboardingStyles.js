@@ -1,4 +1,4 @@
-import { disableBodyScroll, enableBodyScroll } from "body-scroll-lock";
+import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock';
 
 export const disableBody = () => disableBodyScroll(document.body);
 export const enableBody = () => enableBodyScroll(document.body);
@@ -9,6 +9,8 @@ export const onboardingStyles = {
     borderRadius: 10,
     marginLeft: 10,
     marginRight: 10,
+    background: 'var(--white)',
+    color: 'var(--color-font-main)',
   }),
 
   close: (base) => ({
@@ -18,9 +20,6 @@ export const onboardingStyles = {
     right: '13px',
     cursor: 'pointer',
     fontSize: '20px',
-    color: 'var(--color-font-main)',  
+    color: 'var(--color-font-main)',
   }),
-  
-
-  
 };

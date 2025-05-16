@@ -3,19 +3,19 @@
   right: 16px;
   width: 46px;
   height: 21px;
-  background-color: var(--color-second-bg);
+  background-color: var(--color-toggle-bg);
   border-radius: 20px;
   display: flex;
   align-items: center;
   padding: 3px;
-  transition: background-color 0.3s ease-in-out;
+  transition: var(--transition);
 }
 
 .circle {
   left: 4px;
   width: 16px;
   height: 16px;
-  background-color: var(--white);
+  background-color: var(--color-bg-hover);
   border-radius: 50%;
   transition:
     transform 0.3s ease-in-out,
@@ -28,7 +28,7 @@
 
 .dark {
   transform: translateX(24px);
-  background-color: var(--white);
+  background-color: var(--color-bg-hover);
 }
 
 .circle::before {
@@ -51,11 +51,11 @@
 [data-theme='dark'] .circle::before {
   opacity: 1;
   transform: scale(1);
-  background-color: #ddd;
+  background-color: var(--color-toggle-bg);
 }
 
-.toggleButton[data-theme='dark'] {
-  background-color: #333;
+[data-theme='dark'] .toggleButton {
+  background-color: var(--color-toggle-bg);
 }
 
 @media screen and (min-width: 768px) {
@@ -69,10 +69,6 @@
   .circle {
     width: 20px;
     height: 20px;
-  }
-
-  [data-theme='dark'] .circle {
-    left: 3px;
   }
 
   .circle::before {
