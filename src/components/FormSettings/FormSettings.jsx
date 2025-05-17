@@ -11,12 +11,7 @@ import {
   uploadUserPhoto,
 } from '../../redux/auth/operations.js';
 
-import {
-  selectIsLoading,
-  selectUser,
-  selectIsLoadingPhoto,
-  selectUserPhoto,
-} from '../../redux/auth/selectors.js';
+import { selectUserData } from '../../redux/auth/selectors.js';
 
 import avatarDefault from '../../assets/avatarDefault.png';
 import sprite from '../../assets/sprite.svg';
@@ -27,12 +22,8 @@ const FormSetting = ({ handleClose }) => {
   const { t } = useTranslation();
   const dispatch = useDispatch();
 
-  const { user, avatar, isLoading, isLoadingPhoto } = useSelector((state) => ({
-    user: selectUser(state),
-    avatar: selectUserPhoto(state),
-    isLoading: selectIsLoading(state),
-    isLoadingPhoto: selectIsLoadingPhoto(state),
-  }));
+  const { user, avatar, isLoading, isLoadingPhoto } =
+    useSelector(selectUserData);
 
   const [waterIntake, setWaterIntake] = useState(0);
 
