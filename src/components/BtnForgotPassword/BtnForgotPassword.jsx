@@ -16,9 +16,17 @@ const BtnForgotPassword = () => {
   }, [setModal, closeModal]);
 
   return (
-    <button type="button" className={css.btnForgotPassword} onClick={openModal}>
-      Забули пароль? Натисніть сюди для зміни паролю
-    </button>
+    <p className={css.textBtn}>
+      Забули пароль?
+      <button
+        type="button"
+        className={css.forgotPasswordBtn}
+        onClick={openModal}
+      >
+        Натисніть сюди
+      </button>
+      для зміни паролю
+    </p>
   );
 };
 
