@@ -2,7 +2,6 @@ import AdvantagesSection from '../../components/AdvantagesSection/AdvantagesSect
 import FormWrapper from '../../components/FormWrapper/FormWrapper';
 import FormLogin from '../../components/FormLogin/FormLogin';
 import FormFooter from '../../components/FormFooter/FormFooter';
-import ModalForgotPassword from '../../components/ModalForgotPassword/ModalForgotPassword';
 import { useTranslation } from 'react-i18next';
 
 import css from '../RegisterPage/RegisterPage.module.css';
@@ -19,7 +18,6 @@ const LoginPage = () => {
           text={t('footerText')}
           linkName={t('register')}
         />
-        <ModalForgotPassword />
       </FormWrapper>
 
       <div className={css.registerPageRight}>

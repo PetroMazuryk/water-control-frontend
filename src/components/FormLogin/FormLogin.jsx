@@ -1,4 +1,6 @@
 import { useState } from 'react';
+import { useCallback } from 'react';
+import { useModal } from '../../hooks/useModal';
 import { useDispatch, useSelector } from 'react-redux';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
@@ -8,6 +10,7 @@ import { useTranslation } from 'react-i18next';
 import { login } from '../../redux/auth/operations.js';
 import Loader from '../Loader/Loader.jsx';
 import GoogleBtn from '../GoogleBtn/GoogleBtn.jsx';
+import BtnForgotPassword from '../../components/BtnForgotPassword/BtnForgotPassword';
 
 import sprite from '../../assets/sprite.svg';
 import css from '../FormRegister/FormRegister.module.css';
@@ -17,6 +20,11 @@ const FormLogin = () => {
   const dispatch = useDispatch();
   const isLoading = useSelector(selectIsLoading);
   const [showPassword, setShowPassword] = useState(false);
+
+  const setModal = useModal();
+  const closeModal = useCallback(() => {
+    setModal();
+  }, [setModal]);
 
   const schemaValidation = Yup.object({
     email: Yup.string()
@@ -104,6 +112,8 @@ const FormLogin = () => {
               ''
             )}
           </label>
+
+          <BtnForgotPassword onClose={closeModal} />
         </div>
         {isLoading ? (
           <div className={css.registerButtonsContainer}>
@@ -116,7 +126,7 @@ const FormLogin = () => {
               className={css.registerBtn}
               type="submit"
             >
-             {t('logIn')} 
+              {t('logIn')}
             </button>
             <GoogleBtn />
           </div>
