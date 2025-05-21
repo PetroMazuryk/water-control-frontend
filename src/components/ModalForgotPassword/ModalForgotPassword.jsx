@@ -1,14 +1,18 @@
 import { useForm } from 'react-hook-form';
+import { useDispatch } from 'react-redux';
+import toast from 'react-hot-toast';
 import { ANIMATION } from '../../constants/constants.js';
-
+import { sendResetEmail } from '../../redux/auth/operations.js';
 import sprite from '../../assets/sprite.svg';
-
 import css from './ModalForgotPassword.module.css';
 
 const ModalForgotPassword = ({ onClose }) => {
+  const dispatch = useDispatch();
+
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors, isSubmitting },
   } = useForm({
     defaultValues: { email: '' },
@@ -21,8 +25,16 @@ const ModalForgotPassword = ({ onClose }) => {
     }, ANIMATION.DURATION);
   };
 
-  const onSubmit = async (data) => {
-    console.log(data);
+  const onSubmit = async ({ email }) => {
+    try {
+      await dispatch(sendResetEmail(email)).unwrap();
+      toast.success('Посилання для скидання паролю успішно надіслано');
+      reset();
+    } catch (error) {
+      toast.error(
+        typeof error === 'string' ? error : 'Сталася помилка. Спробуйте ще раз.'
+      );
+    }
   };
 
   return (
@@ -34,24 +46,26 @@ const ModalForgotPassword = ({ onClose }) => {
         className={css.closeBtn}
       >
         <svg className={css.svg}>
-          <use xlinkHref={`${sprite}#icon-x`}></use>
+          <use xlinkHref={`${sprite}#icon-x`} />
         </svg>
       </button>
+
       <div className={css.modalTextBox}>
-        <h2 className={css.modalTitle}>Забули пароль? </h2>
+        <h2 className={css.modalTitle}>Забули пароль?</h2>
         <p className={css.modalText}>
-          Ми надішлемо вам електронний лист із посиланням для скидання пароля.
+          Ми надішлемо вам електронного листа з посиланням для скидання пароля.
         </p>
       </div>
+
       <form onSubmit={handleSubmit(onSubmit)} className={css.modalForm}>
         <input
           type="email"
           placeholder="Введіть свою електронну пошту"
           {...register('email', {
-            required: 'Валідація пошти',
+            required: 'Обовʼязково введіть email',
             pattern: {
-              value: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/,
-              message: 'Валідація пошти',
+              value: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
+              message: 'Некоректний формат електронної пошти',
             },
           })}
           className={`${css.inputField} ${errors.email ? css.errorInput : ''}`}
@@ -62,7 +76,9 @@ const ModalForgotPassword = ({ onClose }) => {
 
         <div className={css.modalBtnBox}>
           <button type="submit" className={css.btnSend} disabled={isSubmitting}>
-            Відправити посилання для скидання паролю
+            {isSubmitting
+              ? 'Надсилання...'
+              : 'Відправити посилання для скидання паролю'}
           </button>
           <button type="button" className={css.btnCancel} onClick={handleClose}>
             Відміна

@@ -7,6 +7,7 @@ import {
   updateUserInfo,
   updateUserPhoto,
   updateUserAccessById,
+  sendResetEmailByEmail,
 } from '../../api/auth';
 import { fetchRefreshToken } from '../../api/axiosConfig';
 
@@ -101,6 +102,21 @@ export const updateUserAccess = createAsyncThunk(
       return response.data;
     } catch (error) {
       return rejectWithValue(error.response?.data || error.message);
+    }
+  }
+);
+
+export const sendResetEmail = createAsyncThunk(
+  'auth/sendResetEmail',
+  async (email, { rejectWithValue }) => {
+    try {
+      const response = await sendResetEmailByEmail(email);
+      return response.data;
+    } catch (error) {
+      return rejectWithValue(
+        error.response?.data ||
+          'Failed to send the email. Please try again later.'
+      );
     }
   }
 );

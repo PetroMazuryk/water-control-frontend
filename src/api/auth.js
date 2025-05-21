@@ -40,3 +40,8 @@ export const updateUserAccessById = async (id, { access }) => {
   const data = await instance.patch(`/users/${id}/access`, { access });
   return data;
 };
+
+export const sendResetEmailByEmail = async (email) => {
+  const response = await instance.post('/users/send-reset-password', { email });
+  return response;
+};
