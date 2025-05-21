@@ -133,18 +133,19 @@ const ResetPasswordPage = () => {
 
           <div className={css.resetButtonsContainer}>
             <button
-              type="submit"
-              className={css.resetBtn}
-              disabled={isSubmitting}
-            >
-              Змінити пароль
-            </button>
-            <button
               type="button"
               className={css.resetBtn}
               onClick={() => navigate('/login')}
             >
               Скасувати
+            </button>
+
+            <button
+              type="submit"
+              className={css.resetBtn}
+              disabled={isSubmitting}
+            >
+              Змінити пароль
             </button>
           </div>
         </form>
