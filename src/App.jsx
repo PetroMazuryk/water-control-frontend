@@ -41,6 +41,9 @@ const ControlSchedule = lazy(() =>
 const AccessDenied = lazy(() =>
   import('./pages/AccessDenied/AccessDenied.jsx')
 );
+const ResetPasswordPage = lazy(() =>
+  import('./pages/ResetPasswordPage/ResetPasswordPage.jsx')
+);
 import { logOut } from './redux/auth/operations';
 
 function App() {
@@ -121,6 +124,7 @@ function App() {
           <Route index element={<Navigate to="calendar" replace />} />
         </Route>
 
+        <Route path="/reset-password" element={<ResetPasswordPage />} />
         <Route path="/access-denied" element={<AccessDenied />} />
         <Route path="*" element={<NotFoundPage />} />
       </Routes>

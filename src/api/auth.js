@@ -45,3 +45,11 @@ export const sendResetEmailByEmail = async (email) => {
   const response = await instance.post('/users/send-reset-password', { email });
   return response;
 };
+
+export const resetPasswordRequest = async ({ token, password }) => {
+  const response = await instance.post('/users/reset-password', {
+    token,
+    password,
+  });
+  return response;
+};
