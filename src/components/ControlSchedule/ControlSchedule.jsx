@@ -43,6 +43,7 @@ const CustomTooltip = ({ active, payload, coordinate }) => {
     const labelStyle = {
       fontSize: '12px',
       fontWeight: 'bold',
+      color: 'black',
     };
 
     return (
@@ -96,7 +97,12 @@ const ControlSchedule = () => {
                 <stop offset="100%" stopColor="#9BE1A0" stopOpacity={0} />
               </linearGradient>
             </defs>
-            <XAxis dataKey="date" tickLine={false} tickMargin={21} />
+            <XAxis
+              dataKey="date"
+              tickLine={false}
+              tickMargin={21}
+              tick={{ fill: 'grey' }}
+            />
             <YAxis
               domain={[0, 'auto']}
               tickCount={6}
@@ -104,7 +110,7 @@ const ControlSchedule = () => {
               label={{ angle: -90, position: 'insideLeft' }}
               tickLine={false}
               tickMargin={53}
-              tick={{ textAnchor: 'start' }}
+              tick={{ textAnchor: 'start', fill: 'grey' }}
             />
             <Tooltip
               cursor={false}
