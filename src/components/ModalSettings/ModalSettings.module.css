@@ -28,13 +28,9 @@
 
 .closeBtn {
   position: absolute;
-  background: none;
-  border: none;
-  cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0;
   top: 20px;
   right: 20px;
   width: 24px;
@@ -44,11 +40,11 @@
 .icon {
   height: 100%;
   width: 100%;
-  fill: white;
-  stroke: black;
+  stroke: var(--color-font-main);
 }
+
 .closeBtn:hover .icon {
-  stroke: #87d28d;
+  stroke: var(--color-accent);
 }
 
 @media screen and (min-width: 768px) {
