@@ -12,6 +12,7 @@
   --color-aim: #4a53fa;
   --color-second-bg: #c8b4f8;
   --color-toggle-bg: #c8b4f8;
+  --color-statistics-bg: #c8b4f8;
   --color-second-bg-hover: #927bc6;
   --color-accent: #4eca56;
   --white: #ffffff;
@@ -30,8 +31,9 @@
   --color-font-main: #ffffff;
   --color-font-second: #ffffff;
   --color-font-secondary: #ffffff;
-  --color-formula: rgba(230, 225, 225, 0.6);
+  --color-formula: hsla(0, 9%, 89%, 0.6);
   --color-main-bg: #5e5555;
+  --color-statistics-bg: #746363;
   --color-btn-main: #232222;
   --color-cancel: rgba(240, 243, 246, 0.3);
   --white: #494950;

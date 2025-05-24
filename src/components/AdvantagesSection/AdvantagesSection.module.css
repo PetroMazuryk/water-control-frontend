@@ -61,7 +61,8 @@
 }
 
 .advantagesStatistics {
-  background-color: var(--color-second-bg);
+  background-color: var(--color-statistics-bg);
+
 }
 
 .advantagesSetting {
@@ -156,11 +157,13 @@
   z-index: 3;
   position: relative;
 }
+
 .userCountItem:nth-child(2) {
   z-index: 2;
   left: -10px;
   position: relative;
 }
+
 .userCountItem:nth-child(3) {
   z-index: 1;
   left: -20px;
@@ -197,6 +200,7 @@
   .userCountItem:nth-child(2) {
     left: -18px;
   }
+
   .userCountItem:nth-child(3) {
     left: -36px;
   }
