@@ -25,7 +25,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  stroke: var(--color-btn-bg);
+  stroke: var(--color-font-secondary);
 }
 
 .closeBtn:hover {
