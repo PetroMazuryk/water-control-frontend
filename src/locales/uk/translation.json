@@ -18,6 +18,8 @@
   "footerText": "Немає облікового запису?",
   "register": "Зареєструватися",
 
+  "forgotTitle": "Забули пароль ?",
+
   "userCountText": "Наші <span class=\"{{userCountTextColor}}\">{{count}} щасливі</span><br/> клієнти",
   "habitDrive": "Вироблення звички",
   "viewStats": "Статистики",

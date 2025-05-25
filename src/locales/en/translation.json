@@ -18,6 +18,8 @@
   "footerText": "Don't have an account?",
   "register": "Register",
 
+  "forgotTitle": "Forgot your password ?",
+
   "userCountText": "Our <span class=\"{{userCountTextColor}}\">{{count}} happy</span><br/> customers",
   "habitDrive": "Habit drive",
   "viewStats": "View statistics",

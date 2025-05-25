@@ -1,12 +1,15 @@
 import { useForm } from 'react-hook-form';
 import { useDispatch } from 'react-redux';
 import toast from 'react-hot-toast';
+import { useTranslation } from 'react-i18next';
 import { ANIMATION } from '../../constants/constants.js';
 import { sendResetEmail } from '../../redux/auth/operations.js';
+
 import sprite from '../../assets/sprite.svg';
 import css from './ModalForgotPassword.module.css';
 
 const ModalForgotPassword = ({ onClose }) => {
+  const { t } = useTranslation();
   const dispatch = useDispatch();
 
   const {
@@ -51,7 +54,7 @@ const ModalForgotPassword = ({ onClose }) => {
       </button>
 
       <div className={css.modalTextBox}>
-        <h2 className={css.modalTitle}>Забули пароль?</h2>
+        <h2 className={css.modalTitle}>{t('forgotTitle')}</h2>
         <p className={css.modalText}>
           Ми надішлемо вам електронного листа з посиланням для скидання пароля.
         </p>
