@@ -19,6 +19,7 @@
   "register": "Registrieren",
 
   "forgotTitle": "Passwort vergessen ?",
+  "forgotText": "Wir senden Ihnen eine E-Mail mit einem Link zum Zurücksetzen Ihres Passworts.",
 
   "userCountText": "Unsere <span class=\"{{userCountTextColor}}\">{{count}} glücklichen</span><br/> Kunden",
   "habitDrive": "Gewohnheitsantrieb",

@@ -55,9 +55,7 @@ const ModalForgotPassword = ({ onClose }) => {
 
       <div className={css.modalTextBox}>
         <h2 className={css.modalTitle}>{t('forgotTitle')}</h2>
-        <p className={css.modalText}>
-          Ми надішлемо вам електронного листа з посиланням для скидання пароля.
-        </p>
+        <p className={css.modalText}>{t('forgotText')}</p>
       </div>
 
       <form onSubmit={handleSubmit(onSubmit)} className={css.modalForm}>

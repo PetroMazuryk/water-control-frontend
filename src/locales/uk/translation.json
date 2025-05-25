@@ -19,6 +19,7 @@
   "register": "Зареєструватися",
 
   "forgotTitle": "Забули пароль ?",
+  "forgotText": "Ми надішлемо вам електронного листа з посиланням для скидання пароля.",
 
   "userCountText": "Наші <span class=\"{{userCountTextColor}}\">{{count}} щасливі</span><br/> клієнти",
   "habitDrive": "Вироблення звички",
