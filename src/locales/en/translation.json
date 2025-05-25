@@ -21,6 +21,7 @@
   "forgotTitle": "Forgot your password ?",
   "forgotText": "We will send you an email with a link to reset your password.",
   "sendText": "Send password reset link",
+  "loadingText": "Sending...",
 
   "userCountText": "Our <span class=\"{{userCountTextColor}}\">{{count}} happy</span><br/> customers",
   "habitDrive": "Habit drive",
