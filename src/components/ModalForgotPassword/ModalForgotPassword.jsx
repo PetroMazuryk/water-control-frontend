@@ -77,9 +77,7 @@ const ModalForgotPassword = ({ onClose }) => {
 
         <div className={css.modalBtnBox}>
           <button type="submit" className={css.btnSend} disabled={isSubmitting}>
-            {isSubmitting
-              ? 'Надсилання...'
-              : 'Відправити посилання для скидання паролю'}
+            {isSubmitting ? 'Надсилання...' : t('sendText')}
           </button>
           <button type="button" className={css.btnCancel} onClick={handleClose}>
             {t('cancel')}
