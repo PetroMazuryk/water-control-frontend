@@ -61,7 +61,7 @@ const ModalForgotPassword = ({ onClose }) => {
       <form onSubmit={handleSubmit(onSubmit)} className={css.modalForm}>
         <input
           type="email"
-          placeholder="Введіть свою електронну пошту"
+          placeholder={t('placeholderEmail')}
           {...register('email', {
             required: 'Обовʼязково введіть email',
             pattern: {
