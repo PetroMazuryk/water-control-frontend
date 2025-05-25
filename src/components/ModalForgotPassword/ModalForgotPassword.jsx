@@ -82,7 +82,7 @@ const ModalForgotPassword = ({ onClose }) => {
               : 'Відправити посилання для скидання паролю'}
           </button>
           <button type="button" className={css.btnCancel} onClick={handleClose}>
-            Відміна
+            {t('cancel')}
           </button>
         </div>
       </form>
