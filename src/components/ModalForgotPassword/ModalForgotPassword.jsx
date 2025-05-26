@@ -1,6 +1,8 @@
 import { useForm } from 'react-hook-form';
 import { useDispatch } from 'react-redux';
 import toast from 'react-hot-toast';
+import { yupResolver } from '@hookform/resolvers/yup';
+import * as Yup from 'yup';
 import { useTranslation } from 'react-i18next';
 import { ANIMATION } from '../../constants/constants.js';
 import { sendResetEmail } from '../../redux/auth/operations.js';
@@ -12,12 +14,19 @@ const ModalForgotPassword = ({ onClose }) => {
   const { t } = useTranslation();
   const dispatch = useDispatch();
 
+  const schemaValidation = Yup.object({
+    email: Yup.string()
+      .required(t('emailRequired'))
+      .email(t('enterValidEmail')),
+  });
+
   const {
     register,
     handleSubmit,
     reset,
     formState: { errors, isSubmitting },
   } = useForm({
+    resolver: yupResolver(schemaValidation),
     defaultValues: { email: '' },
   });
 
@@ -61,14 +70,8 @@ const ModalForgotPassword = ({ onClose }) => {
       <form onSubmit={handleSubmit(onSubmit)} className={css.modalForm}>
         <input
           type="email"
+          {...register('email')}
           placeholder={t('placeholderEmail')}
-          {...register('email', {
-            required: 'Обовʼязково введіть email',
-            pattern: {
-              value: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
-              message: 'Некоректний формат електронної пошти',
-            },
-          })}
           className={`${css.inputField} ${errors.email ? css.errorInput : ''}`}
         />
         {errors.email && (
