@@ -79,7 +79,7 @@ const ResetPasswordPage = () => {
               <input
                 type={showPassword ? 'text' : 'password'}
                 {...register('password')}
-                placeholder="Введіть новий пароль"
+                placeholder={t('placeholderNewPassword')}
                 className={clsx(css.resetInput, {
                   [css.resetInputError]: errors.password,
                 })}

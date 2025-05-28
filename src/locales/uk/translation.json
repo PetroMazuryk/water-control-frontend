@@ -26,6 +26,7 @@
 
   "changePassword": "Зміна пароля",
   "newPassword": "Новий пароль",
+  "placeholderNewPassword": "Введіть новий пароль",
 
   "userCountText": "Наші <span class=\"{{userCountTextColor}}\">{{count}} щасливі</span><br/> клієнти",
   "habitDrive": "Вироблення звички",
