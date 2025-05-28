@@ -27,6 +27,7 @@
   "changePassword": "Change password",
   "newPassword": "New password",
   "placeholderNewPassword": "Enter new password",
+  "confirmPassword": "Confirm password",
 
   "userCountText": "Our <span class=\"{{userCountTextColor}}\">{{count}} happy</span><br/> customers",
   "habitDrive": "Habit drive",

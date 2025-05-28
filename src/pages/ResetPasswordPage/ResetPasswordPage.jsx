@@ -104,7 +104,7 @@ const ResetPasswordPage = () => {
           </label>
 
           <label className={css.resetLabel}>
-            <span>Підтвердити пароль</span>
+            <span>{t('confirmPassword')}</span>
             <span className={css.resetPassword}>
               <input
                 type={showConfirmPassword ? 'text' : 'password'}
