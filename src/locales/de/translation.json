@@ -22,6 +22,7 @@
   "forgotText": "Wir senden Ihnen eine E-Mail mit einem Link zum Zurücksetzen Ihres Passworts.",
   "sendText": "Link zum Zurücksetzen des Passworts senden",
   "loadingText": "Senden...",
+  "forgotPasswordMessage": "Passwort vergessen? <btn class=\"{{forgotPasswordBtn}}\">Klick hier</btn>, um Ihr Passwort zu ändern",
 
   "userCountText": "Unsere <span class=\"{{userCountTextColor}}\">{{count}} glücklichen</span><br/> Kunden",
   "habitDrive": "Gewohnheitsantrieb",

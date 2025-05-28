@@ -22,6 +22,7 @@
   "forgotText": "Ми надішлемо вам електронного листа з посиланням для скидання пароля.",
   "sendText": "Відправити посилання для скидання паролю",
   "loadingText": "Надсилання...",
+  "forgotPasswordMessage": "Забули пароль? <btn class=\"{{forgotPasswordBtn}}\">Натисніть сюди</btn> для зміни паролю",
 
   "userCountText": "Наші <span class=\"{{userCountTextColor}}\">{{count}} щасливі</span><br/> клієнти",
   "habitDrive": "Вироблення звички",

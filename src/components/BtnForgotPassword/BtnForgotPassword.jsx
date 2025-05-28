@@ -1,7 +1,8 @@
 import { useCallback } from 'react';
-
+import { Trans } from 'react-i18next';
 import { useModal } from '../../hooks/useModal';
 import ModalForgotPassword from '../../components/ModalForgotPassword/ModalForgotPassword';
+
 import css from './BtnForgotPassword.module.css';
 
 const BtnForgotPassword = () => {
@@ -17,15 +18,18 @@ const BtnForgotPassword = () => {
 
   return (
     <p className={css.textBtn}>
-      Забули пароль?
-      <button
-        type="button"
-        className={css.forgotPasswordBtn}
-        onClick={openModal}
-      >
-        Натисніть сюди
-      </button>
-      для зміни паролю
+      <Trans
+        i18nKey="forgotPasswordMessage"
+        components={{
+          btn: (
+            <button
+              type="button"
+              className={css.forgotPasswordBtn}
+              onClick={openModal}
+            />
+          ),
+        }}
+      />
     </p>
   );
 };
