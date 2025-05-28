@@ -24,6 +24,8 @@
   "loadingText": "Sending...",
   "forgotPasswordMessage": "Forgot your password? <btn class=\"{{forgotPasswordBtn}}\">Click here</btn> to change your password",
 
+  "changePassword": "Change password",
+
   "userCountText": "Our <span class=\"{{userCountTextColor}}\">{{count}} happy</span><br/> customers",
   "habitDrive": "Habit drive",
   "viewStats": "View statistics",

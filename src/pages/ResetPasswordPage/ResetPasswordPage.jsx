@@ -6,6 +6,8 @@ import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as Yup from 'yup';
 import toast from 'react-hot-toast';
+import { useTranslation } from 'react-i18next';
+import Logo from '../../components/Logo/Logo';
 
 import { resetPassword } from '../../redux/auth/operations';
 
@@ -13,6 +15,7 @@ import sprite from '../../assets/sprite.svg';
 import css from './ResetPasswordPage.module.css';
 
 const ResetPasswordPage = () => {
+  const { t } = useTranslation();
   const location = useLocation();
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -61,13 +64,14 @@ const ResetPasswordPage = () => {
 
   return (
     <section className={css.resetComponent}>
+      <Logo />
       <div className="container">
         <form
           className={css.resetForm}
           onSubmit={handleSubmit(onSubmit)}
           noValidate
         >
-          <h2 className={css.resetTitle}>Зміна пароля</h2>
+          <h2 className={css.resetTitle}>{t('changePassword')}</h2>
 
           <label className={css.resetLabel}>
             <span>Новий пароль</span>
