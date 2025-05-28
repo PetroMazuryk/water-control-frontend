@@ -25,6 +25,7 @@
   "forgotPasswordMessage": "Забули пароль? <btn class=\"{{forgotPasswordBtn}}\">Натисніть сюди</btn> для зміни паролю",
 
   "changePassword": "Зміна пароля",
+  "newPassword": "Новий пароль",
 
   "userCountText": "Наші <span class=\"{{userCountTextColor}}\">{{count}} щасливі</span><br/> клієнти",
   "habitDrive": "Вироблення звички",

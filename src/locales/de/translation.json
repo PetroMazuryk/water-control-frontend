@@ -25,6 +25,7 @@
   "forgotPasswordMessage": "Passwort vergessen? <btn class=\"{{forgotPasswordBtn}}\">Klick hier</btn>, um Ihr Passwort zu ändern",
 
   "changePassword": "Kennwort ändern",
+  "newPassword": "Neues Passwort",
 
   "userCountText": "Unsere <span class=\"{{userCountTextColor}}\">{{count}} glücklichen</span><br/> Kunden",
   "habitDrive": "Gewohnheitsantrieb",

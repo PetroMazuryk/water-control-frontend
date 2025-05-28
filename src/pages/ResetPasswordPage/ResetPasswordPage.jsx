@@ -74,7 +74,7 @@ const ResetPasswordPage = () => {
           <h2 className={css.resetTitle}>{t('changePassword')}</h2>
 
           <label className={css.resetLabel}>
-            <span>Новий пароль</span>
+            <span>{t('newPassword')}</span>
             <span className={css.resetPassword}>
               <input
                 type={showPassword ? 'text' : 'password'}
