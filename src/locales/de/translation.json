@@ -28,6 +28,7 @@
   "newPassword": "Neues Passwort",
   "placeholderNewPassword": "Neues Passwort eingeben",
   "confirmPassword": "Passwort bestätigen",
+  "changePasswordBtn": "Kennwort ändern",
 
   "userCountText": "Unsere <span class=\"{{userCountTextColor}}\">{{count}} glücklichen</span><br/> Kunden",
   "habitDrive": "Gewohnheitsantrieb",

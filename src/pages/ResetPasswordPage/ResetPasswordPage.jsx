@@ -149,7 +149,7 @@ const ResetPasswordPage = () => {
               className={css.resetBtn}
               disabled={isSubmitting}
             >
-              Змінити пароль
+              {t('changePasswordBtn')}
             </button>
           </div>
         </form>

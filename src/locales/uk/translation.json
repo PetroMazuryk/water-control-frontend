@@ -28,6 +28,7 @@
   "newPassword": "Новий пароль",
   "placeholderNewPassword": "Введіть новий пароль",
   "confirmPassword": "Підтвердити пароль",
+  "changePasswordBtn": "Змінити пароль",
 
   "userCountText": "Наші <span class=\"{{userCountTextColor}}\">{{count}} щасливі</span><br/> клієнти",
   "habitDrive": "Вироблення звички",
