@@ -141,7 +141,7 @@ const ResetPasswordPage = () => {
               className={css.resetBtn}
               onClick={() => navigate('/login')}
             >
-              Скасувати
+              {t('cancelOut')}
             </button>
 
             <button
