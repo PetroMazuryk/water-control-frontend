@@ -109,7 +109,7 @@ const ResetPasswordPage = () => {
               <input
                 type={showConfirmPassword ? 'text' : 'password'}
                 {...register('confirmPassword')}
-                placeholder="Повторіть пароль"
+                placeholder={t('repeatPassword')}
                 className={clsx(css.resetInput, {
                   [css.resetInputError]: errors.confirmPassword,
                 })}
