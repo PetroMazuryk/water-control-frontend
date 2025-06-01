@@ -11,6 +11,7 @@
   "repeatPassword": "Repeat password",
 
   "userList": "List of all users",
+  "noUsersFound": "No users found.",
 
   "placeholderEmail": "Enter your email",
   "password": "Password",

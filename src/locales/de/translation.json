@@ -11,6 +11,7 @@
   "repeatPassword": "Passwort wiederholen",
 
   "userList": "Liste aller Benutzer",
+  "noUsersFound": "Keine Benutzer gefunden.",
 
   "placeholderEmail": "Geben Sie Ihre E-Mail ein",
   "password": "Passwort",

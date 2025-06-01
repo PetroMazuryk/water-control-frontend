@@ -107,7 +107,7 @@ const ModalAdmin = ({ onClose, currentAccess }) => {
               ))}
           </ul>
         ) : (
-          <p>Користувачі не знайдені.</p>
+          <p>{t('noUsersFound')}</p>
         )}
       </div>
     </div>
