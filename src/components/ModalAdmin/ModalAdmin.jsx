@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
+import { useTranslation } from 'react-i18next';
 import { ANIMATION } from '../../constants/constants.js';
 
 import LoaderComponent from '../LoaderComponent/LoaderComponent.jsx';
@@ -10,6 +11,7 @@ import sprite from '../../assets/sprite.svg';
 import css from './ModalAdmin.module.css';
 
 const ModalAdmin = ({ onClose, currentAccess }) => {
+  const { t } = useTranslation();
   const dispatch = useDispatch();
 
   const [isLoading, setIsLoading] = useState({});
@@ -74,7 +76,7 @@ const ModalAdmin = ({ onClose, currentAccess }) => {
         </svg>
       </button>
       <div className={css.modalTextBox}>
-        <h2 className={css.modalTitle}>Список усіх користувачів</h2>
+        <h2 className={css.modalTitle}>{t('userList')}</h2>
         {userList.length > 0 ? (
           <ul className={css.userCountList}>
             {userList

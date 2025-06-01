@@ -10,6 +10,8 @@
   "registration": "Registration",
   "repeatPassword": "Repeat password",
 
+  "userList": "List of all users",
+
   "placeholderEmail": "Enter your email",
   "password": "Password",
   "placeholderPassword": "Enter your password",
