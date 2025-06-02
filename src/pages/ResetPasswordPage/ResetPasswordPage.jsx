@@ -98,9 +98,10 @@ const ResetPasswordPage = () => {
                 </svg>
               </button>
             </span>
-            {errors.password && (
-              <p className={css.resetErrorMessage}>{errors.password.message}</p>
-            )}
+
+            <p className={css.resetErrorMessage}>
+              {errors.password?.message || '\u00A0'}
+            </p>
           </label>
 
           <label className={css.resetLabel}>
@@ -128,11 +129,10 @@ const ResetPasswordPage = () => {
                 </svg>
               </button>
             </span>
-            {errors.confirmPassword && (
-              <p className={css.resetErrorMessage}>
-                {errors.confirmPassword.message}
-              </p>
-            )}
+
+            <p className={css.resetErrorMessage}>
+              {errors.confirmPassword?.message || '\u00A0'}
+            </p>
           </label>
 
           <div className={css.resetButtonsContainer}>
