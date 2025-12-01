@@ -68,22 +68,21 @@ function App() {
   }, [token, dispatch, userAccess, navigate]);
 
   useEffect(() => {
-    if (authErrorMessage) {
-      toast.error(authErrorMessage);
-    }
-    if (authSuccessMessage) {
-      toast.success(authSuccessMessage);
-    }
-  }, [authSuccessMessage, authErrorMessage]);
+    const pairs = [
+      { error: authErrorMessage, success: authSuccessMessage },
+      { error: waterErrorMessage, success: waterSuccessMessage },
+    ];
 
-  useEffect(() => {
-    if (waterErrorMessage) {
-      toast.error(waterErrorMessage);
-    }
-    if (waterSuccessMessage) {
-      toast.success(waterSuccessMessage);
-    }
-  }, [waterErrorMessage, waterSuccessMessage]);
+    pairs.forEach(({ error, success }) => {
+      if (error) toast.error(error);
+      if (success) toast.success(success);
+    });
+  }, [
+    authErrorMessage,
+    authSuccessMessage,
+    waterErrorMessage,
+    waterSuccessMessage,
+  ]);
 
   return (
     <SharedLayout>
