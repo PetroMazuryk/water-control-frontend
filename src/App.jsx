@@ -1,6 +1,7 @@
 import { lazy, useEffect } from 'react';
 import { toast } from 'react-hot-toast';
 import { useDispatch, useSelector } from 'react-redux';
+import { useTranslation } from 'react-i18next';
 import { Route, Routes, Navigate, useNavigate } from 'react-router-dom';
 import SharedLayout from './components/SharedLayout/SharedLayout';
 import PrivateRoute from './components/PrivateRoute';
@@ -49,6 +50,7 @@ const ResetPasswordPage = lazy(() =>
 import { logOut } from './redux/auth/operations';
 
 function App() {
+  const { t } = useTranslation();
   const token = useSelector(selectToken);
   const dispatch = useDispatch();
   const userAccess = useSelector(selectUserAccess);
@@ -85,11 +87,11 @@ function App() {
 
     pairs.forEach(({ error, success, clear }) => {
       if (error) {
-        toast.error(error);
+        toast.error(t(error));
         clear();
       }
       if (success) {
-        toast.success(success);
+        toast.success(t(success));
         clear();
       }
     });
@@ -99,6 +101,7 @@ function App() {
     waterErrorMessage,
     waterSuccessMessage,
     dispatch,
+    t,
   ]);
 
   return (
