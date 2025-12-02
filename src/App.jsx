@@ -8,6 +8,8 @@ import RestrictedRoute from './components/RestrictedRoute';
 import { current } from './redux/auth/operations';
 import { setLoggedIn } from './redux/auth/slice.js';
 import { ToasterBar } from './components/ToasterBar.jsx';
+import { clearAuthMessages } from './redux/auth/slice.js';
+import { clearDailyMessages } from './redux/water/slice';
 
 import {
   selectToken,
@@ -69,19 +71,34 @@ function App() {
 
   useEffect(() => {
     const pairs = [
-      { error: authErrorMessage, success: authSuccessMessage },
-      { error: waterErrorMessage, success: waterSuccessMessage },
+      {
+        error: authErrorMessage,
+        success: authSuccessMessage,
+        clear: () => dispatch(clearAuthMessages()),
+      },
+      {
+        error: waterErrorMessage,
+        success: waterSuccessMessage,
+        clear: () => dispatch(clearDailyMessages()),
+      },
     ];
 
-    pairs.forEach(({ error, success }) => {
-      if (error) toast.error(error);
-      if (success) toast.success(success);
+    pairs.forEach(({ error, success, clear }) => {
+      if (error) {
+        toast.error(error);
+        clear();
+      }
+      if (success) {
+        toast.success(success);
+        clear();
+      }
     });
   }, [
     authErrorMessage,
     authSuccessMessage,
     waterErrorMessage,
     waterSuccessMessage,
+    dispatch,
   ]);
 
   return (

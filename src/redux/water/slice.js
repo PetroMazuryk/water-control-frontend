@@ -34,6 +34,12 @@ const findDate = (oldDate) => {
 const waterSlice = createSlice({
   name: 'water',
   initialState: WATER_INITIAL_STATE,
+  reducers: {
+    clearDailyMessages(state) {
+      state.waterDaily.errorMessage = null;
+      state.waterDaily.successMessage = null;
+    },
+  },
   extraReducers: (builder) => {
     builder
       //============ fetchDailyWater ===============
@@ -233,4 +239,5 @@ const waterSlice = createSlice({
   },
 });
 
+export const { clearDailyMessages } = waterSlice.actions;
 export const waterReducer = waterSlice.reducer;
