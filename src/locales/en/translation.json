@@ -139,5 +139,10 @@
   "fifth-step": "This section shows your water consumption history for the day — when and how much water you added.",
   "sixth-step": "Here you can view your monthly water intake statistics, with each day shown as a convenient percentage.",
   "onboardingEndTitle": "Great! Now you're ready to use WaterControl.",
-  "onboardingEndText": "We wish you an easy and consistent way to stay hydrated every day 💧"
+  "onboardingEndText": "We wish you an easy and consistent way to stay hydrated every day 💧",
+
+  "success-added": "Successfully added",
+  "success-updated": "Successfully updated",
+  "success-deleted": "Successfully deleted",
+  "error-generic": "Something went wrong. Please try again"
 }
