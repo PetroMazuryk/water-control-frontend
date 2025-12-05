@@ -139,5 +139,10 @@
   "fifth-step": "Dieser Abschnitt zeigt dir die Trinkhistorie des Tages – wann und wie viel Wasser du hinzugefügt hast.",
   "sixth-step": "Hier kannst du deine monatliche Wasserverbrauchsstatistik einsehen. Alle Daten werden pro Tag in Prozent angezeigt.",
   "onboardingEndTitle": "Super! Jetzt bist du bereit, WaterControl zu benutzen.",
-  "onboardingEndText": "Wir wünschen dir viel Erfolg beim täglichen Halten deines Wasserhaushalts 💧"
+  "onboardingEndText": "Wir wünschen dir viel Erfolg beim täglichen Halten deines Wasserhaushalts 💧",
+
+  "success-added": "Erfolgreich hinzugefügt",
+  "success-updated": "Erfolgreich aktualisiert",
+  "success-deleted": "Erfolgreich gelöscht",
+  "error-generic": "Etwas ist schiefgelaufen. Bitte versuchen Sie es erneut"
 }
